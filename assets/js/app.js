@@ -17,27 +17,36 @@
 
   /* ----------------------------- data ----------------------------- */
   var GAMES = [
-    { name: "Fruit Cash", provider: "Print Studios", tag: "Hold'N'Link", cat: "slots", badge: "hot", c: ["#2bd46a", "#0c7a3a"] },
-    { name: "Luxor Relics", provider: "Print Studios", tag: "Hold'N'Link", cat: "slots", badge: "hot", c: ["#ff8a1e", "#b23a00"] },
-    { name: "MMA Legends", provider: "Hacksaw", tag: "Bonus Buy", cat: "slots", badge: "hot", c: ["#5D31FF", "#21105e"] },
-    { name: "Hit in Vegas", provider: "Relax Gaming", tag: "Megaways", cat: "slots", badge: "new", c: ["#FF00FF", "#6b0049"] },
-    { name: "Pompeii Gold", provider: "Big Time Gaming", tag: "Hold'N'Link", cat: "slots", badge: null, c: ["#ffb02e", "#a14b00"] },
-    { name: "Fortune Cash", provider: "Betsolutions", tag: "Jackpot", cat: "slots", badge: "new", c: ["#6DCAFD", "#1b4f86"] },
-    { name: "Crazy Scientist", provider: "High 5", tag: "Bonus Buy", cat: "slots", badge: null, c: ["#19c39a", "#0a5e49"] },
-    { name: "Fu Yin Yang", provider: "Red Tiger", tag: "Hold'N'Link", cat: "slots", badge: null, locked: true, c: ["#ff5252", "#7a0d22"] },
-    { name: "African King", provider: "Pragmatic", tag: "Hold'N'Link", cat: "slots", badge: null, c: ["#f0a44b", "#7a3b00"] },
-    { name: "Sweet Bonanza", provider: "Pragmatic", tag: "Tumble", cat: "slots", badge: "hot", c: ["#ff6fb5", "#7a1f56"] },
-    { name: "Gates of Olympus", provider: "Pragmatic", tag: "Megaways", cat: "slots", badge: null, c: ["#8303F9", "#2a0a52"] },
-    { name: "Wanted Dead", provider: "Hacksaw", tag: "Bonus Buy", cat: "slots", badge: "new", c: ["#c9913f", "#5a3a0c"] },
-    { name: "Lightning Roulette", provider: "Evolution", tag: "Live", cat: "live", badge: "hot", c: ["#DBEE42", "#5a6610"] },
-    { name: "Blackjack VIP", provider: "Evolution", tag: "Live", cat: "live", badge: null, c: ["#19a05a", "#0a4427"] },
-    { name: "Baccarat Lobby", provider: "Evolution", tag: "Live", cat: "live", badge: null, c: ["#5D31FF", "#180a4d"] },
-    { name: "Dragon Tiger", provider: "Evolution", tag: "Live", cat: "live", badge: null, locked: true, c: ["#ff4d4d", "#5e0d0d"] },
-    { name: "Crazy Time", provider: "Evolution", tag: "Game Show", cat: "shows", badge: "hot", c: ["#ff2e7e", "#5e0a35"] },
-    { name: "Mega Ball", provider: "Evolution", tag: "Game Show", cat: "shows", badge: "new", c: ["#6DCAFD", "#103a63"] },
-    { name: "Monopoly Live", provider: "Evolution", tag: "Game Show", cat: "shows", badge: null, c: ["#27c46b", "#0c5e34"] },
-    { name: "Aviator", provider: "Spribe", tag: "Crash", cat: "shows", badge: "new", c: ["#ff5a3c", "#7a1500"] }
+    { name: "Fruit Cash", provider: "Print Studios", tag: "Hold'N'Link", cat: "slots", badge: "hot", motif: "m-cherry", c: ["#2bd46a", "#0c7a3a"] },
+    { name: "Luxor Relics", provider: "Print Studios", tag: "Hold'N'Link", cat: "slots", badge: "hot", motif: "m-crown", c: ["#ff8a1e", "#b23a00"] },
+    { name: "MMA Legends", provider: "Hacksaw", tag: "Bonus Buy", cat: "slots", badge: "hot", motif: "m-star", c: ["#5D31FF", "#21105e"] },
+    { name: "Hit in Vegas", provider: "Relax Gaming", tag: "Megaways", cat: "slots", badge: "new", motif: "m-bell", c: ["#FF00FF", "#6b0049"] },
+    { name: "Pompeii Gold", provider: "Big Time Gaming", tag: "Hold'N'Link", cat: "slots", badge: null, motif: "m-coin", c: ["#ffb02e", "#a14b00"] },
+    { name: "Fortune Cash", provider: "Betsolutions", tag: "Jackpot", cat: "slots", badge: "new", motif: "m-coin", c: ["#6DCAFD", "#1b4f86"] },
+    { name: "Crazy Scientist", provider: "High 5", tag: "Bonus Buy", cat: "slots", badge: null, motif: "m-gem", c: ["#19c39a", "#0a5e49"] },
+    { name: "Fu Yin Yang", provider: "Red Tiger", tag: "Hold'N'Link", cat: "slots", badge: null, locked: true, motif: "m-flame", c: ["#ff5252", "#7a0d22"] },
+    { name: "African King", provider: "Pragmatic", tag: "Hold'N'Link", cat: "slots", badge: null, motif: "m-crown", c: ["#f0a44b", "#7a3b00"] },
+    { name: "Sweet Bonanza", provider: "Pragmatic", tag: "Tumble", cat: "slots", badge: "hot", motif: "m-cherry", c: ["#ff6fb5", "#7a1f56"] },
+    { name: "Gates of Olympus", provider: "Pragmatic", tag: "Megaways", cat: "slots", badge: null, motif: "i-bolt", c: ["#8303F9", "#2a0a52"] },
+    { name: "Wanted Dead", provider: "Hacksaw", tag: "Bonus Buy", cat: "slots", badge: "new", motif: "m-star", c: ["#c9913f", "#5a3a0c"] },
+    { name: "Lightning Roulette", provider: "Evolution", tag: "Live", cat: "live", badge: "hot", motif: "m-wheel", c: ["#DBEE42", "#5a6610"] },
+    { name: "Blackjack VIP", provider: "Evolution", tag: "Live", cat: "live", badge: null, motif: "m-spade", c: ["#19a05a", "#0a4427"] },
+    { name: "Baccarat Lobby", provider: "Evolution", tag: "Live", cat: "live", badge: null, motif: "m-spade", c: ["#5D31FF", "#180a4d"] },
+    { name: "Dragon Tiger", provider: "Evolution", tag: "Live", cat: "live", badge: null, locked: true, motif: "m-flame", c: ["#ff4d4d", "#5e0d0d"] },
+    { name: "Crazy Time", provider: "Evolution", tag: "Game Show", cat: "shows", badge: "hot", motif: "m-wheel", c: ["#ff2e7e", "#5e0a35"] },
+    { name: "Mega Ball", provider: "Evolution", tag: "Game Show", cat: "shows", badge: "new", motif: "m-ball", c: ["#6DCAFD", "#103a63"] },
+    { name: "Monopoly Live", provider: "Evolution", tag: "Game Show", cat: "shows", badge: null, motif: "m-wheel", c: ["#27c46b", "#0c5e34"] },
+    { name: "Aviator", provider: "Spribe", tag: "Crash", cat: "shows", badge: "new", motif: "m-rocket", c: ["#ff5a3c", "#7a1500"] }
   ];
+
+  var CAT_MOTIF = { slots: "m-bell", live: "m-spade", shows: "m-wheel" };
+
+  // Real artwork manifests: filled in as files land in assets/img/*.
+  // key -> file extension; empty means the built-in fallback art is used.
+  var GAME_IMG = {};
+  var PROVIDER_IMG = {};
+  var COIN_IMG = {};
+  function slug(s) { return String(s).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, ""); }
 
   var CURRENCIES = [
     { t: "BTC", n: "Bitcoin", sym: "₿", color: "#F7931A", price: 64000, amt: 0.0123 },
@@ -55,32 +64,52 @@
   var state = { filter: "all", query: "" };
 
   /* ----------------------------- render: currency rail ----------------------------- */
+  function coinSym(c) {
+    var t = c.t.toLowerCase();
+    if (COIN_IMG[t]) return '<span class="coin__sym coin__sym--img"><img src="assets/img/coins/' + t + "." + COIN_IMG[t] + '" alt="" loading="lazy" /></span>';
+    return '<span class="coin__sym" style="background:' + c.color + '">' + esc(c.sym) + "</span>";
+  }
+
   function renderRail() {
     var rail = $("#currencyRail"); if (!rail) return;
     rail.innerHTML = CURRENCIES.map(function (c) {
-      return '<li class="coin"><span class="coin__sym" style="background:' + c.color + '">' + esc(c.sym) + "</span>" + esc(c.t) + "</li>";
+      return '<li class="coin">' + coinSym(c) + esc(c.t) + "</li>";
     }).join("");
   }
 
   /* ----------------------------- render: game rows ----------------------------- */
   function cardHTML(g) {
-    var grad = "background:radial-gradient(120% 120% at 80% 12%, " + hexA(g.c[0], 0.55) + ", transparent 55%), linear-gradient(150deg, " + g.c[0] + ", " + g.c[1] + ");";
+    var c0 = g.c[0], c1 = g.c[1];
+    var rootStyle = "--cg:" + hexA(c0, 0.5) + ";";
+    var gs = slug(g.name);
+    var art;
+    if (GAME_IMG[gs]) {
+      art = '<img class="card__photo" src="assets/img/games/' + gs + "." + GAME_IMG[gs] + '" alt="" loading="lazy" decoding="async" />';
+    } else {
+      var bg = "radial-gradient(82% 70% at 76% 4%, " + hexA(c0, 0.78) + ", transparent 56%),"
+             + "radial-gradient(120% 110% at 8% 116%, " + hexA(c1, 0.98) + ", transparent 64%),"
+             + "linear-gradient(155deg, " + c0 + " 0%, " + c1 + " 100%)";
+      var motif = g.motif || CAT_MOTIF[g.cat] || "m-gem";
+      art = '<span class="card__bg" style="background:' + bg + '"></span>'
+          + '<svg class="card__motif" aria-hidden="true"><use href="#' + motif + '"/></svg>';
+    }
+    var ps = slug(g.provider);
+    var prov = PROVIDER_IMG[ps]
+      ? '<span class="card__provider card__provider--logo"><img src="assets/img/providers/' + ps + "." + PROVIDER_IMG[ps] + '" alt="' + esc(g.provider) + '" loading="lazy" /></span>'
+      : '<span class="card__provider">' + esc(g.provider) + "</span>";
     var parts = g.name.split(" "); var first = parts.shift(); var rest = parts.join(" ");
     var nameHTML = esc(first) + (rest ? "<b>" + esc(rest) + "</b>" : "");
-    var mono = esc((first[0] || "S").toUpperCase());
-    var prov = '<span class="card__provider">' + esc(g.provider) + "</span>";
+    var name = '<span class="card__name">' + nameHTML + "</span>";
     var tag = '<span class="card__tag">' + esc(g.tag || g.provider) + "</span>";
     if (g.locked) {
-      return '<div class="card card--locked" role="group" aria-label="' + esc(g.name) + ' — not available in your region">' +
-        '<div class="card__art" style="' + grad + '"><span class="card__mono">' + mono + "</span>" + prov +
-        '<span class="card__name">' + nameHTML + "</span>" +
-        '<div class="card__lock">' + icon("i-lock") + "<p>Not available in your region</p></div></div>" + tag + "</div>";
+      return '<div class="card card--locked" style="' + rootStyle + '" role="group" aria-label="' + esc(g.name) + ' is not available in your region">'
+        + '<div class="card__art">' + art + prov + name
+        + '<div class="card__lock">' + icon("i-lock") + "<p>Not available in your region</p></div></div>" + tag + "</div>";
     }
     var badge = g.badge === "hot" ? '<span class="card__badge badge-hot">Hot</span>' : g.badge === "new" ? '<span class="card__badge badge-new">New</span>' : "";
-    return '<button class="card" type="button" data-game="' + esc(g.name) + '">' +
-      '<div class="card__art" style="' + grad + '"><span class="card__mono">' + mono + "</span>" + prov + badge +
-      '<span class="card__name">' + nameHTML + "</span>" +
-      '<span class="card__play"><span>' + icon("i-play") + "</span></span></div>" + tag + "</button>";
+    return '<button class="card" type="button" style="' + rootStyle + '" data-game="' + esc(g.name) + '">'
+      + '<div class="card__art">' + art + prov + badge + name
+      + '<span class="card__play"><span>' + icon("i-play") + "</span></span></div>" + tag + "</button>";
   }
 
   function rowHTML(title, iconId, games) {
@@ -245,7 +274,7 @@
     var rows = CURRENCIES.map(function (c, i) {
       var zero = c.amt === 0;
       return '<button class="wallet-row' + (i === 2 ? " is-active" : "") + (zero ? " is-zero" : "") + '" type="button" data-cur="' + c.t + '" role="option" aria-selected="' + (i === 2) + '">' +
-        '<span class="coin__sym" style="background:' + c.color + '">' + esc(c.sym) + "</span>" +
+        coinSym(c) +
         '<span class="wallet-row__name">' + c.t + " · " + esc(c.n) + "</span>" +
         '<span class="wallet-row__amt" data-amt="' + c.amt + '" data-price="' + c.price + '">' + fmtAmt(c.amt, false) + "</span></button>";
     }).join("");
@@ -283,7 +312,7 @@
         row.classList.add("is-active"); row.setAttribute("aria-selected", "true");
         var cur = row.getAttribute("data-cur");
         var addrEl = $("[data-address]", modalInner), nameEl = $("[data-curname]", modalInner);
-        if (addrEl) addrEl.textContent = ADDR[cur] || "—";
+        if (addrEl) addrEl.textContent = ADDR[cur] || "-";
         if (nameEl) nameEl.textContent = cur;
       }
     });
@@ -317,7 +346,7 @@
     else fallback();
     function fallback() {
       try { var r = document.createRange(); r.selectNode(el); var sel = getSelection(); sel.removeAllRanges(); sel.addRange(r); document.execCommand("copy"); sel.removeAllRanges(); done(); }
-      catch (e) { toast("Copy failed — select the address manually."); }
+      catch (e) { toast("Copy failed. Select the address manually."); }
     }
   }
 
