@@ -93,22 +93,19 @@
       art = '<span class="card__bg" style="background:' + bg + '"></span>'
           + '<svg class="card__motif" aria-hidden="true"><use href="#' + motif + '"/></svg>';
     }
-    var ps = slug(g.provider);
-    var prov = PROVIDER_IMG[ps]
-      ? '<span class="card__provider card__provider--logo"><img src="assets/img/providers/' + ps + "." + PROVIDER_IMG[ps] + '" alt="' + esc(g.provider) + '" loading="lazy" /></span>'
-      : '<span class="card__provider">' + esc(g.provider) + "</span>";
+    // provider tag intentionally omitted from game cards
     var parts = g.name.split(" "); var first = parts.shift(); var rest = parts.join(" ");
     var nameHTML = esc(first) + (rest ? "<b>" + esc(rest) + "</b>" : "");
     var name = '<span class="card__name">' + nameHTML + "</span>";
     var tag = '<span class="card__tag">' + esc(g.tag || g.provider) + "</span>";
     if (g.locked) {
       return '<div class="card card--locked" style="' + rootStyle + '" role="group" aria-label="' + esc(g.name) + ' is not available in your region">'
-        + '<div class="card__art">' + art + prov + name
+        + '<div class="card__art">' + art + name
         + '<div class="card__lock">' + icon("i-lock") + "<p>Not available in your region</p></div></div>" + tag + "</div>";
     }
     var badge = g.badge === "hot" ? '<span class="card__badge badge-hot">Hot</span>' : g.badge === "new" ? '<span class="card__badge badge-new">New</span>' : "";
     return '<button class="card" type="button" style="' + rootStyle + '" data-game="' + esc(g.name) + '">'
-      + '<div class="card__art">' + art + prov + badge + name
+      + '<div class="card__art">' + art + badge + name
       + '<span class="card__play"><span>' + icon("i-play") + "</span></span></div>" + tag + "</button>";
   }
 
@@ -385,6 +382,17 @@
 
       var f = t.closest("[data-filter]");
       if (f) { e.preventDefault(); setFilter(f.getAttribute("data-filter")); if ($("#sidebar").classList.contains("is-open")) closeDrawer(); var main = $("#main"); if (main && f.closest(".sidebar")) main.scrollIntoView({ behavior: REDUCE ? "auto" : "smooth" }); return; }
+
+      var navToggle = t.closest("[data-nav-toggle]");
+      if (navToggle) {
+        if (window.matchMedia("(min-width: 1025px)").matches) {
+          var appEl = document.querySelector(".app");
+          var collapsed = appEl.classList.toggle("nav-collapsed");
+          navToggle.setAttribute("aria-expanded", String(!collapsed));
+          navToggle.setAttribute("aria-label", collapsed ? "Expand menu" : "Collapse menu");
+        } else { closeDrawer(); }
+        return;
+      }
 
       if (t.closest("[data-drawer-open]")) { openDrawer(); return; }
       if (t.closest("[data-drawer-close]")) { closeDrawer(); return; }

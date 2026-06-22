@@ -64,6 +64,9 @@
       <symbol id="m-bell" viewBox="0 0 24 24"><path d="M12 2.6c-3.3 0-6 2.7-6 6 0 5-2.2 7.4-2.2 7.4h16.4S18 13.6 18 8.6c0-3.3-2.7-6-6-6Z" fill="currentColor"/><circle cx="12" cy="20" r="2.2" fill="currentColor"/></symbol>
       <symbol id="m-flame" viewBox="0 0 24 24"><path d="M13.5 2c1.2 4.2-3.2 5.5-3.2 8.6 0 1.6 1 2.7 2.2 2.7 1.6 0 2.2-1.6 1.6-3.3 2.2 1.7 3.7 4 3.7 6.8A6.8 6.8 0 0 1 5 16.4C5 9.8 11.2 8.5 13.5 2Z" fill="currentColor"/></symbol>
       <symbol id="m-ball" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.2" fill="currentColor"/><circle cx="8.8" cy="8.8" r="2.6" fill="#fff" opacity=".5"/></symbol>
+      <!-- brand mark + sidebar toggle -->
+      <symbol id="i-logo" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10.5" fill="currentColor"/><path d="M15 9.2a3.7 3.7 0 1 0 .8 4.1" fill="none" stroke="#1C1C1C" stroke-width="2.1" stroke-linecap="round"/><path d="M15.4 6.1l.3 3.1-3.1.2" fill="none" stroke="#1C1C1C" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="i-panel" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.9"/><path d="M9.2 5v14" stroke="currentColor" stroke-width="1.9"/><path d="M5.6 9.4h1.7M5.6 12h1.7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
     </defs>
   </svg>
 
@@ -71,9 +74,12 @@
     <!-- ============ SIDEBAR ============ -->
     <aside class="sidebar" id="sidebar" aria-label="Primary navigation">
       <div class="sidebar__top">
-        <a class="logo" href="#main" aria-label="SatoshiSpin, home">SatoshiSpin</a>
-        <button class="icon-btn sidebar__close" data-drawer-close aria-label="Close menu">
-          <svg class="ic" aria-hidden="true"><use href="#i-x"/></svg>
+        <a class="logo" href="#main" aria-label="SatoshiSpin, home">
+          <svg class="logo__mark" aria-hidden="true"><use href="#i-logo"/></svg>
+          <span class="logo__text">SatoshiSpin</span>
+        </a>
+        <button class="icon-btn sidebar__toggle" data-nav-toggle aria-label="Collapse menu" aria-expanded="true" aria-controls="sidebar">
+          <svg class="ic" aria-hidden="true"><use href="#i-panel"/></svg>
         </button>
       </div>
 
@@ -95,9 +101,27 @@
 
         <div class="nav__heading"><svg class="ic" aria-hidden="true"><use href="#i-trophy"/></svg><span>Leaderboards</span></div>
         <ul class="leader">
-          <li class="leader__row"><span class="leader__rank lr-1">1</span><span class="leader__meta"><b>Monthly</b><i>10M SPIN</i></span><span class="leader__time" data-cd="2606400">30 : 23 : 17 : 00</span></li>
-          <li class="leader__row"><span class="leader__rank lr-2">2</span><span class="leader__meta"><b>Weekly</b><i>100K SPIN</i></span><span class="leader__time" data-cd="138248">01 : 14 : 36 : 08</span></li>
-          <li class="leader__row"><span class="leader__rank lr-3">3</span><span class="leader__meta"><b>Daily</b><i>10K SPIN</i></span><span class="leader__time" data-cd="51972">00 : 14 : 26 : 12</span></li>
+          <li class="leader__row">
+            <span class="leader__rank lr-1">1</span>
+            <span class="leader__meta">
+              <span class="leader__line"><b>Monthly</b><span class="leader__time" data-cd="2606400">30:23:17:00</span></span>
+              <span class="leader__prize">10,000,000 SPIN</span>
+            </span>
+          </li>
+          <li class="leader__row">
+            <span class="leader__rank lr-2">2</span>
+            <span class="leader__meta">
+              <span class="leader__line"><b>Weekly</b><span class="leader__time" data-cd="138248">01:14:36:08</span></span>
+              <span class="leader__prize">100,000 SPIN</span>
+            </span>
+          </li>
+          <li class="leader__row">
+            <span class="leader__rank lr-3">3</span>
+            <span class="leader__meta">
+              <span class="leader__line"><b>Daily</b><span class="leader__time" data-cd="51972">00:14:26:12</span></span>
+              <span class="leader__prize">10,000 SPIN</span>
+            </span>
+          </li>
         </ul>
 
         <a class="nav__item" href="#main"><svg class="ic" aria-hidden="true"><use href="#i-flag"/></svg><span>Challenges</span><em class="pip">2</em></a>
@@ -231,7 +255,7 @@
       <footer class="footer">
         <div class="footer__grid">
           <div class="footer__brand">
-            <span class="logo logo--foot">SatoshiSpin</span>
+            <span class="logo logo--foot"><svg class="logo__mark" aria-hidden="true"><use href="#i-logo"/></svg><span class="logo__text">SatoshiSpin</span></span>
             <p>Free-to-play crypto casino. Play responsibly. Set limits, take breaks, never bet what you can't lose.</p>
             <div class="socials socials--foot">
               <a class="icon-btn" href="#main" aria-label="Telegram"><svg class="ic" aria-hidden="true"><use href="#i-tg"/></svg></a>
