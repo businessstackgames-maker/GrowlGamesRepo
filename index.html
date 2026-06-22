@@ -140,29 +140,62 @@
       </header>
 
       <main class="lobby" id="main" tabindex="-1">
-        <!-- HERO PROMO CAROUSEL (full-width image banners) -->
+        <!-- HERO PROMO CAROUSEL (layered: background + character + live copy) -->
         <section class="hero" aria-roledescription="carousel" aria-label="Promotions">
           <div class="hero__viewport">
             <ul class="hero__track" id="heroTrack">
-              <li class="banner" aria-roledescription="slide" aria-label="1 of 4">
-                <button class="banner__link" type="button" data-auth="join" aria-label="Hit the jackpot today, join SatoshiSpin">
-                  <img class="banner__img" src="assets/img/hero/ssbanner1.png" width="1584" height="672" alt="Hit the jackpot today. Available on mobile and desktop." loading="eager" decoding="async" fetchpriority="high" />
-                </button>
+              <li class="banner banner--1" aria-roledescription="slide" aria-label="1 of 4">
+                <div class="banner__bg"><img class="banner__bgimg" src="assets/img/hero/bg-1.jpg" alt="" onerror="this.remove()" loading="eager" decoding="async" /></div>
+                <span class="banner__scrim" aria-hidden="true"></span>
+                <img class="banner__char" src="assets/img/hero/char-1.png" alt="" onerror="this.remove()" loading="eager" decoding="async" />
+                <div class="banner__content">
+                  <span class="banner__eyebrow">Mobile &amp; desktop</span>
+                  <h2 class="banner__title">Hit the <b>jackpot</b> today</h2>
+                  <p class="banner__sub">3000+ crypto games, daily free spins, and instant payouts.</p>
+                  <div class="banner__cta">
+                    <button class="btn btn--lime" type="button" data-auth="join">Join now</button>
+                    <button class="btn btn--ghost" type="button" data-scroll-top>Browse games</button>
+                  </div>
+                </div>
               </li>
-              <li class="banner" aria-roledescription="slide" aria-label="2 of 4">
-                <button class="banner__link" type="button" data-auth="join" aria-label="Where winners play, win big with SatoshiSpin">
-                  <img class="banner__img" src="assets/img/hero/ssbanner2.png" width="1520" height="704" alt="Where winners play. SatoshiSpin Casino, your bet buddy. Mobile app available." loading="lazy" decoding="async" />
-                </button>
+              <li class="banner banner--2" aria-roledescription="slide" aria-label="2 of 4">
+                <div class="banner__bg"><img class="banner__bgimg" src="assets/img/hero/bg-2.jpg" alt="" onerror="this.remove()" loading="lazy" decoding="async" /></div>
+                <span class="banner__scrim" aria-hidden="true"></span>
+                <img class="banner__char" src="assets/img/hero/char-2.png" alt="" onerror="this.remove()" loading="lazy" decoding="async" />
+                <div class="banner__content">
+                  <span class="banner__eyebrow">Provably fair</span>
+                  <h2 class="banner__title">Where <b>winners</b> play</h2>
+                  <p class="banner__sub">Your bet buddy. Real crypto wins, no house tricks.</p>
+                  <div class="banner__cta">
+                    <button class="btn btn--lime" type="button" data-auth="join">Win big</button>
+                  </div>
+                </div>
               </li>
-              <li class="banner" aria-roledescription="slide" aria-label="3 of 4">
-                <button class="banner__link" type="button" data-auth="join" aria-label="Deal you in? Try SatoshiSpin free">
-                  <img class="banner__img" src="assets/img/hero/ssbanner3.png" width="1520" height="704" alt="Deal you in? Try free. SatoshiSpin Casino, your bet buddy. Mobile app available." loading="lazy" decoding="async" />
-                </button>
+              <li class="banner banner--3" aria-roledescription="slide" aria-label="3 of 4">
+                <div class="banner__bg"><img class="banner__bgimg" src="assets/img/hero/bg-3.jpg" alt="" onerror="this.remove()" loading="lazy" decoding="async" /></div>
+                <span class="banner__scrim" aria-hidden="true"></span>
+                <img class="banner__char" src="assets/img/hero/char-3.png" alt="" onerror="this.remove()" loading="lazy" decoding="async" />
+                <div class="banner__content">
+                  <span class="banner__eyebrow">Free to play</span>
+                  <h2 class="banner__title">Deal <b>you in?</b></h2>
+                  <p class="banner__sub">Try every table free, then switch to crypto when you're ready.</p>
+                  <div class="banner__cta">
+                    <button class="btn btn--lime" type="button" data-auth="join">Try free</button>
+                  </div>
+                </div>
               </li>
-              <li class="banner" aria-roledescription="slide" aria-label="4 of 4">
-                <button class="banner__link" type="button" data-auth="join" aria-label="Luck starts here, bet now with SatoshiSpin">
-                  <img class="banner__img" src="assets/img/hero/ssbanner4.png" width="1520" height="704" alt="Luck starts here. Bet now. SatoshiSpin Casino, your bet buddy. Mobile app available." loading="lazy" decoding="async" />
-                </button>
+              <li class="banner banner--4" aria-roledescription="slide" aria-label="4 of 4">
+                <div class="banner__bg"><img class="banner__bgimg" src="assets/img/hero/bg-4.jpg" alt="" onerror="this.remove()" loading="lazy" decoding="async" /></div>
+                <span class="banner__scrim" aria-hidden="true"></span>
+                <img class="banner__char" src="assets/img/hero/char-4.png" alt="" onerror="this.remove()" loading="lazy" decoding="async" />
+                <div class="banner__content">
+                  <span class="banner__eyebrow">Weekly Wager Rush</span>
+                  <h2 class="banner__title">Luck <b>starts</b> here</h2>
+                  <p class="banner__sub">Spin, bet, and climb the 10,000,000 SPIN leaderboard.</p>
+                  <div class="banner__cta">
+                    <button class="btn btn--lime" type="button" data-auth="join">Bet now</button>
+                  </div>
+                </div>
               </li>
             </ul>
           </div>
