@@ -45,7 +45,7 @@
   // key -> file extension; empty means the built-in fallback art is used.
   var GAME_IMG = {};
   var PROVIDER_IMG = {};
-  var COIN_IMG = {};
+  var COIN_IMG = { btc: "svg", eth: "svg", usdt: "svg", usdc: "svg", doge: "svg", trx: "svg", bch: "svg", bnb: "svg", xrp: "svg" };
   function slug(s) { return String(s).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, ""); }
 
   var CURRENCIES = [
