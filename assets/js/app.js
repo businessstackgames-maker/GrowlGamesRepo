@@ -1,4 +1,4 @@
-/* NodeRoll — lobby interactivity (dependency-free) */
+/* SatoshiSpin — lobby interactivity (dependency-free) */
 (function () {
   "use strict";
 
@@ -67,7 +67,7 @@
     var grad = "background:radial-gradient(120% 120% at 80% 12%, " + hexA(g.c[0], 0.55) + ", transparent 55%), linear-gradient(150deg, " + g.c[0] + ", " + g.c[1] + ");";
     var parts = g.name.split(" "); var first = parts.shift(); var rest = parts.join(" ");
     var nameHTML = esc(first) + (rest ? "<b>" + esc(rest) + "</b>" : "");
-    var mono = esc((first[0] || "N").toUpperCase());
+    var mono = esc((first[0] || "S").toUpperCase());
     var prov = '<span class="card__provider">' + esc(g.provider) + "</span>";
     var tag = '<span class="card__tag">' + esc(g.tag || g.provider) + "</span>";
     if (g.locked) {
@@ -228,7 +228,7 @@
 
   function authHTML(tab) {
     var join = tab !== "login";
-    return '<div class="modal__head"><h2 class="modal__title" id="modalTitle">' + (join ? "Join NodeRoll" : "Welcome back") + "</h2>" +
+    return '<div class="modal__head"><h2 class="modal__title" id="modalTitle">' + (join ? "Join SatoshiSpin" : "Welcome back") + "</h2>" +
       '<button class="icon-btn" type="button" data-close aria-label="Close">' + icon("i-x") + "</button></div>" +
       '<div class="modal__tabs" role="tablist">' +
       '<button class="modal__tab ' + (join ? "is-active" : "") + '" type="button" role="tab" data-tab="join">Join now</button>' +
@@ -237,7 +237,7 @@
       '<div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" placeholder="you@email.com" /><span class="field__err" data-err="email"></span></div>' +
       '<div class="field"><label for="f-pass">Password</label><input id="f-pass" name="password" type="password" autocomplete="' + (join ? "new-password" : "current-password") + '" placeholder="••••••••" /><span class="field__err" data-err="password"></span></div>' +
       '<button class="btn ' + (join ? "btn--lime" : "btn--primary") + '" type="submit">' + (join ? "Create account" : "Log in") + "</button>" +
-      '<p class="modal__foot">' + (join ? "Already have an account? " : "New to NodeRoll? ") +
+      '<p class="modal__foot">' + (join ? "Already have an account? " : "New to SatoshiSpin? ") +
       '<button type="button" data-tab="' + (join ? "login" : "join") + '">' + (join ? "Log in" : "Join now") + "</button></p></form>";
   }
 
@@ -266,7 +266,7 @@
     return Number(amt).toLocaleString(undefined, { maximumFractionDigits: 8 });
   }
 
-  var ADDR = { BTC: "bc1qnode0roll0demo0addr0x9f2c8a7", ETH: "0xNodeR0llDem0Addr3ss00009f2c8a71b", USDT: "TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t", USDC: "0xNodeR0llUsdc0Dem0009f2c8a71bd34", DOGE: "DNodeR0llD0ge0Dem0Addr3ss009f2c", TRX: "TNodeR0llTrx0Dem0Addr3ss09f2c8a", BCH: "qpnode0roll0bch0demo0addr0x9f2c", DAI: "0xNodeR0llDai0Dem0Addr009f2c8a71", XRP: "rNodeR0llXrp0Dem0Addr3ss09f2c8a", BNB: "bnb1node0roll0demo0addr0x9f2c8a7" };
+  var ADDR = { BTC: "bc1qsatoshispin0demo0addr0x9f2c8a7", ETH: "0xSat0shiSpinDem0Addr3ss00009f2c8a71b", USDT: "TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t", USDC: "0xSat0shiSpinUsdc0Dem0009f2c8a71bd34", DOGE: "DSat0shiSpinD0ge0Dem0Addr3ss009f2c", TRX: "TSat0shiSpinTrx0Dem0Addr3ss09f2c8a", BCH: "qpsatoshispin0bch0demo0addr0x9f2c", DAI: "0xSat0shiSpinDai0Dem0Addr009f2c8a71", XRP: "rSat0shiSpinXrp0Dem0Addr3ss09f2c8a", BNB: "bnb1satoshispin0demo0addr0x9f2c8a7" };
 
   // modal internal interactions (delegated)
   if (modalInner) {
@@ -304,7 +304,7 @@
       function err(name, msg) { var s = form.querySelector('[data-err="' + name + '"]'); if (s) s.textContent = msg || ""; var inp = form[name]; if (inp) inp.setAttribute("aria-invalid", msg ? "true" : "false"); if (msg) ok = false; }
       err("email", /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim()) ? "" : "Enter a valid email.");
       err("password", pass.value.length >= 8 ? "" : "At least 8 characters.");
-      if (ok) { closeModal(); toast("Welcome to NodeRoll. Your balance is ready."); }
+      if (ok) { closeModal(); toast("Welcome to SatoshiSpin. Your balance is ready."); }
       else { var bad = form.querySelector('[aria-invalid="true"]'); if (bad) bad.focus(); }
     });
   }

@@ -3,17 +3,17 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>NodeRoll — Crypto Casino</title>
-  <meta name="description" content="NodeRoll is a free-to-play crypto casino. 3000+ games, daily free wheel, instant crypto deposits, and a weekly wager prize pool." />
+  <title>SatoshiSpin — Crypto Casino</title>
+  <meta name="description" content="SatoshiSpin is a free-to-play crypto casino. 3000+ games, daily free wheel, instant crypto deposits, and a weekly wager prize pool." />
   <meta name="theme-color" content="#1C1C1C" />
 
-  <meta property="og:title" content="NodeRoll — Crypto Casino" />
+  <meta property="og:title" content="SatoshiSpin — Crypto Casino" />
   <meta property="og:description" content="3000+ crypto games. Daily free wheel. Weekly wager rush." />
   <meta property="og:type" content="website" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" />
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
@@ -59,7 +59,7 @@
     <!-- ============ SIDEBAR ============ -->
     <aside class="sidebar" id="sidebar" aria-label="Primary navigation">
       <div class="sidebar__top">
-        <a class="logo" href="#main" aria-label="NodeRoll — home">NodeRoll</a>
+        <a class="logo" href="#main" aria-label="SatoshiSpin — home">SatoshiSpin</a>
         <button class="icon-btn sidebar__close" data-drawer-close aria-label="Close menu">
           <svg class="ic" aria-hidden="true"><use href="#i-x"/></svg>
         </button>
@@ -83,9 +83,9 @@
 
         <div class="nav__heading"><svg class="ic" aria-hidden="true"><use href="#i-trophy"/></svg><span>Leaderboards</span></div>
         <ul class="leader">
-          <li class="leader__row"><span class="leader__rank lr-1">1</span><span class="leader__meta"><b>Monthly</b><i>10M NDR</i></span><span class="leader__time" data-cd="2606400">30 : 23 : 17 : 00</span></li>
-          <li class="leader__row"><span class="leader__rank lr-2">2</span><span class="leader__meta"><b>Weekly</b><i>100K NDR</i></span><span class="leader__time" data-cd="138248">01 : 14 : 36 : 08</span></li>
-          <li class="leader__row"><span class="leader__rank lr-3">3</span><span class="leader__meta"><b>Daily</b><i>10K NDR</i></span><span class="leader__time" data-cd="51972">00 : 14 : 26 : 12</span></li>
+          <li class="leader__row"><span class="leader__rank lr-1">1</span><span class="leader__meta"><b>Monthly</b><i>10M SPIN</i></span><span class="leader__time" data-cd="2606400">30 : 23 : 17 : 00</span></li>
+          <li class="leader__row"><span class="leader__rank lr-2">2</span><span class="leader__meta"><b>Weekly</b><i>100K SPIN</i></span><span class="leader__time" data-cd="138248">01 : 14 : 36 : 08</span></li>
+          <li class="leader__row"><span class="leader__rank lr-3">3</span><span class="leader__meta"><b>Daily</b><i>10K SPIN</i></span><span class="leader__time" data-cd="51972">00 : 14 : 26 : 12</span></li>
         </ul>
 
         <a class="nav__item" href="#main"><svg class="ic" aria-hidden="true"><use href="#i-flag"/></svg><span>Challenges</span><em class="pip">2</em></a>
@@ -107,11 +107,11 @@
         <button class="icon-btn topbar__menu" data-drawer-open aria-label="Open menu" aria-controls="sidebar">
           <svg class="ic" aria-hidden="true"><use href="#i-menu"/></svg>
         </button>
-        <a class="logo logo--top" href="#main" aria-label="NodeRoll — home">NodeRoll</a>
+        <a class="logo logo--top" href="#main" aria-label="SatoshiSpin — home">SatoshiSpin</a>
 
         <div class="wager" role="group" aria-label="Weekly wager rush">
           <svg class="ic wager__ic" aria-hidden="true"><use href="#i-trophy"/></svg>
-          <div class="wager__text"><b>Weekly Wager Rush</b><span>10,000,000 NDR prize pool</span></div>
+          <div class="wager__text"><b>Weekly Wager Rush</b><span>10,000,000 SPIN prize pool</span></div>
           <div class="wager__cd" data-cd="599175" aria-label="Time remaining">06 : 22 : 46 : 15</div>
           <button class="btn btn--soft wager__cta" type="button" data-toast="You're in the Weekly Wager Rush. Wager to climb the board.">Participate</button>
         </div>
@@ -128,50 +128,29 @@
       </header>
 
       <main class="lobby" id="main" tabindex="-1">
-        <!-- HERO PROMO CAROUSEL (570x265 units) -->
+        <!-- HERO PROMO CAROUSEL (full-width image banners) -->
         <section class="hero" aria-roledescription="carousel" aria-label="Promotions">
           <div class="hero__viewport">
             <ul class="hero__track" id="heroTrack">
-              <li class="banner banner--welcome" aria-roledescription="slide" aria-label="1 of 3">
-                <div class="banner__body">
-                  <p class="banner__eyebrow">Your free-to-play casino</p>
-                  <h2 class="banner__title">Play. Stack.<br/>Cash out.</h2>
-                  <p class="banner__sub">3000+ crypto games. Spin the free daily wheel — deposit to win bigger.</p>
-                  <div class="banner__actions">
-                    <button class="btn btn--lime" type="button" data-auth="join">Join now</button>
-                    <div class="mini-deposit">
-                      <span class="mini-deposit__coin"><svg class="ic" aria-hidden="true"><use href="#i-coin"/></svg>Ethereum <i>ETH</i></span>
-                      <button class="btn btn--primary btn--sm" type="button" data-deposit>Deposit</button>
-                      <button class="btn btn--ghost btn--sm" type="button" data-toast="Buy crypto with card — coming soon.">Buy Crypto</button>
-                    </div>
-                  </div>
-                </div>
-                <div class="banner__art art--welcome" aria-hidden="true"><span class="orb"></span><span class="coin-emblem">N</span></div>
+              <li class="banner" aria-roledescription="slide" aria-label="1 of 4">
+                <button class="banner__link" type="button" data-auth="join" aria-label="Hit the jackpot today — join SatoshiSpin">
+                  <img class="banner__img" src="assets/img/hero/banner-1.svg" width="1512" height="650" alt="Hit the jackpot today. Available on mobile and desktop." loading="eager" decoding="async" fetchpriority="high" />
+                </button>
               </li>
-
-              <li class="banner banner--vip" aria-roledescription="slide" aria-label="2 of 3">
-                <div class="banner__body">
-                  <p class="banner__eyebrow">VIP Rewards</p>
-                  <h2 class="banner__title">Climb the ranks</h2>
-                  <p class="banner__sub">Unlock fatter rakeback, drops and bonuses with every level you clear.</p>
-                  <div class="banner__actions">
-                    <button class="btn btn--primary" type="button" data-toast="VIP rewards: 12 tiers, weekly rakeback up to 25%.">See rewards</button>
-                  </div>
-                </div>
-                <div class="banner__art art--vip" aria-hidden="true"><span class="gem"></span></div>
+              <li class="banner" aria-roledescription="slide" aria-label="2 of 4">
+                <button class="banner__link" type="button" data-auth="join" aria-label="Where winners play — win big with SatoshiSpin">
+                  <img class="banner__img" src="assets/img/hero/banner-2.svg" width="1512" height="650" alt="Where winners play. SatoshiSpin Casino — your bet buddy. Mobile app available." loading="lazy" decoding="async" />
+                </button>
               </li>
-
-              <li class="banner banner--rush" aria-roledescription="slide" aria-label="3 of 3">
-                <div class="banner__body">
-                  <p class="banner__eyebrow">Weekly Wager Rush</p>
-                  <h2 class="banner__title">10,000,000 NDR</h2>
-                  <p class="banner__sub">Wager this week to grab a slice of the pool. Ends in</p>
-                  <div class="rush-cd" data-cd="599175" aria-label="Time remaining">06 : 22 : 46 : 15</div>
-                  <div class="banner__actions">
-                    <button class="btn btn--lime" type="button" data-toast="You're in the Weekly Wager Rush. Wager to climb the board.">Participate</button>
-                  </div>
-                </div>
-                <div class="banner__art art--rush" aria-hidden="true"><span class="bolt-emblem"><svg class="ic" aria-hidden="true"><use href="#i-bolt"/></svg></span></div>
+              <li class="banner" aria-roledescription="slide" aria-label="3 of 4">
+                <button class="banner__link" type="button" data-auth="join" aria-label="Deal you in? Try SatoshiSpin free">
+                  <img class="banner__img" src="assets/img/hero/banner-3.svg" width="1512" height="650" alt="Deal you in? Try free. SatoshiSpin Casino — your bet buddy. Mobile app available." loading="lazy" decoding="async" />
+                </button>
+              </li>
+              <li class="banner" aria-roledescription="slide" aria-label="4 of 4">
+                <button class="banner__link" type="button" data-auth="join" aria-label="Luck starts here — bet now with SatoshiSpin">
+                  <img class="banner__img" src="assets/img/hero/banner-4.svg" width="1512" height="650" alt="Luck starts here. Bet now. SatoshiSpin Casino — your bet buddy. Mobile app available." loading="lazy" decoding="async" />
+                </button>
               </li>
             </ul>
           </div>
@@ -207,7 +186,7 @@
       <footer class="footer">
         <div class="footer__grid">
           <div class="footer__brand">
-            <span class="logo logo--foot">NodeRoll</span>
+            <span class="logo logo--foot">SatoshiSpin</span>
             <p>Free-to-play crypto casino. Play responsibly — set limits, take breaks, never bet what you can't lose.</p>
             <div class="socials socials--foot">
               <a class="icon-btn" href="#main" aria-label="Telegram"><svg class="ic" aria-hidden="true"><use href="#i-tg"/></svg></a>
@@ -220,7 +199,7 @@
             <a href="#main">Slots</a><a href="#main">Live Casino</a><a href="#main">Game Shows</a><a href="#main">New Releases</a>
           </nav>
           <nav class="footer__col" aria-label="Company">
-            <h3>NodeRoll</h3>
+            <h3>SatoshiSpin</h3>
             <a href="#main">About</a><a href="#main">VIP Club</a><a href="#main">Affiliates</a><a href="#main">Blog</a>
           </nav>
           <nav class="footer__col" aria-label="Support">
@@ -230,7 +209,7 @@
         </div>
         <div class="footer__legal">
           <span class="age">18+</span>
-          <p>NodeRoll is a demonstration interface. No real-money gambling takes place. © 2026 NodeRoll.</p>
+          <p>SatoshiSpin is a demonstration interface. No real-money gambling takes place. © 2026 SatoshiSpin.</p>
         </div>
       </footer>
     </div>

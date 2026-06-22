@@ -1,7 +1,7 @@
-# PRODUCT.md — NodeRoll
+# PRODUCT.md — SatoshiSpin
 
 ## What it is
-NodeRoll is a **crypto casino lobby** — a free-to-play + crypto-deposit gaming
+SatoshiSpin is a **crypto casino lobby** — a free-to-play + crypto-deposit gaming
 platform. This surface is the signed-out **lobby**: the storefront where players
 browse game categories, see live promotions, and start playing or sign up.
 
@@ -26,8 +26,8 @@ can deposit.
 - **Mood:** neon arcade on carbon — energetic, premium, a little electric.
 - **Base:** `#1C1C1C` (everything sits on the darkest brand color).
 - **Accents:** brand neons used as accents only, never as the body surface.
-- **Type:** **Bebas Neue only**, across the entire product (brand requirement).
-- **Logo:** text-only "NodeRoll" wordmark, white, Bebas Neue.
+- **Type:** **Poppins**, across the entire product (brand requirement).
+- **Logo:** text-only "SatoshiSpin" wordmark, white, Poppins (mixed-case, 800).
 
 ## Voice
 Bold, concise, confident. No exclamation-mark hype, no "Oops!", no AI clichés

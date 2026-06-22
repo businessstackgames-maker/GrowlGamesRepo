@@ -1,4 +1,4 @@
-# DESIGN.md — NodeRoll design system
+# DESIGN.md — SatoshiSpin design system
 
 Single source of truth for tokens and component rules. Implemented as CSS custom
 properties in `assets/css/styles.css`.
@@ -27,15 +27,16 @@ accents carry actions/state, not decoration).
 Contrast: body/muted verified ≥4.5:1 on `--bg`. Text on `--lime` and on light
 fills is always `#1C1C1C`. No gradient text. Glow is shadow, never text fill.
 
-## Type — Bebas Neue only
+## Type — Poppins
 
-Bebas Neue is a single-weight condensed display caps face. Hierarchy comes from
-**size, color, opacity, and letter-spacing**, not weight. Small text gets
-positive tracking + tabular figures so balances stay legible.
+Poppins is a geometric sans loaded at weights 400/500/600/700/800. Hierarchy
+comes from **weight + size + color**; uppercase labels keep positive tracking and
+balances use tabular figures so they stay legible. The wordmark is mixed-case
+Poppins 800; section headings stay uppercase.
 
 | Token | Size | Tracking | Use |
 |---|---|---|---|
-| `--fs-logo` | 28px | .10em | Wordmark |
+| `--fs-logo` | 28px | -.01em (800, mixed-case) | Wordmark |
 | `--fs-display` | clamp(40px,6vw,72px) | -.01em | Hero headline |
 | `--fs-h2` | 26px | .01em | Section titles |
 | `--fs-lg` | 20px | .02em | Banner subhead, prices |
@@ -43,7 +44,7 @@ positive tracking + tabular figures so balances stay legible.
 | `--fs-sm` | 15px | .04em | Meta, balances (tabular-nums) |
 | `--fs-xs` | 13px | .06em | Badges, labels |
 
-Loaded via Google Fonts `<link>` with fallback `'Oswald','Anton','Arial Narrow'`.
+Loaded via Google Fonts `<link>` (weights 400–800) with a `system-ui` fallback.
 (Production follow-up: self-host the woff2.)
 
 ## Space / radius / z
@@ -64,7 +65,7 @@ on hover/active only. Glassmorphism is not a default.
 - Product register: no orchestrated page-load sequence; motion conveys state.
 
 ## Signature components
-- **Hero promo banner:** 570×265 unit (`aspect-ratio:570/265`), brand-gradient, in a snap carousel.
-- **Game tile:** colored art + provider label + Bebas title + tag; states: default / hover (lift+glow+play) / locked (region) / badges (HOT/NEW).
+- **Hero promo banner:** full-width image banner (~1512×650) in a snap carousel; the artwork is the message — no overlaid copy/CTAs, and the whole banner is the click target (opens Join).
+- **Game tile:** colored art + provider label + Poppins title + tag; states: default / hover (lift+glow+play) / locked (region) / badges (HOT/NEW).
 - **Wallet dropdown:** balance pill → currency list, "Hide 0 balances" / "Display in fiat".
 - **Mobile bottom nav:** Menu · Search · Deposit (raised) · Lobby · Spin.
