@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>NodeRoll — Crypto Casino</title>
+  <meta name="description" content="NodeRoll is a free-to-play crypto casino. 3000+ games, daily free wheel, instant crypto deposits, and a weekly wager prize pool." />
+  <meta name="theme-color" content="#1C1C1C" />
+
+  <meta property="og:title" content="NodeRoll — Crypto Casino" />
+  <meta property="og:description" content="3000+ crypto games. Daily free wheel. Weekly wager rush." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to games</a>
+
+  <!-- ============ ICON SPRITE ============ -->
+  <svg width="0" height="0" class="sprite" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11.5 12 4l9 7.5M5 10v9h14v-9" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="i-dice" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4" fill="none" stroke="currentColor" stroke-width="1.9"/><circle cx="9" cy="9" r="1.4" fill="currentColor"/><circle cx="15" cy="15" r="1.4" fill="currentColor"/><circle cx="15" cy="9" r="1.4" fill="currentColor"/><circle cx="9" cy="15" r="1.4" fill="currentColor"/></symbol>
+      <symbol id="i-slots" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.9"/><path d="M9 5v14M15 5v14" stroke="currentColor" stroke-width="1.9"/></symbol>
+      <symbol id="i-live" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3" fill="currentColor"/><path d="M6.5 6.5a8 8 0 0 0 0 11M17.5 6.5a8 8 0 0 1 0 11" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></symbol>
+      <symbol id="i-shows" viewBox="0 0 24 24"><rect x="3.5" y="7.5" width="17" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.9"/><path d="m8 7.5 4-3.5 4 3.5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="i-fire" viewBox="0 0 24 24"><path d="M12 3c1 3-2 4-2 7a2 2 0 1 0 4 0c2 1.5 3 3.4 3 5.5A5.5 5.5 0 0 1 6.5 15c0-4 3.5-5 5.5-12Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+      <symbol id="i-gift" viewBox="0 0 24 24"><rect x="4" y="9.5" width="16" height="10.5" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 9.5h17M12 9.5V20M12 9.5C9 9.5 7.5 4 12 6.5 16.5 4 15 9.5 12 9.5Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+      <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M7 4h10v4a5 5 0 0 1-10 0V4Z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M7 5H4v2a3 3 0 0 0 3 3M17 5h3v2a3 3 0 0 1-3 3M10 14h4M9 20h6M12 14v6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+      <symbol id="i-flag" viewBox="0 0 24 24"><path d="M6 21V4M6 4h11l-2 4 2 4H6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 11v5M12 8h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+      <symbol id="i-headset" viewBox="0 0 24 24"><path d="M5 13v-1a7 7 0 0 1 14 0v1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><rect x="3.5" y="12.5" width="3.5" height="6" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="17" y="12.5" width="3.5" height="6" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M19 18.5a4 4 0 0 1-4 3h-2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+      <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 12h18M12 3c2.6 2.5 2.6 15 0 18-2.6-3-2.6-15.5 0-18Z" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+      <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="1.9"/><path d="m20 20-3.5-3.5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></symbol>
+      <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+      <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 3 5 13h6l-1 8 8-10h-6l1-8Z" fill="currentColor"/></symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></symbol>
+      <symbol id="i-list" viewBox="0 0 24 24"><path d="M8 7h12M8 12h12M8 17h12M4 7h.01M4 12h.01M4 17h.01" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></symbol>
+      <symbol id="i-chev-left" viewBox="0 0 24 24"><path d="m15 5-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="i-chev-right" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="i-chev-down" viewBox="0 0 24 24"><path d="m5 9 7 7 7-7" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="9.5" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+      <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5-11-6.5Z" fill="currentColor"/></symbol>
+      <symbol id="i-wallet" viewBox="0 0 24 24"><rect x="3.5" y="6" width="17" height="13" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 9.5h13a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-13" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="16" cy="12.5" r="1.2" fill="currentColor"/></symbol>
+      <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+      <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6 18 18M18 6 6 18" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="i-coin" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v10M9.5 9.5h4a1.8 1.8 0 0 1 0 3.5h-3a1.8 1.8 0 0 0 0 3.5h4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+      <symbol id="i-tg" viewBox="0 0 24 24"><path d="M21 4 3 11l5 2 2 6 3-4 5 4 3-15Z" fill="currentColor"/></symbol>
+      <symbol id="i-discord" viewBox="0 0 24 24"><path d="M19 6.5A14 14 0 0 0 15.5 5l-.3.6a11 11 0 0 1 3 1.5 12 12 0 0 0-12.4 0 11 11 0 0 1 3-1.5L8.5 5A14 14 0 0 0 5 6.5C2.5 10 2 14 2.5 17.5A14 14 0 0 0 7 20l1-1.6a8 8 0 0 1-2-1l.4-.3a9 9 0 0 0 11.2 0l.4.3a8 8 0 0 1-2 1L17 20a14 14 0 0 0 4.5-2.5C22 14 21.5 10 19 6.5ZM9 15a1.6 1.6 0 0 1 0-3.2 1.6 1.6 0 0 1 0 3.2Zm6 0a1.6 1.6 0 0 1 0-3.2 1.6 1.6 0 0 1 0 3.2Z" fill="currentColor"/></symbol>
+      <symbol id="i-xcom" viewBox="0 0 24 24"><path d="M4 4h4l4.5 6L17.5 4H21l-7 9 7.5 11h-4l-5-7-5.5 7H3l7.5-9.5L4 4Z" fill="currentColor"/></symbol>
+    </defs>
+  </svg>
+
+  <div class="app">
+    <!-- ============ SIDEBAR ============ -->
+    <aside class="sidebar" id="sidebar" aria-label="Primary navigation">
+      <div class="sidebar__top">
+        <a class="logo" href="#main" aria-label="NodeRoll — home">NodeRoll</a>
+        <button class="icon-btn sidebar__close" data-drawer-close aria-label="Close menu">
+          <svg class="ic" aria-hidden="true"><use href="#i-x"/></svg>
+        </button>
+      </div>
+
+      <nav class="nav" aria-label="Casino sections">
+        <a class="nav__item is-active" href="#main"><svg class="ic" aria-hidden="true"><use href="#i-home"/></svg><span>Main</span></a>
+
+        <button class="nav__item nav__group" data-group aria-expanded="true" aria-controls="grp-casino">
+          <svg class="ic" aria-hidden="true"><use href="#i-dice"/></svg><span>Casino</span>
+          <svg class="ic nav__caret" aria-hidden="true"><use href="#i-chev-down"/></svg>
+        </button>
+        <div class="nav__sub" id="grp-casino">
+          <a class="nav__item" href="#main" data-filter="all"><svg class="ic" aria-hidden="true"><use href="#i-trophy"/></svg><span>Top Games</span></a>
+          <a class="nav__item" href="#main" data-filter="slots"><svg class="ic" aria-hidden="true"><use href="#i-slots"/></svg><span>Slots</span></a>
+          <a class="nav__item" href="#main" data-filter="live"><svg class="ic" aria-hidden="true"><use href="#i-live"/></svg><span>Live Casino</span></a>
+          <a class="nav__item" href="#main" data-filter="shows"><svg class="ic" aria-hidden="true"><use href="#i-shows"/></svg><span>Game Shows</span></a>
+          <a class="nav__item" href="#main" data-filter="hot"><svg class="ic" aria-hidden="true"><use href="#i-fire"/></svg><span>Hottest Games</span></a>
+          <a class="nav__item" href="#main" data-filter="new"><svg class="ic" aria-hidden="true"><use href="#i-gift"/></svg><span>New Releases</span></a>
+        </div>
+
+        <div class="nav__heading"><svg class="ic" aria-hidden="true"><use href="#i-trophy"/></svg><span>Leaderboards</span></div>
+        <ul class="leader">
+          <li class="leader__row"><span class="leader__rank lr-1">1</span><span class="leader__meta"><b>Monthly</b><i>10M NDR</i></span><span class="leader__time" data-cd="2606400">30 : 23 : 17 : 00</span></li>
+          <li class="leader__row"><span class="leader__rank lr-2">2</span><span class="leader__meta"><b>Weekly</b><i>100K NDR</i></span><span class="leader__time" data-cd="138248">01 : 14 : 36 : 08</span></li>
+          <li class="leader__row"><span class="leader__rank lr-3">3</span><span class="leader__meta"><b>Daily</b><i>10K NDR</i></span><span class="leader__time" data-cd="51972">00 : 14 : 26 : 12</span></li>
+        </ul>
+
+        <a class="nav__item" href="#main"><svg class="ic" aria-hidden="true"><use href="#i-flag"/></svg><span>Challenges</span><em class="pip">2</em></a>
+        <a class="nav__item" href="#main"><svg class="ic" aria-hidden="true"><use href="#i-info"/></svg><span>Help</span></a>
+        <a class="nav__item" href="#main"><svg class="ic" aria-hidden="true"><use href="#i-headset"/></svg><span>Live support</span><em class="badge-24">24/7</em></a>
+        <button class="nav__item" type="button"><svg class="ic" aria-hidden="true"><use href="#i-globe"/></svg><span>English</span><svg class="ic nav__caret" aria-hidden="true"><use href="#i-chev-down"/></svg></button>
+      </nav>
+
+      <div class="socials" aria-label="Social links">
+        <a class="icon-btn" href="#main" aria-label="Telegram"><svg class="ic" aria-hidden="true"><use href="#i-tg"/></svg></a>
+        <a class="icon-btn" href="#main" aria-label="Discord"><svg class="ic" aria-hidden="true"><use href="#i-discord"/></svg></a>
+        <a class="icon-btn" href="#main" aria-label="X (Twitter)"><svg class="ic" aria-hidden="true"><use href="#i-xcom"/></svg></a>
+      </div>
+    </aside>
+
+    <!-- ============ MAIN ============ -->
+    <div class="main">
+      <header class="topbar">
+        <button class="icon-btn topbar__menu" data-drawer-open aria-label="Open menu" aria-controls="sidebar">
+          <svg class="ic" aria-hidden="true"><use href="#i-menu"/></svg>
+        </button>
+        <a class="logo logo--top" href="#main" aria-label="NodeRoll — home">NodeRoll</a>
+
+        <div class="wager" role="group" aria-label="Weekly wager rush">
+          <svg class="ic wager__ic" aria-hidden="true"><use href="#i-trophy"/></svg>
+          <div class="wager__text"><b>Weekly Wager Rush</b><span>10,000,000 NDR prize pool</span></div>
+          <div class="wager__cd" data-cd="599175" aria-label="Time remaining">06 : 22 : 46 : 15</div>
+          <button class="btn btn--soft wager__cta" type="button" data-toast="You're in the Weekly Wager Rush. Wager to climb the board.">Participate</button>
+        </div>
+
+        <form class="search" role="search" data-search aria-label="Search games">
+          <svg class="ic" aria-hidden="true"><use href="#i-search"/></svg>
+          <input type="search" id="searchInput" placeholder="Search games" aria-label="Search games" autocomplete="off" />
+        </form>
+
+        <div class="topbar__actions">
+          <button class="btn btn--ghost" type="button" data-auth="login">Log in</button>
+          <button class="btn btn--primary" type="button" data-auth="join">Join now</button>
+        </div>
+      </header>
+
+      <main class="lobby" id="main" tabindex="-1">
+        <!-- HERO PROMO CAROUSEL (570x265 units) -->
+        <section class="hero" aria-roledescription="carousel" aria-label="Promotions">
+          <div class="hero__viewport">
+            <ul class="hero__track" id="heroTrack">
+              <li class="banner banner--welcome" aria-roledescription="slide" aria-label="1 of 3">
+                <div class="banner__body">
+                  <p class="banner__eyebrow">Your free-to-play casino</p>
+                  <h2 class="banner__title">Play. Stack.<br/>Cash out.</h2>
+                  <p class="banner__sub">3000+ crypto games. Spin the free daily wheel — deposit to win bigger.</p>
+                  <div class="banner__actions">
+                    <button class="btn btn--lime" type="button" data-auth="join">Join now</button>
+                    <div class="mini-deposit">
+                      <span class="mini-deposit__coin"><svg class="ic" aria-hidden="true"><use href="#i-coin"/></svg>Ethereum <i>ETH</i></span>
+                      <button class="btn btn--primary btn--sm" type="button" data-deposit>Deposit</button>
+                      <button class="btn btn--ghost btn--sm" type="button" data-toast="Buy crypto with card — coming soon.">Buy Crypto</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="banner__art art--welcome" aria-hidden="true"><span class="orb"></span><span class="coin-emblem">N</span></div>
+              </li>
+
+              <li class="banner banner--vip" aria-roledescription="slide" aria-label="2 of 3">
+                <div class="banner__body">
+                  <p class="banner__eyebrow">VIP Rewards</p>
+                  <h2 class="banner__title">Climb the ranks</h2>
+                  <p class="banner__sub">Unlock fatter rakeback, drops and bonuses with every level you clear.</p>
+                  <div class="banner__actions">
+                    <button class="btn btn--primary" type="button" data-toast="VIP rewards: 12 tiers, weekly rakeback up to 25%.">See rewards</button>
+                  </div>
+                </div>
+                <div class="banner__art art--vip" aria-hidden="true"><span class="gem"></span></div>
+              </li>
+
+              <li class="banner banner--rush" aria-roledescription="slide" aria-label="3 of 3">
+                <div class="banner__body">
+                  <p class="banner__eyebrow">Weekly Wager Rush</p>
+                  <h2 class="banner__title">10,000,000 NDR</h2>
+                  <p class="banner__sub">Wager this week to grab a slice of the pool. Ends in</p>
+                  <div class="rush-cd" data-cd="599175" aria-label="Time remaining">06 : 22 : 46 : 15</div>
+                  <div class="banner__actions">
+                    <button class="btn btn--lime" type="button" data-toast="You're in the Weekly Wager Rush. Wager to climb the board.">Participate</button>
+                  </div>
+                </div>
+                <div class="banner__art art--rush" aria-hidden="true"><span class="bolt-emblem"><svg class="ic" aria-hidden="true"><use href="#i-bolt"/></svg></span></div>
+              </li>
+            </ul>
+          </div>
+          <div class="hero__controls">
+            <button class="icon-btn hero__arrow" data-hero="prev" aria-label="Previous promotion"><svg class="ic" aria-hidden="true"><use href="#i-chev-left"/></svg></button>
+            <div class="hero__dots" id="heroDots" role="tablist" aria-label="Choose promotion"></div>
+            <button class="icon-btn hero__arrow" data-hero="next" aria-label="Next promotion"><svg class="ic" aria-hidden="true"><use href="#i-chev-right"/></svg></button>
+          </div>
+        </section>
+
+        <!-- CURRENCY RAIL -->
+        <section class="rail" aria-label="Available currencies">
+          <span class="rail__label">Available currencies</span>
+          <ul class="rail__list" id="currencyRail"></ul>
+        </section>
+
+        <!-- FILTER TABS -->
+        <nav class="filters" id="filters" aria-label="Game categories">
+          <button class="chip is-active" type="button" data-filter="all"><svg class="ic" aria-hidden="true"><use href="#i-dice"/></svg>Lobby</button>
+          <button class="chip" type="button" data-filter="slots"><svg class="ic" aria-hidden="true"><use href="#i-slots"/></svg>Slots</button>
+          <button class="chip" type="button" data-filter="live"><svg class="ic" aria-hidden="true"><use href="#i-live"/></svg>Live Casino</button>
+          <button class="chip" type="button" data-filter="shows"><svg class="ic" aria-hidden="true"><use href="#i-shows"/></svg>Game Shows</button>
+          <button class="chip" type="button" data-filter="hot"><svg class="ic" aria-hidden="true"><use href="#i-fire"/></svg>Hottest</button>
+          <button class="chip" type="button" data-filter="new"><svg class="ic" aria-hidden="true"><use href="#i-gift"/></svg>New Releases</button>
+        </nav>
+
+        <!-- GAME ROWS (rendered by app.js) -->
+        <div id="rows" class="rows"></div>
+        <p class="noscript" id="noscript">Enable JavaScript to browse the game library.</p>
+      </main>
+
+      <!-- ============ FOOTER ============ -->
+      <footer class="footer">
+        <div class="footer__grid">
+          <div class="footer__brand">
+            <span class="logo logo--foot">NodeRoll</span>
+            <p>Free-to-play crypto casino. Play responsibly — set limits, take breaks, never bet what you can't lose.</p>
+            <div class="socials socials--foot">
+              <a class="icon-btn" href="#main" aria-label="Telegram"><svg class="ic" aria-hidden="true"><use href="#i-tg"/></svg></a>
+              <a class="icon-btn" href="#main" aria-label="Discord"><svg class="ic" aria-hidden="true"><use href="#i-discord"/></svg></a>
+              <a class="icon-btn" href="#main" aria-label="X (Twitter)"><svg class="ic" aria-hidden="true"><use href="#i-xcom"/></svg></a>
+            </div>
+          </div>
+          <nav class="footer__col" aria-label="Casino">
+            <h3>Casino</h3>
+            <a href="#main">Slots</a><a href="#main">Live Casino</a><a href="#main">Game Shows</a><a href="#main">New Releases</a>
+          </nav>
+          <nav class="footer__col" aria-label="Company">
+            <h3>NodeRoll</h3>
+            <a href="#main">About</a><a href="#main">VIP Club</a><a href="#main">Affiliates</a><a href="#main">Blog</a>
+          </nav>
+          <nav class="footer__col" aria-label="Support">
+            <h3>Support</h3>
+            <a href="#main">Help Center</a><a href="#main">Live Support</a><a href="#main">Responsible Gaming</a><a href="#main">Terms</a>
+          </nav>
+        </div>
+        <div class="footer__legal">
+          <span class="age">18+</span>
+          <p>NodeRoll is a demonstration interface. No real-money gambling takes place. © 2026 NodeRoll.</p>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <!-- ============ MOBILE BOTTOM NAV ============ -->
+  <nav class="bottomnav" aria-label="Mobile navigation">
+    <button class="bottomnav__item" type="button" data-drawer-open><svg class="ic" aria-hidden="true"><use href="#i-list"/></svg><span>Menu</span></button>
+    <button class="bottomnav__item" type="button" data-mobile-search><svg class="ic" aria-hidden="true"><use href="#i-search"/></svg><span>Search</span></button>
+    <button class="bottomnav__item bottomnav__deposit" type="button" data-deposit aria-label="Deposit"><svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg><span>Deposit</span></button>
+    <button class="bottomnav__item" type="button" data-scroll-top><svg class="ic" aria-hidden="true"><use href="#i-dice"/></svg><span>Lobby</span></button>
+    <button class="bottomnav__item" type="button" data-toast="Daily free spin unlocks after sign-up."><svg class="ic" aria-hidden="true"><use href="#i-bolt"/></svg><span>Spin</span></button>
+  </nav>
+
+  <!-- ============ OVERLAYS ============ -->
+  <div class="backdrop" id="backdrop" hidden></div>
+
+  <dialog class="modal" id="modal" aria-labelledby="modalTitle">
+    <div class="modal__inner" id="modalInner"><!-- filled by app.js --></div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+  <script src="assets/js/app.js" defer></script>
+</body>
+</html>
