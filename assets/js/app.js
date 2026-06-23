@@ -60,20 +60,16 @@
 
   // Extra uploaded thumbnails (no name/metadata) — used as clean, name-free tiles.
   var EXTRA_IMG = [
-    "24de8d4e-405f-4c17-bce9-df1fadf641fa.png", "18d3ebca-0b06-4258-8043-3bbafb0555a3.png",
-    "3682a221-296a-4b92-94c9-dca4df748a6d.png", "162af47f-a81b-4230-89ef-7e811f5a78fc.png",
-    "0f794495-65ba-44f0-bbb8-7ec3dbec83df.jfif", "84ec5467-92f9-4a56-b30b-ee50d386d954.png",
+    "0f794495-65ba-44f0-bbb8-7ec3dbec83df.jfif",
     "86efef39-c84f-411b-8c84-a7be5092e623.jpg", "8fefce9e-3a4c-4226-a06f-cda16b91b7a8.jpg",
     "b90a2f75-8900-4539-a57d-271bdc768683.jpg", "b420262e-8ac9-4bb1-91a6-10adeb604045.jpg",
     "c76a9d55-c3d1-416a-aa5c-d19ac4862039.jpg", "9964b460-a760-415d-8572-b8fa3feca741.jpg",
-    "a4af9052-3d4b-4e85-8d09-ac61caed73cd.png", "d62a910c-a74a-4c3b-92f6-2e18c8fa8268.jpg",
-    "a80f7426-0df7-4d75-b893-af370bf3a0c8.jpg", "ce04c203-411a-4d5a-bf8d-09e7cc9979c0.jpg",
-    "92b52bb7-6678-43c3-ae40-a3cd751c5220.jpg", "a9e307aa-714f-4d52-a8a8-2ab68637a916.jpg",
-    "98fec924-d832-42a4-9614-69ce7b1e3bff.jpg", "a3e843c5-66ac-44ab-bb6a-52edf89d6b8e.jpg",
-    "d92aa4c0-8ecf-472f-b8e9-ec465908dfce.jpg", "d03a89e8-c44b-45f9-872d-98ca422376e5.png",
+    "d62a910c-a74a-4c3b-92f6-2e18c8fa8268.jpg", "a80f7426-0df7-4d75-b893-af370bf3a0c8.jpg",
+    "ce04c203-411a-4d5a-bf8d-09e7cc9979c0.jpg", "92b52bb7-6678-43c3-ae40-a3cd751c5220.jpg",
+    "a9e307aa-714f-4d52-a8a8-2ab68637a916.jpg", "98fec924-d832-42a4-9614-69ce7b1e3bff.jpg",
+    "a3e843c5-66ac-44ab-bb6a-52edf89d6b8e.jpg", "d92aa4c0-8ecf-472f-b8e9-ec465908dfce.jpg",
     "bab08f68-8388-4f54-a17b-0187a07c7104.jpg", "ec6e3534-cc2c-4006-b4a6-11679606c7f0.jpg",
-    "ed3dcce6-3656-4ecf-8dcc-7745e9c9ad27.jpg", "fcb182f4-0afb-4575-8ba5-11ecd1944c74.jfif",
-    "ed4e1679-0666-4b6c-925f-0a018dd8fa23.jfif"
+    "ed3dcce6-3656-4ecf-8dcc-7745e9c9ad27.jpg", "fcb182f4-0afb-4575-8ba5-11ecd1944c74.jfif"
   ];
   var XCAT = ["slots", "slots", "slots", "live", "shows"], XBADGE = ["hot", null, "new", null, null, "hot", null];
   var EXTRA = EXTRA_IMG.map(function (f, i) {
