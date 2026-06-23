@@ -85,18 +85,18 @@
   // Providers showcase. Logos ship in assets/img/providers/; per-studio background + character art
   // are uploaded to assets/img/providers/backgrounds|characters/<slug>.{jpg,png} (graceful fallback until then).
   var PROVIDERS = [
-    { n: "BGaming", slug: "bgaming", logo: "bgg", c: "#3a2b6b" },
-    { n: "Hacksaw", slug: "hacksaw", logo: "hs", c: "#5a2d86" },
-    { n: "NetEnt", slug: "netent", logo: "ne", c: "#1f5a8a" },
-    { n: "Novomatic", slug: "novomatic", logo: "novo", c: "#2a4a8a" },
-    { n: "Play'n GO", slug: "playngo", logo: "playngo_logo", c: "#7a2d5a" },
-    { n: "Pragmatic Play", slug: "pragmatic", logo: "pp", c: "#8a3a2a" },
-    { n: "Relax Gaming", slug: "relax", logo: "relax", c: "#2a6b5a" },
-    { n: "Yggdrasil", slug: "yggdrasil", logo: "yggdrasil", c: "#2a3a7a" },
-    { n: "Nolimit City", slug: "nolimit", logo: "nolimit", c: "#6b2a2a" },
-    { n: "Red Tiger", slug: "redtiger", logo: "redtiger", c: "#7a2424" },
-    { n: "PG Soft", slug: "pgsoft", logo: "pg", c: "#2a6b3a" },
-    { n: "Evolution", slug: "evolution", logo: "ev", c: "#1a4a3a" }
+    { n: "BGaming", logo: "bgg", c: "#3a2b6b", bg: "BGSlot_BOTTOM.png", char: "caishen-god-of-fortune-character-full.png" },
+    { n: "Hacksaw", logo: "hs", c: "#5a2d86", bg: "BGFree_BOTTOM.png", char: "midnight-bandits-character-full.png" },
+    { n: "NetEnt", logo: "ne", c: "#1f5a8a", bg: "BGBonus_BOTTOM.png", char: "golden-destiny-character-full.png" },
+    { n: "Novomatic", logo: "novo", c: "#2a4a8a", bg: "BGmatch3_BOTTOM.png", char: "coins-of-dragon-character-full.png" },
+    { n: "Play'n GO", logo: "playngo_logo", c: "#7a2d5a", bg: "BGPickMe_BOTTOM.jpg", char: "a-big-catch-character-full.png" },
+    { n: "Pragmatic Play", logo: "pp", c: "#8a3a2a", bg: "BGFree2.png", char: "disco-farm-character-full.png" },
+    { n: "Relax Gaming", logo: "relax", c: "#2a6b5a", bg: "BGSlot_BOTTOM_1.png", char: "coins-of-leprechaun-character-full.png" },
+    { n: "Yggdrasil", logo: "yggdrasil", c: "#2a3a7a", bg: "BGSlot_BOTTOM_.jpg", char: "3-pots-of-wishes-character-full.png" },
+    { n: "Nolimit City", logo: "nolimit", c: "#6b2a2a", bg: "BGFree_BOTTOM.jpg", char: "dr-jekyll-mr-hyde-2-character-full.png" },
+    { n: "Red Tiger", logo: "redtiger", c: "#7a2424", bg: "BGBonus_BOTTOM.png", char: "after-night-falls-2-character-full.png" },
+    { n: "PG Soft", logo: "pg", c: "#2a6b3a", bg: "BGmatch3_BOTTOM.png", char: "mamma-mia-2-character-full.png" },
+    { n: "Evolution", logo: "ev", c: "#1a4a3a", bg: "BGPickMe_BOTTOM.jpg", char: "the-neighbor-wars-character-full.png" }
   ];
 
   // sample data helpers for the live wins ticker + latest bets feed
@@ -243,11 +243,19 @@
     var track = $("#providersTrack"); if (!track) return;
     track.innerHTML = PROVIDERS.map(function (p) {
       return '<button class="provider" type="button" style="--pc:' + p.c + '" data-provider="' + esc(p.n) + '" aria-label="' + esc(p.n) + ' games">' +
-        '<img class="provider__bg" src="assets/img/providers/backgrounds/' + p.slug + '.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()" />' +
+        '<img class="provider__bg" src="assets/img/providers/backgrounds/' + p.bg + '" alt="" loading="lazy" decoding="async" onerror="this.remove()" />' +
         '<span class="provider__scrim" aria-hidden="true"></span>' +
-        '<img class="provider__char" src="assets/img/providers/characters/' + p.slug + '.png" alt="" loading="lazy" decoding="async" onerror="this.remove()" />' +
+        '<img class="provider__char" src="assets/img/providers/characters/' + p.char + '" alt="" loading="lazy" decoding="async" onerror="this.remove()" />' +
         '<span class="provider__logo"><img src="assets/img/providers/' + p.logo + '.svg" alt="' + esc(p.n) + '" loading="lazy" decoding="async" onerror="this.outerHTML=\'<span>\'+this.alt+\'</span>\'" /></span>' +
         "</button>";
+    }).join("");
+  }
+
+  var FOOTER_COINS = ["btc", "eth", "usdt", "bnb", "ltc", "bch", "usdc", "sol", "shiba", "xrp", "ton", "dot", "matic", "trx", "doge", "ada", "pix", "visa", "mastercard", "blink", "interac", "bank"];
+  function renderFooterCoins() {
+    var host = $("#footerCoins"); if (!host) return;
+    host.innerHTML = FOOTER_COINS.map(function (c) {
+      return '<li class="pay"><img src="assets/img/coins/' + c + '.svg" alt="" loading="lazy" decoding="async" onerror="this.closest(\'.pay\').remove()" /></li>';
     }).join("");
   }
 
@@ -275,6 +283,57 @@
       body.insertAdjacentHTML("afterbegin", betRowHTML(true));
       while (body.children.length > 10) body.removeChild(body.lastChild);
     }, 3500);
+  }
+
+  /* ----------------------------- live community chat ----------------------------- */
+  var CHAT_LINES = [
+    "gg 🎉", "lets go", "big win on aviator!", "x100 lfg 🚀", "anyone playing slots rn?",
+    "wagering for the raffle", "rip my balance lol", "nice hit man", "up 2 eth today 😎",
+    "who's online?", "to the moon", "just claimed my free spin", "down bad ngl",
+    "this game is hot 🔥", "gl everyone", "cashed out at x5 💰", "new releases slap",
+    "gm degens", "first time here, any tips?", "stacking sats", "that bonus round tho",
+    "good luck on the wager rush", "+0.3 btc lets goo", "back to back wins 🤑", "respect the bankroll"
+  ];
+  function initChat() {
+    var panel = $("#chatPanel"), log = $("#chatLog"), tab = $(".chat-tab"), online = $("#chatOnline");
+    if (!panel || !log) return;
+    var counter = 0;
+    function chatTime() { var d = new Date(), h = d.getHours(), ap = h >= 12 ? "PM" : "AM"; h = h % 12 || 12; return h + ":" + String(d.getMinutes()).padStart(2, "0") + " " + ap; }
+    function avatar(name, i) {
+      var initial = (name.replace(/[^A-Za-z0-9]/g, "").charAt(0) || "U").toUpperCase();
+      return '<span class="chat__avatar" style="--ah:' + ((i * 53) % 360) + '"><img src="assets/img/avatars/a' + ((i % 12) + 1) + '.png" alt="" loading="lazy" decoding="async" onerror="this.remove()" /><b>' + initial + "</b></span>";
+    }
+    function push(name, text, i, me) {
+      var atBottom = log.scrollHeight - log.scrollTop - log.clientHeight < 90;
+      var el = document.createElement("div");
+      el.className = "chat__msg" + (me ? " chat__msg--me" : "");
+      el.innerHTML = avatar(name, i) +
+        '<div class="chat__bubble"><div class="chat__from"><span class="chat__name">' + esc(name) +
+        '</span><span class="chat__time">' + chatTime() + '</span></div><div class="chat__text">' + esc(text) + "</div></div>";
+      log.appendChild(el);
+      while (log.children.length > 40) log.removeChild(log.firstChild);
+      if (atBottom || me) log.scrollTop = log.scrollHeight;
+    }
+    function randomMsg() { push(randUser(), CHAT_LINES[Math.floor(Math.random() * CHAT_LINES.length)], counter++, false); }
+    for (var k = 0; k < 12; k++) randomMsg();
+    log.scrollTop = log.scrollHeight;
+    if (online) setInterval(function () { if (!document.hidden) online.textContent = (2300 + Math.floor(Math.random() * 400)).toLocaleString(); }, 5000);
+    if (!REDUCE) setInterval(function () { if (!document.hidden) randomMsg(); }, 4200);
+
+    function toggle() {
+      var open = panel.classList.toggle("is-open");
+      panel.setAttribute("aria-hidden", String(!open));
+      if (tab) { tab.classList.toggle("is-hidden", open); tab.setAttribute("aria-expanded", String(open)); }
+      if (open) log.scrollTop = log.scrollHeight;
+    }
+    $$("[data-chat-toggle]").forEach(function (b) { b.addEventListener("click", toggle); });
+    var form = $("[data-chat-form]"), input = $("#chatInput");
+    if (form) form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var v = (input.value || "").trim();
+      if (!v) { toast("Sign in to join the community chat."); return; }
+      push("You", v, 999, true); input.value = "";
+    });
   }
 
   function setFilter(f) {
@@ -338,10 +397,11 @@
   /* ----------------------------- countdowns ----------------------------- */
   function initCountdowns() {
     var els = $$("[data-cd]"); if (!els.length) return;
-    var list = els.map(function (el) { return { el: el, t: parseInt(el.getAttribute("data-cd"), 10) || 0 }; });
+    var list = els.map(function (el) { return { el: el, t: parseInt(el.getAttribute("data-cd"), 10) || 0, compact: el.getAttribute("data-fmt") === "compact" }; });
     function p(n) { return String(n).padStart(2, "0"); }
     function fmt(s) { if (s < 0) s = 0; return p(Math.floor(s / 86400)) + " : " + p(Math.floor(s % 86400 / 3600)) + " : " + p(Math.floor(s % 3600 / 60)) + " : " + p(Math.floor(s % 60)); }
-    function tick() { list.forEach(function (o) { o.el.textContent = fmt(o.t); if (o.t > 0) o.t--; }); }
+    function fmtCompact(s) { if (s < 0) s = 0; return Math.floor(s / 86400) + "d " + Math.floor(s % 86400 / 3600) + "h " + Math.floor(s % 3600 / 60) + "m"; }
+    function tick() { list.forEach(function (o) { o.el.textContent = o.compact ? fmtCompact(o.t) : fmt(o.t); if (o.t > 0) o.t--; }); }
     tick(); setInterval(tick, 1000);
   }
 
@@ -368,15 +428,16 @@
     if (!modal || !modalInner) return;
     modalReturn = document.activeElement;
     modalInner.innerHTML = html;
+    modal.classList.toggle("modal--wide", !!modalInner.querySelector(".auth"));
     if (typeof modal.showModal === "function") modal.showModal(); else modal.setAttribute("open", "");
-    var f = modalInner.querySelector("input, button, [tabindex]"); if (f) f.focus();
+    var f = modalInner.querySelector("input") || modalInner.querySelector("button"); if (f) f.focus();
   }
   function closeModal() {
     if (!modal) return;
     if (modal.open && typeof modal.close === "function") modal.close(); else modal.removeAttribute("open");
   }
   if (modal) {
-    modal.addEventListener("close", function () { modalInner.innerHTML = ""; if (modalReturn && modalReturn.focus) modalReturn.focus(); });
+    modal.addEventListener("close", function () { modalInner.innerHTML = ""; modal.classList.remove("modal--wide"); if (modalReturn && modalReturn.focus) modalReturn.focus(); });
     modal.addEventListener("click", function (e) {
       if (e.target === modal) closeModal(); // click on backdrop area
     });
@@ -384,17 +445,41 @@
 
   function authHTML(tab) {
     var join = tab !== "login";
-    return '<div class="modal__head"><h2 class="modal__title" id="modalTitle">' + (join ? "Join SatoshiSpin" : "Welcome back") + "</h2>" +
-      '<button class="icon-btn" type="button" data-close aria-label="Close">' + icon("i-x") + "</button></div>" +
-      '<div class="modal__tabs" role="tablist">' +
-      '<button class="modal__tab ' + (join ? "is-active" : "") + '" type="button" role="tab" data-tab="join">Join now</button>' +
-      '<button class="modal__tab ' + (!join ? "is-active" : "") + '" type="button" role="tab" data-tab="login">Log in</button></div>' +
+    var form =
       '<form data-authform novalidate>' +
-      '<div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" placeholder="you@email.com" /><span class="field__err" data-err="email"></span></div>' +
-      '<div class="field"><label for="f-pass">Password</label><input id="f-pass" name="password" type="password" autocomplete="' + (join ? "new-password" : "current-password") + '" placeholder="••••••••" /><span class="field__err" data-err="password"></span></div>' +
-      '<button class="btn ' + (join ? "btn--lime" : "btn--primary") + '" type="submit">' + (join ? "Create account" : "Log in") + "</button>" +
-      '<p class="modal__foot">' + (join ? "Already have an account? " : "New to SatoshiSpin? ") +
-      '<button type="button" data-tab="' + (join ? "login" : "join") + '">' + (join ? "Log in" : "Join now") + "</button></p></form>";
+        (join ? '<div class="field"><label for="f-user">Username</label><input id="f-user" name="username" type="text" autocomplete="username" placeholder="Username" /><span class="field__err" data-err="username"></span></div>' : "") +
+        '<div class="field"><label for="f-email">Email Address</label><input id="f-email" name="email" type="email" autocomplete="email" placeholder="Email Address" /><span class="field__err" data-err="email"></span></div>' +
+        '<div class="field"><label for="f-pass">Password</label>' +
+          '<div class="field__pass"><input id="f-pass" name="password" type="password" autocomplete="' + (join ? "new-password" : "current-password") + '" placeholder="Password" />' +
+          '<button class="field__eye" type="button" data-eye aria-label="Show password">' + icon("i-eye") + "</button></div>" +
+          (join ? '<span class="field__hint">Password must be at least 7 characters</span>' : "") +
+          '<span class="field__err" data-err="password"></span></div>' +
+        (join ? '<details class="auth__ref"><summary>Referral Code (Optional)</summary><div class="field"><input name="ref" type="text" placeholder="Referral code" autocomplete="off" /></div></details>' : "") +
+        (join ? '<label class="auth__terms"><input type="checkbox" data-terms /><span>I am 18+ and have read and accept the <button type="button" class="linkish" data-toast="Terms of Service — demo placeholder.">Terms of Service</button> and <button type="button" class="linkish" data-toast="Privacy Policy — demo placeholder.">Privacy Policy</button>.</span></label>' : "") +
+        '<button class="btn btn--lime auth__submit" type="submit">' + (join ? "Play Now" : "Login") + "</button>" +
+      "</form>" +
+      '<div class="auth__or"><span>Or continue with</span></div>' +
+      '<div class="auth__sso">' +
+        '<button class="btn" type="button" data-toast="Google sign-in is a demo placeholder."><b class="sso-g">G</b>Google</button>' +
+        '<button class="btn" type="button" data-toast="MetaMask connect is a demo placeholder."><span class="sso-m">🦊</span>Metamask</button>' +
+      "</div>" +
+      '<p class="auth__legal">This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.</p>';
+
+    return '<div class="auth">' +
+      '<div class="auth__form">' +
+        '<button class="icon-btn auth__close" type="button" data-close aria-label="Close">' + icon("i-x") + "</button>" +
+        '<h2 class="auth__title" id="modalTitle">' + (join ? "Create your account" : "Welcome back") + "</h2>" +
+        '<p class="auth__sub">' + (join ? "Already have an account? " : "New to SatoshiSpin? ") +
+          '<button type="button" data-tab="' + (join ? "login" : "join") + '">' + (join ? "Login" : "Join now") + "</button></p>" +
+        form +
+      "</div>" +
+      '<div class="auth__art" aria-hidden="true">' +
+        '<img class="auth__bg" src="assets/img/register/background.jpg" alt="" onerror="this.remove()" />' +
+        '<span class="auth__scrim"></span>' +
+        '<img class="auth__char" src="assets/img/register/character.png" alt="" onerror="this.remove()" />' +
+        '<img class="auth__flying" src="assets/img/register/flying.png" alt="" onerror="this.remove()" />' +
+        '<div class="auth__caption"><h3>Charles Oliveira</h3><span class="auth__badge">BMF Champion</span></div>' +
+      "</div></div>";
   }
 
   function depositHTML() {
@@ -429,6 +514,8 @@
     modalInner.addEventListener("click", function (e) {
       var t = e.target;
       if (t.closest("[data-close]")) { closeModal(); return; }
+      var eye = t.closest("[data-eye]");
+      if (eye) { var pi = $("#f-pass", modalInner); if (pi) { var show = pi.type === "password"; pi.type = show ? "text" : "password"; eye.setAttribute("aria-label", show ? "Hide password" : "Show password"); } return; }
       var tabBtn = t.closest("[data-tab]");
       if (tabBtn) { openModal(authHTML(tabBtn.getAttribute("data-tab"))); return; }
       var copyBtn = t.closest("[data-copy]");
@@ -456,11 +543,18 @@
     modalInner.addEventListener("submit", function (e) {
       var form = e.target.closest("[data-authform]"); if (!form) return;
       e.preventDefault();
-      var email = form.email, pass = form.password, ok = true;
+      var join = !!form.username;
+      var ok = true;
       function err(name, msg) { var s = form.querySelector('[data-err="' + name + '"]'); if (s) s.textContent = msg || ""; var inp = form[name]; if (inp) inp.setAttribute("aria-invalid", msg ? "true" : "false"); if (msg) ok = false; }
-      err("email", /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim()) ? "" : "Enter a valid email.");
-      err("password", pass.value.length >= 8 ? "" : "At least 8 characters.");
-      if (ok) { closeModal(); toast("Welcome to SatoshiSpin. Your balance is ready."); }
+      if (join) err("username", form.username.value.trim().length >= 3 ? "" : "At least 3 characters.");
+      err("email", /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.value.trim()) ? "" : "Enter a valid email.");
+      err("password", form.password.value.length >= 7 ? "" : "At least 7 characters.");
+      if (join) {
+        var terms = form.querySelector("[data-terms]");
+        if (terms && !terms.checked) { var lbl = form.querySelector(".auth__terms"); if (lbl) lbl.classList.add("is-err"); ok = false; }
+        else { var lbl2 = form.querySelector(".auth__terms"); if (lbl2) lbl2.classList.remove("is-err"); }
+      }
+      if (ok) { closeModal(); toast(join ? "Welcome to SatoshiSpin. Your balance is ready." : "Logged in. Good luck!"); }
       else { var bad = form.querySelector('[aria-invalid="true"]'); if (bad) bad.focus(); }
     });
   }
@@ -497,6 +591,8 @@
     renderWins();
     renderProviders();
     renderBets();
+    renderFooterCoins();
+    initChat();
     initHero();
     initCountdowns();
 
