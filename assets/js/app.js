@@ -295,9 +295,11 @@
     if (!panel || !log) return;
     var counter = 0;
     function chatTime() { var d = new Date(), h = d.getHours(), ap = h >= 12 ? "PM" : "AM"; h = h % 12 || 12; return h + ":" + String(d.getMinutes()).padStart(2, "0") + " " + ap; }
+    var AVATARS = ["avatar-svgrepo-com.svg", "avatar-svgrepo-com (1).svg", "avatar-svgrepo-com (2).svg", "avatar-svgrepo-com (3).svg", "avatar-svgrepo-com (4).svg", "avatar-svgrepo-com (5).svg", "avatar-svgrepo-com (6).svg", "avatar-svgrepo-com (7).svg", "avatar-svgrepo-com (8).svg", "avatar-svgrepo-com (9).svg", "avatar-svgrepo-com (10).svg"];
     function avatar(name, i) {
       var initial = (name.replace(/[^A-Za-z0-9]/g, "").charAt(0) || "U").toUpperCase();
-      return '<span class="chat__avatar" style="--ah:' + ((i * 53) % 360) + '"><img src="assets/img/avatars/a' + ((i % 12) + 1) + '.png" alt="" loading="lazy" decoding="async" onerror="this.remove()" /><b>' + initial + "</b></span>";
+      var src = "assets/img/avatars/" + encodeURI(AVATARS[i % AVATARS.length]);
+      return '<span class="chat__avatar" style="--ah:' + ((i * 53) % 360) + '"><img src="' + src + '" alt="" loading="lazy" decoding="async" onerror="this.remove()" /><b>' + initial + "</b></span>";
     }
     function push(name, text, i, me) {
       var atBottom = log.scrollHeight - log.scrollTop - log.clientHeight < 90;
@@ -470,7 +472,7 @@
         form +
       "</div>" +
       '<div class="auth__art" aria-hidden="true">' +
-        '<img class="auth__bg" src="assets/img/register/background.jpg" alt="" onerror="this.remove()" />' +
+        '<img class="auth__bg" src="assets/img/register/background.jpeg" alt="" onerror="this.remove()" />' +
         '<span class="auth__scrim"></span>' +
         '<img class="auth__char" src="assets/img/register/character.png" alt="" onerror="this.remove()" />' +
         '<img class="auth__flying" src="assets/img/register/flying.png" alt="" onerror="this.remove()" />' +
