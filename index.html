@@ -230,6 +230,12 @@
           </div>
         </section>
 
+        <!-- LIVE WINS (populated by app.js) -->
+        <section class="wins" aria-label="Live wins">
+          <span class="wins__label"><i aria-hidden="true"></i>Live wins</span>
+          <div class="wins__viewport"><div class="wins__track" id="winsTrack"></div></div>
+        </section>
+
         <!-- CURRENCY RAIL -->
         <section class="rail" aria-label="Available currencies">
           <span class="rail__label">Available currencies</span>
@@ -249,6 +255,38 @@
         <!-- GAME ROWS (rendered by app.js) -->
         <div id="rows" class="rows"></div>
         <p class="noscript" id="noscript">Enable JavaScript to browse the game library.</p>
+
+        <!-- GAME PROVIDERS (populated by app.js) -->
+        <section class="providers" aria-label="Game providers">
+          <div class="sec-head">
+            <h2><svg class="ic" aria-hidden="true"><use href="#i-slots"/></svg>Providers</h2>
+            <div class="sec-head__nav">
+              <button class="icon-btn sec-arrow" type="button" data-pscroll="prev" aria-label="Scroll providers left"><svg class="ic" aria-hidden="true"><use href="#i-chev-left"/></svg></button>
+              <button class="icon-btn sec-arrow" type="button" data-pscroll="next" aria-label="Scroll providers right"><svg class="ic" aria-hidden="true"><use href="#i-chev-right"/></svg></button>
+            </div>
+          </div>
+          <div class="providers__track" id="providersTrack"></div>
+        </section>
+
+        <!-- LATEST BETS (populated by app.js) -->
+        <section class="bets" aria-label="Latest bets">
+          <div class="sec-head"><h2><svg class="ic" aria-hidden="true"><use href="#i-list"/></svg>Latest bets</h2></div>
+          <div class="bets__table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Game</th>
+                  <th class="col-time">Time</th>
+                  <th class="col-player">Player</th>
+                  <th>Bet</th>
+                  <th>Multiplier</th>
+                  <th class="col-r">Payout</th>
+                </tr>
+              </thead>
+              <tbody id="betsBody"></tbody>
+            </table>
+          </div>
+        </section>
       </main>
 
       <!-- ============ FOOTER ============ -->
@@ -279,6 +317,17 @@
         <div class="footer__legal">
           <span class="age">18+</span>
           <p>SatoshiSpin is a demonstration interface. No real-money gambling takes place. © 2026 SatoshiSpin.</p>
+        </div>
+        <div class="license">
+          <a class="license__seal" href="#" data-verify aria-label="Verify gaming licence">
+            <img src="assets/img/license/curacao-seal.png" alt="Curaçao Gaming Control Board licence" loading="lazy" decoding="async" onerror="var s=this.closest('.license__seal'); if(s){s.classList.add('is-fallback');} this.remove();" />
+            <span class="license__seal--fallback">CGB<br />VALID</span>
+          </a>
+          <p class="license__text">
+            <b>SatoshiSpin</b> is operated by <b>[Operator Name] N.V.</b>, a company registered in Curaçao under No. <b>[123456]</b>, registered address <b>[Street, Willemstad, Curaçao]</b>.
+            SatoshiSpin is licensed and regulated by the <b>Curaçao Gaming Control Board (GCB)</b> under licence No. <b>[OGL/2024/XXX/XXXX]</b>.
+            Payments are processed by <b>[Payment Agent] Ltd</b>. Gambling can be addictive — please play responsibly. <a href="#" data-verify>Click to verify</a>.
+          </p>
         </div>
       </footer>
     </div>

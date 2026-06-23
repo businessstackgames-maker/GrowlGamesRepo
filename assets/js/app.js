@@ -56,6 +56,70 @@
   var COIN_IMG = { btc: "svg", eth: "svg", usdt: "svg", usdc: "svg", doge: "svg", trx: "svg", bch: "svg", bnb: "svg", xrp: "svg" };
   function slug(s) { return String(s).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, ""); }
 
+  function shuffle(a) { a = a.slice(); for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
+
+  // Extra uploaded thumbnails (no name/metadata) — used as clean, name-free tiles.
+  var EXTRA_IMG = [
+    "24de8d4e-405f-4c17-bce9-df1fadf641fa.png", "18d3ebca-0b06-4258-8043-3bbafb0555a3.png",
+    "3682a221-296a-4b92-94c9-dca4df748a6d.png", "162af47f-a81b-4230-89ef-7e811f5a78fc.png",
+    "0f794495-65ba-44f0-bbb8-7ec3dbec83df.jfif", "84ec5467-92f9-4a56-b30b-ee50d386d954.png",
+    "86efef39-c84f-411b-8c84-a7be5092e623.jpg", "8fefce9e-3a4c-4226-a06f-cda16b91b7a8.jpg",
+    "b90a2f75-8900-4539-a57d-271bdc768683.jpg", "b420262e-8ac9-4bb1-91a6-10adeb604045.jpg",
+    "c76a9d55-c3d1-416a-aa5c-d19ac4862039.jpg", "9964b460-a760-415d-8572-b8fa3feca741.jpg",
+    "a4af9052-3d4b-4e85-8d09-ac61caed73cd.png", "d62a910c-a74a-4c3b-92f6-2e18c8fa8268.jpg",
+    "a80f7426-0df7-4d75-b893-af370bf3a0c8.jpg", "ce04c203-411a-4d5a-bf8d-09e7cc9979c0.jpg",
+    "92b52bb7-6678-43c3-ae40-a3cd751c5220.jpg", "a9e307aa-714f-4d52-a8a8-2ab68637a916.jpg",
+    "98fec924-d832-42a4-9614-69ce7b1e3bff.jpg", "a3e843c5-66ac-44ab-bb6a-52edf89d6b8e.jpg",
+    "d92aa4c0-8ecf-472f-b8e9-ec465908dfce.jpg", "d03a89e8-c44b-45f9-872d-98ca422376e5.png",
+    "bab08f68-8388-4f54-a17b-0187a07c7104.jpg", "ec6e3534-cc2c-4006-b4a6-11679606c7f0.jpg",
+    "ed3dcce6-3656-4ecf-8dcc-7745e9c9ad27.jpg", "fcb182f4-0afb-4575-8ba5-11ecd1944c74.jfif",
+    "ed4e1679-0666-4b6c-925f-0a018dd8fa23.jfif"
+  ];
+  var XCAT = ["slots", "slots", "slots", "live", "shows"], XBADGE = ["hot", null, "new", null, null, "hot", null];
+  var EXTRA = EXTRA_IMG.map(function (f, i) {
+    return { img: f, cat: XCAT[i % XCAT.length], badge: XBADGE[i % XBADGE.length], tag: "", c: ["#5D31FF", "#1a0e3a"] };
+  });
+  var NAMED = GAMES.slice();                       // titled games (name + thumbnail)
+  var POOL = shuffle(NAMED.concat(EXTRA));          // shuffled once; rows take disjoint slices so nothing repeats on screen
+
+  // Providers showcase. Logos ship in assets/img/providers/; per-studio background + character art
+  // are uploaded to assets/img/providers/backgrounds|characters/<slug>.{jpg,png} (graceful fallback until then).
+  var PROVIDERS = [
+    { n: "BGaming", slug: "bgaming", logo: "bgg", c: "#3a2b6b" },
+    { n: "Hacksaw", slug: "hacksaw", logo: "hs", c: "#5a2d86" },
+    { n: "NetEnt", slug: "netent", logo: "ne", c: "#1f5a8a" },
+    { n: "Novomatic", slug: "novomatic", logo: "novo", c: "#2a4a8a" },
+    { n: "Play'n GO", slug: "playngo", logo: "playngo_logo", c: "#7a2d5a" },
+    { n: "Pragmatic Play", slug: "pragmatic", logo: "pp", c: "#8a3a2a" },
+    { n: "Relax Gaming", slug: "relax", logo: "relax", c: "#2a6b5a" },
+    { n: "Yggdrasil", slug: "yggdrasil", logo: "yggdrasil", c: "#2a3a7a" },
+    { n: "Nolimit City", slug: "nolimit", logo: "nolimit", c: "#6b2a2a" },
+    { n: "Red Tiger", slug: "redtiger", logo: "redtiger", c: "#7a2424" },
+    { n: "PG Soft", slug: "pgsoft", logo: "pg", c: "#2a6b3a" },
+    { n: "Evolution", slug: "evolution", logo: "ev", c: "#1a4a3a" }
+  ];
+
+  // sample data helpers for the live wins ticker + latest bets feed
+  var USER_W = ["Lucky", "Crypto", "Neon", "Mega", "Spin", "Degen", "Vault", "Pixel", "Turbo", "Golden", "Shadow", "Nova", "Blitz", "Ace", "Wild", "Hodl"];
+  function randUser() {
+    if (Math.random() < 0.5) return "User" + (100000 + Math.floor(Math.random() * 899999));
+    var n = USER_W[Math.floor(Math.random() * USER_W.length)] + (Math.floor(Math.random() * 9000) + 100);
+    return n.length > 12 ? n.slice(0, 11) + "…" : n;
+  }
+  function gameFile(g) { return g.img || (slug(g.name) + "." + (GAME_IMG[slug(g.name)] || "jpg")); }
+  function fmtUSD(n) { return "$" + Number(n).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
+  function randMult() {
+    var r = Math.random();
+    if (r < 0.6) return +(Math.random() * 0.99).toFixed(2);     // loss
+    if (r < 0.9) return +(1 + Math.random() * 4).toFixed(2);    // modest win
+    return +(5 + Math.random() * 390).toFixed(2);               // big win
+  }
+  function nowTime() {
+    var d = new Date(), h = d.getHours(), ap = h >= 12 ? "PM" : "AM"; h = h % 12 || 12;
+    function p(n) { return String(n).padStart(2, "0"); }
+    return p(h) + ":" + p(d.getMinutes()) + ":" + p(d.getSeconds()) + " " + ap;
+  }
+
   var CURRENCIES = [
     { t: "BTC", n: "Bitcoin", sym: "₿", color: "#F7931A", price: 64000, amt: 0.0123 },
     { t: "ETH", n: "Ethereum", sym: "Ξ", color: "#627EEA", price: 3400, amt: 0.42 },
@@ -86,16 +150,20 @@
   }
 
   /* ----------------------------- render: game rows ----------------------------- */
-  function cardHTML(g) {
-    var c0 = g.c[0], c1 = g.c[1];
+  function cardHTML(g, opts) {
+    opts = opts || {};
+    var c0 = (g.c && g.c[0]) || "#5D31FF", c1 = (g.c && g.c[1]) || "#1a0e3a";
     var rootStyle = "--cg:" + hexA(c0, 0.5) + ";";
-    var gs = slug(g.name);
-    var hasImg = !!GAME_IMG[gs];
-    var artClass = hasImg ? "card__art card__art--photo" : "card__art";
-    var art;
-    if (hasImg) {
-      art = '<img class="card__photo" src="assets/img/games/' + gs + "." + GAME_IMG[gs] + '" alt="' + esc(g.name) + '" loading="lazy" decoding="async" />';
+    var file = g.img || (GAME_IMG[slug(g.name)] ? slug(g.name) + "." + GAME_IMG[slug(g.name)] : null);
+    var label = g.name || "Casino game";
+    var art, artClass;
+    if (file) {
+      // gradient sits behind the photo so a slow/failed image never shows a blank tile
+      artClass = "card__art card__art--photo";
+      art = '<span class="card__bg" style="background:linear-gradient(155deg,' + c0 + ',' + c1 + ')"></span>'
+          + '<img class="card__photo" src="assets/img/games/' + file + '" alt="" loading="lazy" decoding="async" onerror="this.remove()" />';
     } else {
+      artClass = "card__art";
       var bg = "radial-gradient(82% 70% at 76% 4%, " + hexA(c0, 0.78) + ", transparent 56%),"
              + "radial-gradient(120% 110% at 8% 116%, " + hexA(c1, 0.98) + ", transparent 64%),"
              + "linear-gradient(155deg, " + c0 + " 0%, " + c1 + " 100%)";
@@ -103,31 +171,26 @@
       art = '<span class="card__bg" style="background:' + bg + '"></span>'
           + '<svg class="card__motif" aria-hidden="true"><use href="#' + motif + '"/></svg>';
     }
-    // provider tag intentionally omitted from game cards
-    var name = "";
-    if (!hasImg) {
-      var parts = g.name.split(" "); var first = parts.shift(); var rest = parts.join(" ");
-      name = '<span class="card__name">' + esc(first) + (rest ? "<b>" + esc(rest) + "</b>" : "") + "</span>";
-    }
-    var tag = '<span class="card__tag">' + esc(g.tag || g.provider) + "</span>";
+    // game name + provider tag intentionally omitted — tiles are pure artwork
     if (g.locked) {
-      return '<div class="card card--locked" style="' + rootStyle + '" role="group" aria-label="' + esc(g.name) + ' is not available in your region">'
-        + '<div class="' + artClass + '">' + art + name
-        + '<div class="card__lock">' + icon("i-lock") + "<p>Not available in your region</p></div></div>" + tag + "</div>";
+      return '<div class="card card--locked" style="' + rootStyle + '" role="group" aria-label="' + esc(label) + ' is not available in your region">'
+        + '<div class="' + artClass + '">' + art
+        + '<div class="card__lock">' + icon("i-lock") + "<p>Not available in your region</p></div></div></div>";
     }
-    var badge = g.badge === "hot" ? '<span class="card__badge badge-hot">Hot</span>' : g.badge === "new" ? '<span class="card__badge badge-new">New</span>' : "";
-    return '<button class="card" type="button" style="' + rootStyle + '" data-game="' + esc(g.name) + '">'
-      + '<div class="' + artClass + '">' + art + badge + name
-      + '<span class="card__play"><span>' + icon("i-play") + "</span></span></div>" + tag + "</button>";
+    var b = opts.badge !== undefined ? opts.badge : g.badge;
+    var badge = b === "hot" ? '<span class="card__badge badge-hot">Hot</span>' : b === "new" ? '<span class="card__badge badge-new">New</span>' : "";
+    return '<button class="card" type="button" style="' + rootStyle + '" data-game="' + esc(label) + '" aria-label="' + esc(label) + '">'
+      + '<div class="' + artClass + '">' + art + badge
+      + '<span class="card__play"><span>' + icon("i-play") + "</span></span></div></button>";
   }
 
-  function rowHTML(title, iconId, games) {
+  function rowHTML(title, iconId, games, rowBadge) {
     return '<section class="row">' +
       '<header class="row__head"><h2 class="row__title">' + icon(iconId) + esc(title) + "</h2>" +
       '<div class="row__nav"><button class="row__see" type="button" data-see>See all</button>' +
       '<button class="icon-btn row__arrow" type="button" data-scroll="prev" aria-label="Scroll left">' + icon("i-chev-left") + "</button>" +
       '<button class="icon-btn row__arrow" type="button" data-scroll="next" aria-label="Scroll right">' + icon("i-chev-right") + "</button></div></header>" +
-      '<div class="grid">' + games.map(cardHTML).join("") + "</div></section>";
+      '<div class="grid">' + games.map(function (g) { return cardHTML(g, rowBadge !== undefined ? { badge: rowBadge } : undefined); }).join("") + "</div></section>";
   }
 
   function renderRows() {
@@ -136,16 +199,17 @@
 
     if (state.query) {
       var q = state.query.toLowerCase();
-      var res = GAMES.filter(function (g) { return g.name.toLowerCase().indexOf(q) > -1 || g.provider.toLowerCase().indexOf(q) > -1; });
+      var res = NAMED.filter(function (g) { return g.name.toLowerCase().indexOf(q) > -1 || (g.provider && g.provider.toLowerCase().indexOf(q) > -1); });
       host.innerHTML = res.length ? rowHTML("Results · " + res.length, "i-search", res)
         : '<p class="noscript">No games match “' + esc(state.query) + "”.</p>";
       return;
     }
     if (state.filter === "all") {
+      // disjoint slices of the shuffled pool → no thumbnail repeats across the visible rows
       host.innerHTML =
-        rowHTML("Popular", "i-trophy", GAMES.slice(0, 12)) +
-        rowHTML("Hottest Games", "i-fire", GAMES.filter(function (g) { return g.badge === "hot"; })) +
-        rowHTML("New Releases", "i-gift", GAMES.filter(function (g) { return g.badge === "new"; }));
+        rowHTML("Popular", "i-trophy", POOL.slice(0, 14)) +
+        rowHTML("Hottest Games", "i-fire", POOL.slice(14, 28), "hot") +
+        rowHTML("New Releases", "i-gift", POOL.slice(28, 42), "new");
       return;
     }
     var map = {
@@ -156,7 +220,61 @@
       "new": ["New Releases", "i-gift", function (g) { return g.badge === "new"; }]
     };
     var m = map[state.filter] || map.slots;
-    host.innerHTML = rowHTML(m[0], m[1], GAMES.filter(m[2]));
+    host.innerHTML = rowHTML(m[0], m[1], POOL.filter(m[2]));
+  }
+
+  /* ----------------------------- render: live wins · providers · latest bets ----------------------------- */
+  function renderWins() {
+    var track = $("#winsTrack"); if (!track) return;
+    var items = [];
+    for (var i = 0; i < 14; i++) {
+      var g = POOL[Math.floor(Math.random() * POOL.length)];
+      var amt = +(Math.random() * Math.random() * 900 + 1).toFixed(2);
+      items.push('<div class="win"><img class="win__thumb" src="assets/img/games/' + gameFile(g) +
+        '" alt="" loading="lazy" decoding="async" onerror="this.style.visibility=\'hidden\'" />' +
+        '<span class="win__user">' + esc(randUser()) + '</span><span class="win__amt">' + fmtUSD(amt) + "</span></div>");
+    }
+    var html = items.join("");
+    track.innerHTML = REDUCE ? html : html + html;   // duplicate for a seamless marquee loop
+    track.classList.toggle("is-anim", !REDUCE);
+  }
+
+  function renderProviders() {
+    var track = $("#providersTrack"); if (!track) return;
+    track.innerHTML = PROVIDERS.map(function (p) {
+      return '<button class="provider" type="button" style="--pc:' + p.c + '" data-provider="' + esc(p.n) + '" aria-label="' + esc(p.n) + ' games">' +
+        '<img class="provider__bg" src="assets/img/providers/backgrounds/' + p.slug + '.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()" />' +
+        '<span class="provider__scrim" aria-hidden="true"></span>' +
+        '<img class="provider__char" src="assets/img/providers/characters/' + p.slug + '.png" alt="" loading="lazy" decoding="async" onerror="this.remove()" />' +
+        '<span class="provider__logo"><img src="assets/img/providers/' + p.logo + '.svg" alt="' + esc(p.n) + '" loading="lazy" decoding="async" onerror="this.outerHTML=\'<span>\'+this.alt+\'</span>\'" /></span>' +
+        "</button>";
+    }).join("");
+  }
+
+  function betRowHTML(isNew) {
+    var g = NAMED[Math.floor(Math.random() * NAMED.length)];
+    var bet = +(Math.random() * 2.9 + 0.03).toFixed(2);
+    var mult = randMult(), pay = +(bet * mult).toFixed(2), win = mult >= 1;
+    return '<tr class="bets__row' + (isNew ? " bets__row--new" : "") + '">' +
+      '<td><span class="bets__game"><img class="bets__thumb" src="assets/img/games/' + gameFile(g) +
+      '" alt="" loading="lazy" decoding="async" onerror="this.style.visibility=\'hidden\'" />' +
+      '<span class="bets__name">' + esc(g.name) + "</span></span></td>" +
+      '<td class="col-time bets__time">' + nowTime() + "</td>" +
+      '<td class="col-player bets__player">' + esc(randUser()) + "</td>" +
+      "<td>" + fmtUSD(bet) + "</td>" +
+      '<td><span class="bets__mult' + (win ? " is-win" : "") + '">x' + mult.toFixed(2) + "</span></td>" +
+      '<td class="col-r"><span class="bets__pay' + (win ? " is-win" : "") + '">' + fmtUSD(pay) + "</span></td></tr>";
+  }
+  function renderBets() {
+    var body = $("#betsBody"); if (!body) return;
+    var rows = ""; for (var i = 0; i < 10; i++) rows += betRowHTML(false);
+    body.innerHTML = rows;
+    if (REDUCE) return;
+    setInterval(function () {
+      if (document.hidden) return;
+      body.insertAdjacentHTML("afterbegin", betRowHTML(true));
+      while (body.children.length > 10) body.removeChild(body.lastChild);
+    }, 3500);
   }
 
   function setFilter(f) {
@@ -376,6 +494,9 @@
   function init() {
     renderRail();
     renderRows();
+    renderWins();
+    renderProviders();
+    renderBets();
     initHero();
     initCountdowns();
 
@@ -428,6 +549,15 @@
 
       var arrow = t.closest("[data-scroll]");
       if (arrow) { var g2 = arrow.closest(".row").querySelector(".grid"); g2.scrollBy({ left: (arrow.getAttribute("data-scroll") === "next" ? 1 : -1) * Math.round(g2.clientWidth * 0.8), behavior: REDUCE ? "auto" : "smooth" }); return; }
+
+      var pscroll = t.closest("[data-pscroll]");
+      if (pscroll) { var pt = $("#providersTrack"); if (pt) pt.scrollBy({ left: (pscroll.getAttribute("data-pscroll") === "next" ? 1 : -1) * Math.round(pt.clientWidth * 0.85), behavior: REDUCE ? "auto" : "smooth" }); return; }
+
+      var prov = t.closest(".provider[data-provider]");
+      if (prov) { toast(prov.getAttribute("data-provider") + " — provider lobby coming soon."); return; }
+
+      var verify = t.closest("[data-verify]");
+      if (verify) { e.preventDefault(); toast("Replace the placeholder licence details with your registered Curaçao licence and verification link."); return; }
 
       var card = t.closest(".card[data-game]");
       if (card) { toast("Launching " + card.getAttribute("data-game") + "…"); return; }
