@@ -204,6 +204,7 @@
       // disjoint slices of the shuffled pool → no thumbnail repeats across the visible rows
       host.innerHTML =
         rowHTML("Popular", "i-trophy", POOL.slice(0, 14)) +
+        sportsbookHTML() +
         rowHTML("Hottest Games", "i-fire", POOL.slice(14, 28), "hot") +
         rowHTML("New Releases", "i-gift", POOL.slice(28, 42), "new");
       return;
@@ -245,6 +246,36 @@
         '<span class="provider__logo"><img src="assets/img/providers/' + p.logo + '.svg" alt="' + esc(p.n) + '" loading="lazy" decoding="async" onerror="this.outerHTML=\'<span>\'+this.alt+\'</span>\'" /></span>' +
         "</button>";
     }).join("");
+  }
+
+  /* ----------------------------- sportsbook (below Popular) ----------------------------- */
+  var SPORTS = [
+    { flag: "pt", team: "Portugal", match: "Portugal - Uzbekistan", v: 52049, w: 2414906, odds: "1.13", t: "2h" },
+    { flag: "gb-eng", team: "England", match: "England - Ghana", v: 46445, w: 1748751, odds: "1.17", t: "5h" },
+    { flag: "hr", team: "Croatia", match: "Panama - Croatia", v: 39656, w: 1474120, odds: "1.46", t: "8h" },
+    { flag: "br", team: "Brazil", match: "Brazil - Chile", v: 61203, w: 3120880, odds: "1.21", t: "3h" },
+    { flag: "es", team: "Spain", match: "Spain - Norway", v: 48317, w: 1980540, odds: "1.34", t: "6h" },
+    { flag: "fr", team: "France", match: "France - Iceland", v: 43990, w: 1655300, odds: "1.28", t: "9h" }
+  ];
+  function fmtInt(n) { return Number(n).toLocaleString(); }
+  function sportsbookHTML() {
+    var cards = SPORTS.map(function (s) {
+      return '<article class="bet">' +
+        '<div class="bet__top"><span class="bet__time">' + esc(s.t) + "</span>" +
+          '<span class="bet__viewers"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg>' + fmtInt(s.v) + "</span>" +
+          '<svg class="ic bet__livedot" aria-hidden="true"><use href="#i-bolt"/></svg></div>' +
+        '<div class="bet__match"><img class="bet__flag" src="https://flagcdn.com/w40/' + s.flag + '.png" alt="" loading="lazy" decoding="async" onerror="this.remove()" />' +
+          '<span class="bet__team"><b>' + esc(s.team) + "</b><span>" + esc(s.match) + "</span></span></div>" +
+        '<div class="bet__pick"><span class="bet__wager">💰 $' + fmtInt(s.w) + " Wagered</span>" +
+          '<button class="bet__odds" type="button" data-toast="Bet slips open after you sign up."><span>' + esc(s.team) + "</span><b>" + esc(s.odds) + "</b></button></div>" +
+        "</article>";
+    }).join("");
+    return '<section class="row sportsbook">' +
+      '<header class="row__head"><h2 class="row__title">' + icon("i-trophy") + "Top Sports Picks</h2>" +
+      '<div class="row__nav">' +
+      '<button class="icon-btn row__arrow" type="button" data-scroll="prev" aria-label="Scroll left">' + icon("i-chev-left") + "</button>" +
+      '<button class="icon-btn row__arrow" type="button" data-scroll="next" aria-label="Scroll right">' + icon("i-chev-right") + "</button></div></header>" +
+      '<div class="grid bet-grid">' + cards + "</div></section>";
   }
 
   var FOOTER_COINS = ["btc", "eth", "usdt", "bnb", "ltc", "bch", "usdc", "sol", "shiba", "xrp", "ton", "dot", "matic", "trx", "doge", "ada", "pix", "visa", "mastercard", "blink", "interac", "bank"];
@@ -466,7 +497,8 @@
     return '<div class="auth">' +
       '<div class="auth__form">' +
         '<button class="icon-btn auth__close" type="button" data-close aria-label="Close">' + icon("i-x") + "</button>" +
-        '<h2 class="auth__title" id="modalTitle">' + (join ? "Create your account" : "Welcome back") + "</h2>" +
+        '<h2 class="auth__title" id="modalTitle">' + (join ? "Welcome to the Ultimate Gaming Experience" : "Welcome back") + "</h2>" +
+        '<p class="auth__lead">' + (join ? "Register now and gain access to exciting games, special offers, and member-only rewards." : "Log in to pick up right where you left off.") + "</p>" +
         '<p class="auth__sub">' + (join ? "Already have an account? " : "New to SatoshiSpin? ") +
           '<button type="button" data-tab="' + (join ? "login" : "join") + '">' + (join ? "Login" : "Join now") + "</button></p>" +
         form +
@@ -476,7 +508,6 @@
         '<span class="auth__scrim"></span>' +
         '<img class="auth__char" src="assets/img/register/character.png" alt="" onerror="this.remove()" />' +
         '<img class="auth__flying" src="assets/img/register/flying.png" alt="" onerror="this.remove()" />' +
-        '<div class="auth__caption"><h3>Charles Oliveira</h3><span class="auth__badge">BMF Champion</span></div>' +
       "</div></div>";
   }
 
