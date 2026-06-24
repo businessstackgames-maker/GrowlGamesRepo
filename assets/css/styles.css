@@ -315,18 +315,21 @@ h1, h2, h3 { font-weight: 700; line-height: 1.05; text-transform: uppercase; let
 /* hero carousel — full-width image banners */
 .hero { display: flex; flex-direction: column; gap: var(--s-3); }
 .hero__viewport {
-  overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none;
-  -webkit-overflow-scrolling: touch; border-radius: var(--r-xl);
+  overflow-x: auto; overflow-y: hidden; scroll-snap-type: x mandatory; scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  /* top room so the character can bleed above its tile without being clipped */
+  padding-top: 40px;
 }
 .hero__track { display: flex; gap: var(--s-4); }
 .banner {
-  position: relative; flex: 0 0 calc((100% - var(--s-4)) / 1.75); max-width: calc((100% - var(--s-4)) / 1.75);
+  position: relative; flex: 0 0 calc((100% - var(--s-4)) / 2); max-width: calc((100% - var(--s-4)) / 2);
   scroll-snap-align: start; isolation: isolate;
-  border-radius: var(--r-xl); overflow: hidden;
+  border-radius: var(--r-xl); overflow: visible;
   aspect-ratio: 12 / 5; background: #0e0b14;
 }
-/* background layer: per-slide gradient fallback, real photo layered on top */
-.banner__bg { position: absolute; inset: 0; z-index: 0; }
+/* background layer: per-slide gradient fallback, real photo layered on top.
+   keeps its own rounded clip so the banner can stay overflow:visible for the character */
+.banner__bg { position: absolute; inset: 0; z-index: 0; border-radius: inherit; overflow: hidden; }
 .banner__bgimg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 /* subtle dark overlay sandwiched between the background and the character so
    the character pops and the copy stays readable (sits below char z3 + content z4) */
@@ -340,13 +343,15 @@ h1, h2, h3 { font-weight: 700; line-height: 1.05; text-transform: uppercase; let
 .banner--4 .banner__bg { background: radial-gradient(82% 120% at 86% 14%, #2f8a5a, transparent 60%), linear-gradient(120deg, #123a26, #0a0f0c); }
 /* left scrim: dark enough to read the copy, clears past the midpoint so the artwork shows */
 .banner__scrim {
-  position: absolute; inset: 0; z-index: 2; pointer-events: none;
+  position: absolute; inset: 0; z-index: 2; pointer-events: none; border-radius: inherit;
   background: linear-gradient(90deg, rgba(8,6,12,.9) 0%, rgba(8,6,12,.55) 30%, rgba(8,6,12,.12) 52%, transparent 66%);
 }
+/* character bleeds ~13% above the tile for a 3D pop (fixed px keeps the bleed
+   consistent across tile sizes; the viewport's padding-top gives it clearance) */
 .banner__char {
   position: absolute; right: 1%; bottom: 0; z-index: 3;
-  height: 100%; width: auto; max-width: 46%; object-fit: contain; object-position: bottom right;
-  pointer-events: none; filter: drop-shadow(0 10px 24px rgba(0,0,0,.45));
+  height: calc(100% + 34px); width: auto; max-width: 56%; object-fit: contain; object-position: bottom right;
+  pointer-events: none; filter: drop-shadow(0 14px 24px rgba(0,0,0,.55));
 }
 .banner__content {
   position: absolute; left: clamp(16px, 4%, 40px); top: 50%; transform: translateY(-50%);
@@ -364,12 +369,15 @@ h1, h2, h3 { font-weight: 700; line-height: 1.05; text-transform: uppercase; let
 .banner__cta .btn { height: 38px; padding: 0 var(--s-4); font-size: var(--fs-sm); }
 
 @media (max-width: 760px) {
-  .banner { flex: 0 0 100%; max-width: 100%; aspect-ratio: 16 / 11; }
-  .banner__content { max-width: 76%; }
-  .banner__char { max-width: 50%; }
+  .hero__viewport { padding-top: 30px; }
+  .banner { flex: 0 0 100%; max-width: 100%; aspect-ratio: 16 / 10; }
+  .banner__content { max-width: 70%; }
+  .banner__char { max-width: 48%; height: calc(100% + 24px); }
   .banner__scrim { background: linear-gradient(90deg, rgba(8,6,12,.95) 0%, rgba(8,6,12,.78) 46%, rgba(8,6,12,.4) 74%, rgba(8,6,12,.18) 100%); }
 }
 @media (max-width: 460px) {
+  .hero__viewport { padding-top: 10px; }
+  .banner { aspect-ratio: 3 / 2; }
   .banner__char { display: none; }
   .banner__content { max-width: 92%; }
 }
@@ -859,6 +867,17 @@ h1, h2, h3 { font-weight: 700; line-height: 1.05; text-transform: uppercase; let
 /* ===========================================================================
    RESPONSIVE
    =========================================================================== */
+/* large desktops — keep content from sprawling, give tiles more presence */
+@media (min-width: 1500px) {
+  .lobby { max-width: 1640px; margin-inline: auto; width: 100%; }
+  .grid { grid-auto-columns: 176px; }
+  .providers__track { grid-auto-columns: 216px; }
+}
+/* tablet — 2 hero tiles still, comfortable game tiles */
+@media (min-width: 681px) and (max-width: 1024px) {
+  .grid { grid-auto-columns: 168px; }
+}
+
 @media (max-width: 1024px) {
   .app { grid-template-columns: 1fr; }
   .sidebar {
