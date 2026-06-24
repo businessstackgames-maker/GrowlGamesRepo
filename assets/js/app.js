@@ -497,8 +497,7 @@
     return '<div class="auth">' +
       '<div class="auth__form">' +
         '<button class="icon-btn auth__close" type="button" data-close aria-label="Close">' + icon("i-x") + "</button>" +
-        '<h2 class="auth__title" id="modalTitle">' + (join ? "Welcome to the Ultimate Gaming Experience" : "Welcome back") + "</h2>" +
-        '<p class="auth__lead">' + (join ? "Register now and gain access to exciting games, special offers, and member-only rewards." : "Log in to pick up right where you left off.") + "</p>" +
+        '<h2 class="auth__title" id="modalTitle">' + (join ? "Create your account" : "Welcome back") + "</h2>" +
         '<p class="auth__sub">' + (join ? "Already have an account? " : "New to SatoshiSpin? ") +
           '<button type="button" data-tab="' + (join ? "login" : "join") + '">' + (join ? "Login" : "Join now") + "</button></p>" +
         form +
@@ -508,6 +507,10 @@
         '<span class="auth__scrim"></span>' +
         '<img class="auth__char" src="assets/img/register/character.png" alt="" onerror="this.remove()" />' +
         '<img class="auth__flying" src="assets/img/register/flying.png" alt="" onerror="this.remove()" />' +
+        '<div class="auth__caption">' +
+          "<h3>" + (join ? "Welcome to the Ultimate Gaming Experience" : "Good to see you again") + "</h3>" +
+          "<p>" + (join ? "Register now and gain access to exciting games, special offers, and member-only rewards." : "Log in to continue your winning streak.") + "</p>" +
+        "</div>" +
       "</div></div>";
   }
 

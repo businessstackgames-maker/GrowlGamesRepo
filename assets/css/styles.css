@@ -821,14 +821,14 @@ h1, h2, h3 { font-weight: 700; line-height: 1.05; text-transform: uppercase; let
   background: radial-gradient(110% 90% at 70% 30%, #5d31ff 0%, #2a1466 40%, #14081f 100%);
 }
 .auth__bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 100% 50%; z-index: 0; }
-.auth__scrim { position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(110deg, rgba(10,6,18,.35) 0%, rgba(10,6,18,.18) 40%, rgba(10,6,18,.55) 100%); }
+.auth__scrim { position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(180deg, rgba(8,6,16,.62) 0%, rgba(8,6,16,.12) 32%, transparent 55%), linear-gradient(110deg, rgba(10,6,18,.35) 0%, rgba(10,6,18,.16) 45%, rgba(10,6,18,.5) 100%); }
 .auth__char { position: absolute; left: 50%; bottom: 0; transform: translateX(-50%); z-index: 2; height: 92%; width: auto; max-width: 96%; object-fit: contain; object-position: bottom center; pointer-events: none; filter: drop-shadow(0 14px 30px rgba(0,0,0,.5)); }
 .auth__flying { position: absolute; inset: 0; z-index: 3; width: 100%; height: 100%; object-fit: contain; pointer-events: none; }
 @media (prefers-reduced-motion: no-preference) { .auth__flying { animation: flyDrift 14s ease-in-out infinite alternate; } }
 @keyframes flyDrift { from { transform: translate(-1.5%, 1%); } to { transform: translate(1.5%, -1%); } }
-.auth__caption { position: absolute; top: var(--s-6); right: var(--s-6); z-index: 4; text-align: right; color: #fff; pointer-events: none; }
-.auth__caption h3 { font-size: clamp(20px, 2.4vw, 30px); font-weight: 800; text-transform: none; letter-spacing: 0; line-height: 1.05; text-shadow: 0 2px 14px rgba(0,0,0,.55); }
-.auth__caption .auth__badge { display: inline-block; margin-top: 4px; padding: 3px 11px; border-radius: var(--r-pill); background: rgba(255,255,255,.14); backdrop-filter: blur(6px); color: #fff; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; font-weight: 600; }
+.auth__caption { position: absolute; top: var(--s-6); left: var(--s-6); right: var(--s-6); z-index: 4; text-align: left; color: #fff; pointer-events: none; }
+.auth__caption h3 { font-size: clamp(22px, 2.6vw, 30px); font-weight: 800; text-transform: none; letter-spacing: -.01em; line-height: 1.12; text-shadow: 0 2px 14px rgba(0,0,0,.6); }
+.auth__caption p { margin-top: 8px; font-size: 14px; line-height: 1.5; color: rgba(255,255,255,.9); text-shadow: 0 1px 10px rgba(0,0,0,.6); max-width: 34ch; }
 
 @media (max-width: 760px) {
   .modal.modal--wide { width: min(420px, calc(100vw - 32px)); }
