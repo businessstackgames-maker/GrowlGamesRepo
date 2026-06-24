@@ -273,7 +273,7 @@ h1, h2, h3 { font-weight: 700; line-height: 1.05; text-transform: uppercase; let
 .wager__ic { color: var(--lime); width: 20px; height: 20px; flex: 0 0 auto; }
 .wager__text { display: flex; flex-direction: column; gap: 1px; line-height: 1.12; }
 .wager__text b { color: var(--ink); font-weight: 600; font-size: 13px; letter-spacing: .04em; white-space: nowrap; }
-.wager__text span { color: var(--muted); font-size: 11px; letter-spacing: .04em; white-space: nowrap; }
+.wager__text span { color: var(--muted); font-size: 11px; line-height: 20px; letter-spacing: .04em; white-space: nowrap; }
 .wager__cd { font-size: var(--fs-sm); color: var(--sky); font-variant-numeric: tabular-nums; letter-spacing: .04em; white-space: nowrap; padding-left: var(--s-4); border-left: 1px solid var(--line-2); }
 .wager__cta { flex: 0 0 auto; }
 
@@ -350,7 +350,7 @@ h1, h2, h3 { font-weight: 700; line-height: 1.05; text-transform: uppercase; let
    consistent across tile sizes; the viewport's padding-top gives it clearance) */
 .banner__char {
   position: absolute; right: 1%; bottom: 0; z-index: 3;
-  height: calc(100% + 34px); width: auto; max-width: 56%; object-fit: contain; object-position: bottom right;
+  height: calc(100% + 40px); width: auto; max-width: 56%; object-fit: contain; object-position: bottom right;
   pointer-events: none; filter: drop-shadow(0 14px 24px rgba(0,0,0,.55));
 }
 .banner__content {
@@ -640,7 +640,7 @@ h1, h2, h3 { font-weight: 700; line-height: 1.05; text-transform: uppercase; let
 .provider__bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
 /* gentle overlay between the background and the character */
 .provider__scrim { position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(180deg, rgba(8,6,14,.5) 0%, rgba(8,6,14,.14) 42%, rgba(8,6,14,.66) 100%); }
-.provider__char { position: absolute; left: 0; right: 0; bottom: -88; z-index: 2; height: 120%; width: 100%; object-fit: contain; object-position: bottom center; pointer-events: none; filter: drop-shadow(0 8px 18px rgba(0,0,0,.5)); }
+.provider__char { position: absolute; left: 0; right: 0; bottom: -88px; z-index: 2; height: 120%; width: 100%; object-fit: contain; object-position: bottom center; pointer-events: none; filter: drop-shadow(0 8px 18px rgba(0,0,0,.5)); }
 .provider__logo { position: absolute; left: 12px; right: 12px; top: 16px; z-index: 3; display: grid; place-items: center; min-height: 30px; }
 .provider__logo img { height: 50px; width: auto; max-width: 100%; object-fit: contain; filter: drop-shadow(0 2px 8px rgba(0,0,0,.55)); }
 .provider__logo span { color: #fff; font-weight: 700; font-size: var(--fs-base); letter-spacing: .02em; text-transform: uppercase; text-shadow: 0 2px 8px rgba(0,0,0,.5); }
