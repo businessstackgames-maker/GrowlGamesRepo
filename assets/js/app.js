@@ -459,7 +459,7 @@
       '<div class="auth__or"><span>Or continue with</span></div>' +
       '<div class="auth__sso">' +
         '<button class="btn" type="button" data-toast="Google sign-in is a demo placeholder."><img class="sso-ic" src="assets/img/register/google.svg" alt="" onerror="this.outerHTML=\'<b class=\\\'sso-g\\\'>G</b>\'" />Google</button>' +
-        '<button class="btn" type="button" data-toast="MetaMask connect is a demo placeholder."><img class="sso-ic" src="assets/img/register/metamask.svg" alt="" onerror="this.outerHTML=\'<span class=\\\'sso-m\\\'>🦊</span>\'" />Metamask</button>' +
+        '<button class="btn" type="button" data-toast="MetaMask connect is a demo placeholder."><img class="sso-ic" src="assets/img/register/metamask.png" alt="" onerror="this.outerHTML=\'<span class=\\\'sso-m\\\'>🦊</span>\'" />Metamask</button>' +
       "</div>" +
       '<p class="auth__legal">This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.</p>';
 
