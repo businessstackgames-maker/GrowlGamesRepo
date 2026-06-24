@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>SatoshiSpin · Crypto Casino</title>
+  <meta name="description" content="SatoshiSpin is a free-to-play crypto casino. 3000+ games, daily free wheel, instant crypto deposits, and a weekly wager prize pool." />
+  <meta name="theme-color" content="#1C1C1C" />
+
+  <meta property="og:title" content="SatoshiSpin · Crypto Casino" />
+  <meta property="og:description" content="3000+ crypto games. Daily free wheel. Weekly wager rush." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to games</a>
+
+  <!-- ============ ICON SPRITE ============ -->
+  <svg width="0" height="0" class="sprite" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-home" viewBox="-2 -2 24 24"><path fill="currentColor" fill-rule="evenodd" d="m18.479 5.578-5.386-4.453a4.814 4.814 0 0 0-6.186 0L1.521 5.578C.551 6.381 0 7.597 0 8.866v6.945C0 18.066 1.734 20 4 20h2a2 2 0 0 0 2-2v-3.252c0-1.268.952-2.19 2-2.19s2 .922 2 2.19V18a2 2 0 0 0 2 2h2c2.266 0 4-1.934 4-4.19V8.867c0-1.269-.55-2.485-1.521-3.288" clip-rule="evenodd"/></symbol>
+      <symbol id="i-dice" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M7 3.5h10A3.5 3.5 0 0 1 20.5 7v10a3.5 3.5 0 0 1-3.5 3.5H7A3.5 3.5 0 0 1 3.5 17V7A3.5 3.5 0 0 1 7 3.5Zm1.5 4.1a1.45 1.45 0 1 0 0 2.9 1.45 1.45 0 0 0 0-2.9Zm7 0a1.45 1.45 0 1 0 0 2.9 1.45 1.45 0 0 0 0-2.9Zm-7 6.4a1.45 1.45 0 1 0 0 2.9 1.45 1.45 0 0 0 0-2.9Zm7 0a1.45 1.45 0 1 0 0 2.9 1.45 1.45 0 0 0 0-2.9Z" clip-rule="evenodd"/></symbol>
+      <symbol id="i-slots" viewBox="-2 -2 26 26"><path fill="currentColor" d="M20.415 13.05a3.42 3.42 0 0 0-2.618-1.186 3.4 3.4 0 0 0-1.429.303 9.1 9.1 0 0 0-1.442-4.086 10.4 10.4 0 0 0-2.35-2.542c.698-.166 1.459-.478 2.042-1.06C16.024 3.071 15.812.684 15.803.584a.63.63 0 0 0-.568-.568c-.101-.01-2.487-.222-3.894 1.185-.823.823-1.11 2-1.205 2.85l-1.637-.865a.631.631 0 0 0-.59 1.115l1.547.819a10.5 10.5 0 0 0-2.961 3.015 9.1 9.1 0 0 0-1.406 4.03 3.4 3.4 0 0 0-1.429-.302 3.42 3.42 0 0 0-2.618 1.187C.36 13.834 0 14.915 0 16.177c0 1.33.573 2.673 1.57 3.682 1.075 1.085 2.534 1.682 4.11 1.682s3.035-.597 4.109-1.682c.998-1.01 1.57-2.351 1.57-3.682 0-1.262-.36-2.343-1.042-3.126A3.42 3.42 0 0 0 7.7 11.864c-.47 0-.92.089-1.338.263.295-2.553 1.876-4.855 4.368-6.32 2.456 1.45 4.061 3.788 4.365 6.32a3.5 3.5 0 0 0-1.336-.263c-.812 0-1.565.266-2.174.758.68.964 1.038 2.182 1.038 3.555 0 1.234-.39 2.47-1.094 3.534q.069.076.14.148c1.074 1.085 2.533 1.682 4.11 1.682 1.575 0 3.035-.597 4.108-1.682.999-1.01 1.571-2.351 1.571-3.682 0-1.262-.36-2.343-1.042-3.126"/></symbol>
+      <symbol id="i-live" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M21.758 14.482c-.787 3.857-5.167 5.445-8.183 2.998a6 6 0 0 1-.973-.998c.914 2.127 2.19 3.588 4.01 4.262v1.116H7.384v-1.116c1.82-.674 3.1-2.131 4.01-4.262q-.43.555-.973.998c-3.011 2.447-7.391.86-8.179-2.998a4.5 4.5 0 0 1 .046-2.098c.358-1.33 1.584-2.678 2.894-3.916.623-.586 1.225-1.133 1.815-1.685C8.757 5.141 10.72 3.183 12 1.14c1.28 2.042 3.243 4 5.003 5.643.59.552 1.192 1.1 1.815 1.685 1.306 1.238 2.531 2.585 2.894 3.916.18.687.198 1.407.046 2.098" clip-rule="evenodd"/></symbol>
+      <symbol id="i-shows" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M4.5 4h15A2.5 2.5 0 0 1 22 6.5v8a2.5 2.5 0 0 1-2.5 2.5h-4.6l.5 2H17a1 1 0 1 1 0 2H7a1 1 0 1 1 0-2h1.6l.5-2H4.5A2.5 2.5 0 0 1 2 14.5v-8A2.5 2.5 0 0 1 4.5 4Zm5.5 4.3v4.4a.6.6 0 0 0 .9.5l3.7-2.2a.6.6 0 0 0 0-1l-3.7-2.2a.6.6 0 0 0-.9.5Z" clip-rule="evenodd"/></symbol>
+      <symbol id="i-fire" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.5c.5 2.7-1.2 4.2-2.6 5.6C8 9.5 6.3 11 6.3 13.6a5.7 5.7 0 0 0 11.4.4c0-2-.8-3.8-2.1-5.2.2 1.1-.3 2-1.2 2.6.4-2.7-.9-5.2-3.2-6.7.7 1.6.2 3-.8 4-.4-2.5.4-4.4 1.6-6.2Z"/></symbol>
+      <symbol id="i-gift" viewBox="0 0 24 24"><path fill="currentColor" d="M3 9.5A1.5 1.5 0 0 1 4.5 8H11v4H4.5A1.5 1.5 0 0 1 3 10.5v-1Zm10 2.5V8h6.5A1.5 1.5 0 0 1 21 9.5v1a1.5 1.5 0 0 1-1.5 1.5H13Z"/><path fill="currentColor" d="M5 13.5h6V21H7a2 2 0 0 1-2-2v-5.5Zm8 0h6V19a2 2 0 0 1-2 2h-4v-7.5Z"/><path fill="currentColor" d="M11 7.8C8 7.8 6.5 3 9 3.4c1.4.25 2 2.4 2 4.4Zm2 0c0-2 .6-4.15 2-4.4 2.5-.4 1 4.4-2 4.4Z"/></symbol>
+      <symbol id="i-trophy" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M18 4V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v1H3.5A1.5 1.5 0 0 0 2 5.5v1A4.5 4.5 0 0 0 6.8 11 6 6 0 0 0 11 14.9V17H9a1.5 1.5 0 0 0-1.48 1.25l-.4 2.3A1 1 0 0 0 8.1 22h7.8a1 1 0 0 0 .99-1.45l-.4-2.3A1.5 1.5 0 0 0 15 17h-2v-2.1A6 6 0 0 0 17.2 11 4.5 4.5 0 0 0 22 6.5v-1A1.5 1.5 0 0 0 20.5 4H18ZM6 8.7A2.5 2.5 0 0 1 4 6.5V6h2v2.7Zm12 0V6h2v.5A2.5 2.5 0 0 1 18 8.7Z" clip-rule="evenodd"/></symbol>
+      <symbol id="i-flag" viewBox="0 0 24 24"><path fill="currentColor" d="M5.5 2a1 1 0 0 0-1 1v18a1 1 0 1 0 2 0v-7h11.2a1 1 0 0 0 .82-1.57L16.2 8.5l2.32-2.93A1 1 0 0 0 17.7 4H6.5V3a1 1 0 0 0-1-1Z"/></symbol>
+      <symbol id="i-info" viewBox="0 0 21 21"><path fill="currentColor" d="M10.5 1.313c-4.344 0-7.875 3.53-7.875 7.875v3.28c0 .362.295.657.656.657 0 2.605 3.938 2.605 3.938 0V10.5c0-1.687-1.995-2.605-3.275-1.463A6.563 6.563 0 0 1 10.5 2.625c3.57 0 6.47 2.861 6.556 6.412-1.273-1.142-3.275-.224-3.275 1.463v2.625c0 1.083.886 1.969 1.969 1.969a2.624 2.624 0 0 1-2.625 2.625h-.69a1.64 1.64 0 0 0-1.607-1.313h-.656c-2.172 0-2.172 3.282 0 3.282h.656a1.65 1.65 0 0 0 1.306-.657h.991a3.94 3.94 0 0 0 3.938-3.937v-.512c.4-.361.656-.88.656-1.457.36 0 .656-.295.656-.656V9.188c0-4.345-3.53-7.876-7.875-7.876"/></symbol>
+      <symbol id="i-headset" viewBox="0 0 24 24"><path fill="currentColor" d="M12 3a8 8 0 0 0-8 8v5.5A2.5 2.5 0 0 0 6.5 19H7a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1h-.9a6 6 0 0 1 11.8 0H17a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1h.5a2.5 2.5 0 0 0 2.5-2.5V11a8 8 0 0 0-8-8Z"/></symbol>
+      <symbol id="i-globe" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20ZM4 11.4h16v1.2H4ZM5.6 7.3h12.8v1H5.6ZM5.6 15.7h12.8v1H5.6ZM11.4 2.3h1.2v19.4h-1.2Z" clip-rule="evenodd"/></symbol>
+      <symbol id="i-search" viewBox="0 0 18 18"><path fill="currentColor" d="M8.625 1.5A7.13 7.13 0 0 0 1.5 8.625a7.13 7.13 0 0 0 7.125 7.125 7.13 7.13 0 0 0 7.125-7.125A7.13 7.13 0 0 0 8.625 1.5m0 8.813h-2.25a.567.567 0 0 1-.562-.563c0-.307.255-.562.562-.562h2.25c.307 0 .563.255.563.562a.567.567 0 0 1-.563.563m2.25-2.25h-4.5a.567.567 0 0 1-.562-.563c0-.308.255-.562.562-.562h4.5c.307 0 .563.255.563.562a.567.567 0 0 1-.563.563m5.1 8.435a.52.52 0 0 1-.367-.15l-1.395-1.395a.53.53 0 0 1 0-.742.53.53 0 0 1 .742 0l1.395 1.394a.53.53 0 0 1 0 .743.55.55 0 0 1-.375.15"/></symbol>
+      <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+      <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 3 5 13h6l-1 8 8-10h-6l1-8Z" fill="currentColor"/></symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></symbol>
+      <symbol id="i-list" viewBox="0 0 24 24"><path d="M8 7h12M8 12h12M8 17h12M4 7h.01M4 12h.01M4 17h.01" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></symbol>
+      <symbol id="i-chev-left" viewBox="0 0 24 24"><path d="m15 5-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="i-chev-right" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="i-chev-down" viewBox="0 0 24 24"><path d="m5 9 7 7 7-7" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="9.5" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+      <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5-11-6.5Z" fill="currentColor"/></symbol>
+      <symbol id="i-wallet" viewBox="0 0 24 24"><rect x="3.5" y="6" width="17" height="13" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 9.5h13a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-13" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="16" cy="12.5" r="1.2" fill="currentColor"/></symbol>
+      <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+      <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6 18 18M18 6 6 18" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="i-coin" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v10M9.5 9.5h4a1.8 1.8 0 0 1 0 3.5h-3a1.8 1.8 0 0 0 0 3.5h4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+      <symbol id="i-tg" viewBox="0 0 24 24"><path d="M21 4 3 11l5 2 2 6 3-4 5 4 3-15Z" fill="currentColor"/></symbol>
+      <symbol id="i-discord" viewBox="0 0 24 24"><path d="M19 6.5A14 14 0 0 0 15.5 5l-.3.6a11 11 0 0 1 3 1.5 12 12 0 0 0-12.4 0 11 11 0 0 1 3-1.5L8.5 5A14 14 0 0 0 5 6.5C2.5 10 2 14 2.5 17.5A14 14 0 0 0 7 20l1-1.6a8 8 0 0 1-2-1l.4-.3a9 9 0 0 0 11.2 0l.4.3a8 8 0 0 1-2 1L17 20a14 14 0 0 0 4.5-2.5C22 14 21.5 10 19 6.5ZM9 15a1.6 1.6 0 0 1 0-3.2 1.6 1.6 0 0 1 0 3.2Zm6 0a1.6 1.6 0 0 1 0-3.2 1.6 1.6 0 0 1 0 3.2Z" fill="currentColor"/></symbol>
+      <symbol id="i-xcom" viewBox="0 0 24 24"><path d="M4 4h4l4.5 6L17.5 4H21l-7 9 7.5 11h-4l-5-7-5.5 7H3l7.5-9.5L4 4Z" fill="currentColor"/></symbol>
+      <!-- decorative game-tile motifs (filled silhouettes, aria-hidden) -->
+      <symbol id="m-cherry" viewBox="0 0 24 24"><path d="M13 4c-2.5 1.2-3.5 3.4-3.8 4.7M13 4c2.2.2 4 1.2 5.4 2.6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="7.6" cy="16.4" r="4.4" fill="currentColor"/><circle cx="16.2" cy="16.8" r="4" fill="currentColor"/></symbol>
+      <symbol id="m-crown" viewBox="0 0 24 24"><path d="M2.5 7.5 7 12l5-7.5L17 12l4.5-4.5L19 20H5L2.5 7.5Z" fill="currentColor"/></symbol>
+      <symbol id="m-coin" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.2" fill="currentColor"/><circle cx="12" cy="12" r="5.6" fill="none" stroke="#1C1C1C" stroke-width="1.8" opacity=".55"/></symbol>
+      <symbol id="m-gem" viewBox="0 0 24 24"><path d="M6.5 3h11l4 6-9.5 12L2.5 9l4-6Z" fill="currentColor"/><path d="M2.5 9h19M9 3l-2 6 5 12 5-12-2-6" fill="none" stroke="#1C1C1C" stroke-width="1" opacity=".45"/></symbol>
+      <symbol id="m-spade" viewBox="0 0 24 24"><path d="M12 3C9.2 6.8 4.5 8.8 4.5 13.2A3.8 3.8 0 0 0 11 16c.1 2-.8 3.6-2.3 5h6.6c-1.5-1.4-2.4-3-2.3-5a3.8 3.8 0 0 0 6.5-2.8C19.5 8.8 14.8 6.8 12 3Z" fill="currentColor"/></symbol>
+      <symbol id="m-star" viewBox="0 0 24 24"><path d="m12 2.5 2.9 6.2 6.8.8-5 4.6 1.3 6.7L12 18.4 5.7 21.6 7 14.9l-5-4.6 6.8-.8L12 2.5Z" fill="currentColor"/></symbol>
+      <symbol id="m-wheel" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.2" fill="currentColor"/><path d="M12 2.8v18.4M2.8 12h18.4M5.5 5.5l13 13M18.5 5.5l-13 13" stroke="#1C1C1C" stroke-width="1.2" opacity=".5"/><circle cx="12" cy="12" r="2.4" fill="#1C1C1C"/></symbol>
+      <symbol id="m-rocket" viewBox="0 0 24 24"><path d="M21.5 2.5 2.5 10.8l6.7 2.3 2.3 6.7L21.5 2.5Z" fill="currentColor"/><path d="M21.5 2.5 9.2 13.1" fill="none" stroke="#1C1C1C" stroke-width="1.1" opacity=".4"/></symbol>
+      <symbol id="m-bell" viewBox="0 0 24 24"><path d="M12 2.6c-3.3 0-6 2.7-6 6 0 5-2.2 7.4-2.2 7.4h16.4S18 13.6 18 8.6c0-3.3-2.7-6-6-6Z" fill="currentColor"/><circle cx="12" cy="20" r="2.2" fill="currentColor"/></symbol>
+      <symbol id="m-flame" viewBox="0 0 24 24"><path d="M13.5 2c1.2 4.2-3.2 5.5-3.2 8.6 0 1.6 1 2.7 2.2 2.7 1.6 0 2.2-1.6 1.6-3.3 2.2 1.7 3.7 4 3.7 6.8A6.8 6.8 0 0 1 5 16.4C5 9.8 11.2 8.5 13.5 2Z" fill="currentColor"/></symbol>
+      <symbol id="m-ball" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.2" fill="currentColor"/><circle cx="8.8" cy="8.8" r="2.6" fill="#fff" opacity=".5"/></symbol>
+      <!-- brand mark + sidebar toggle -->
+      <symbol id="i-logo" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10.5" fill="currentColor"/><path d="M15 9.2a3.7 3.7 0 1 0 .8 4.1" fill="none" stroke="#1C1C1C" stroke-width="2.1" stroke-linecap="round"/><path d="M15.4 6.1l.3 3.1-3.1.2" fill="none" stroke="#1C1C1C" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="i-panel" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.9"/><path d="M9.2 5v14" stroke="currentColor" stroke-width="1.9"/><path d="M5.6 9.4h1.7M5.6 12h1.7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+      <symbol id="i-chat" viewBox="0 0 24 24"><path fill="currentColor" d="M6 4h12a3 3 0 0 1 3 3v6a3 3 0 0 1-3 3h-5.2l-4.5 3.6A1 1 0 0 1 6.8 19l.2-2H6a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3Zm1.5 5.5a1.3 1.3 0 1 0 0 2.6 1.3 1.3 0 0 0 0-2.6Zm4.5 0a1.3 1.3 0 1 0 0 2.6 1.3 1.3 0 0 0 0-2.6Zm4.5 0a1.3 1.3 0 1 0 0 2.6 1.3 1.3 0 0 0 0-2.6Z"/></symbol>
+      <symbol id="i-eye" viewBox="0 0 24 24"><path fill="currentColor" d="M12 5C7 5 3 9 1.6 12 3 15 7 19 12 19s9-4 10.4-7C21 9 17 5 12 5Zm0 11a4 4 0 1 1 0-8 4 4 0 0 1 0 8Zm0-6a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z"/></symbol>
+      <symbol id="i-users" viewBox="0 0 24 24"><path fill="currentColor" d="M9 11a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm0 1.6c-3 0-6 1.5-6 4V19h12v-2.4c0-2.5-3-4-6-4Zm8.4-1.6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm.6 1.6c-.5 0-1 .05-1.5.16.95.84 1.5 2 1.5 3.44V19h4v-2.4c0-2.1-2.1-3.2-4-3.6Z"/></symbol>
+    </defs>
+  </svg>
+
+  <div class="app">
+    <!-- ============ SIDEBAR ============ -->
+    <aside class="sidebar" id="sidebar" aria-label="Primary navigation">
+      <div class="sidebar__top">
+        <a class="logo" href="#main" aria-label="SatoshiSpin, home">
+          <span class="logo__mark">
+            <img class="logo__img" src="assets/img/brand/satoshispin%20logo.svg" alt="" onerror="var m=this.closest('.logo__mark'); if(m){m.classList.add('is-fallback');} this.remove();" />
+            <svg aria-hidden="true"><use href="#i-logo"/></svg>
+          </span>
+          <span class="logo__text">SatoshiSpin</span>
+        </a>
+        <button class="icon-btn sidebar__toggle" data-nav-toggle aria-label="Collapse menu" aria-expanded="true" aria-controls="sidebar">
+          <svg class="ic" aria-hidden="true"><use href="#i-panel"/></svg>
+        </button>
+      </div>
+
+      <nav class="nav" aria-label="Casino sections">
+        <a class="nav__item is-active" href="#main"><svg class="ic" aria-hidden="true"><use href="#i-home"/></svg><span>Main</span></a>
+
+        <button class="nav__item nav__group" data-group aria-expanded="true" aria-controls="grp-casino">
+          <svg class="ic" aria-hidden="true"><use href="#i-dice"/></svg><span>Casino</span>
+          <svg class="ic nav__caret" aria-hidden="true"><use href="#i-chev-down"/></svg>
+        </button>
+        <div class="nav__sub" id="grp-casino">
+          <a class="nav__item" href="#main" data-filter="all"><svg class="ic" aria-hidden="true"><use href="#i-trophy"/></svg><span>Top Games</span></a>
+          <a class="nav__item" href="#main" data-filter="slots"><svg class="ic" aria-hidden="true"><use href="#i-slots"/></svg><span>Slots</span></a>
+          <a class="nav__item" href="#main" data-filter="live"><svg class="ic" aria-hidden="true"><use href="#i-live"/></svg><span>Live Casino</span></a>
+          <a class="nav__item" href="#main" data-filter="shows"><svg class="ic" aria-hidden="true"><use href="#i-shows"/></svg><span>Game Shows</span></a>
+          <a class="nav__item" href="#main" data-filter="hot"><svg class="ic" aria-hidden="true"><use href="#i-fire"/></svg><span>Hottest Games</span></a>
+          <a class="nav__item" href="#main" data-filter="new"><svg class="ic" aria-hidden="true"><use href="#i-gift"/></svg><span>New Releases</span></a>
+        </div>
+
+        <div class="nav__heading"><svg class="ic" aria-hidden="true"><use href="#i-trophy"/></svg><span>Leaderboards</span></div>
+        <ul class="leader">
+          <li class="leader__row">
+            <span class="leader__rank lr-1">1</span>
+            <span class="leader__meta">
+              <span class="leader__line"><b>Monthly</b><span class="leader__time" data-cd="2606400">30:23:17:00</span></span>
+              <span class="leader__prize">10,000,000 SPIN</span>
+            </span>
+          </li>
+          <li class="leader__row">
+            <span class="leader__rank lr-2">2</span>
+            <span class="leader__meta">
+              <span class="leader__line"><b>Weekly</b><span class="leader__time" data-cd="138248">01:14:36:08</span></span>
+              <span class="leader__prize">100,000 SPIN</span>
+            </span>
+          </li>
+          <li class="leader__row">
+            <span class="leader__rank lr-3">3</span>
+            <span class="leader__meta">
+              <span class="leader__line"><b>Daily</b><span class="leader__time" data-cd="51972">00:14:26:12</span></span>
+              <span class="leader__prize">10,000 SPIN</span>
+            </span>
+          </li>
+        </ul>
+
+        <a class="nav__item" href="#main"><svg class="ic" aria-hidden="true"><use href="#i-flag"/></svg><span>Challenges</span><em class="pip">2</em></a>
+      </nav>
+
+      <div class="sidebar__actions">
+        <button class="sbtn" type="button" data-toast="Live support is online 24/7 — sign in to start a chat." aria-label="Support">
+          <svg class="ic" aria-hidden="true"><use href="#i-headset"/></svg><span class="lbl">Support</span>
+        </button>
+        <button class="sbtn" type="button" data-toast="More languages coming soon." aria-label="Language: English">
+          <svg class="ic" aria-hidden="true"><use href="#i-globe"/></svg><span class="lbl">English</span>
+        </button>
+      </div>
+      <div class="socials" aria-label="Social links">
+        <a class="icon-btn" href="#main" aria-label="Telegram"><svg class="ic" aria-hidden="true"><use href="#i-tg"/></svg></a>
+        <a class="icon-btn" href="#main" aria-label="Discord"><svg class="ic" aria-hidden="true"><use href="#i-discord"/></svg></a>
+        <a class="icon-btn" href="#main" aria-label="X (Twitter)"><svg class="ic" aria-hidden="true"><use href="#i-xcom"/></svg></a>
+      </div>
+    </aside>
+
+    <!-- ============ MAIN ============ -->
+    <div class="main">
+      <header class="topbar">
+        <button class="icon-btn topbar__menu" data-drawer-open aria-label="Open menu" aria-controls="sidebar">
+          <svg class="ic" aria-hidden="true"><use href="#i-menu"/></svg>
+        </button>
+        <a class="logo logo--top" href="#main" aria-label="SatoshiSpin, home">SatoshiSpin</a>
+
+        <div class="wager" role="group" aria-label="Weekly wager rush">
+          <svg class="ic wager__ic" aria-hidden="true"><use href="#i-trophy"/></svg>
+          <div class="wager__text"><b>Weekly Wager Rush</b><span>10,000,000 SPIN prize pool</span></div>
+          <div class="wager__cd" data-cd="599175" aria-label="Time remaining">06 : 22 : 46 : 15</div>
+          <button class="btn btn--soft wager__cta" type="button" data-toast="You're in the Weekly Wager Rush. Wager to climb the board.">Participate</button>
+        </div>
+
+        <form class="search" role="search" data-search aria-label="Search games">
+          <svg class="ic" aria-hidden="true"><use href="#i-search"/></svg>
+          <input type="search" id="searchInput" placeholder="Search games" aria-label="Search games" autocomplete="off" />
+        </form>
+
+        <div class="topbar__actions">
+          <button class="btn btn--ghost" type="button" data-auth="login">Log in</button>
+          <button class="btn btn--primary" type="button" data-auth="join">Join now</button>
+        </div>
+      </header>
+
+      <main class="lobby" id="main" tabindex="-1">
+        <!-- HERO PROMO CAROUSEL (layered: background + character + live copy) -->
+        <section class="hero" aria-roledescription="carousel" aria-label="Promotions">
+          <div class="hero__viewport">
+            <ul class="hero__track" id="heroTrack">
+              <li class="banner banner--1" aria-roledescription="slide" aria-label="1 of 4">
+                <div class="banner__bg"><img class="banner__bgimg" src="assets/img/hero/bg-1.jpeg" alt="" onerror="this.remove()" loading="eager" decoding="async" /></div>
+                <span class="banner__scrim" aria-hidden="true"></span>
+                <img class="banner__char" src="assets/img/hero/char-1.png" alt="" onerror="this.remove()" loading="eager" decoding="async" />
+                <div class="banner__content">
+                  <span class="banner__eyebrow">Mobile &amp; desktop</span>
+                  <h2 class="banner__title">Hit the <b>jackpot</b> today</h2>
+                  <p class="banner__sub">3000+ crypto games, daily free spins, and instant payouts.</p>
+                  <div class="banner__cta">
+                    <button class="btn btn--lime" type="button" data-auth="join">Join now</button>
+                    <button class="btn btn--ghost" type="button" data-scroll-top>Browse games</button>
+                  </div>
+                </div>
+              </li>
+              <li class="banner banner--2" aria-roledescription="slide" aria-label="2 of 4">
+                <div class="banner__bg"><img class="banner__bgimg" src="assets/img/hero/bg-2.jpeg" alt="" onerror="this.remove()" loading="lazy" decoding="async" /></div>
+                <span class="banner__scrim" aria-hidden="true"></span>
+                <img class="banner__char" src="assets/img/hero/char-2.png" alt="" onerror="this.remove()" loading="lazy" decoding="async" />
+                <div class="banner__content">
+                  <span class="banner__eyebrow">Provably fair</span>
+                  <h2 class="banner__title">Where <b>winners</b> play</h2>
+                  <p class="banner__sub">Your bet buddy. Real crypto wins, no house tricks.</p>
+                  <div class="banner__cta">
+                    <button class="btn btn--lime" type="button" data-auth="join">Win big</button>
+                  </div>
+                </div>
+              </li>
+              <li class="banner banner--3" aria-roledescription="slide" aria-label="3 of 4">
+                <div class="banner__bg"><img class="banner__bgimg" src="assets/img/hero/bg-3.jpeg" alt="" onerror="this.remove()" loading="lazy" decoding="async" /></div>
+                <span class="banner__scrim" aria-hidden="true"></span>
+                <img class="banner__char" src="assets/img/hero/char-3.png" alt="" onerror="this.remove()" loading="lazy" decoding="async" />
+                <div class="banner__content">
+                  <span class="banner__eyebrow">Free to play</span>
+                  <h2 class="banner__title">Deal <b>you in?</b></h2>
+                  <p class="banner__sub">Try every table free, then switch to crypto when you're ready.</p>
+                  <div class="banner__cta">
+                    <button class="btn btn--lime" type="button" data-auth="join">Try free</button>
+                  </div>
+                </div>
+              </li>
+              <li class="banner banner--4" aria-roledescription="slide" aria-label="4 of 4">
+                <div class="banner__bg"><img class="banner__bgimg" src="assets/img/hero/bg-4.jpeg" alt="" onerror="this.remove()" loading="lazy" decoding="async" /></div>
+                <span class="banner__scrim" aria-hidden="true"></span>
+                <img class="banner__char" src="assets/img/hero/char-4.png" alt="" onerror="this.remove()" loading="lazy" decoding="async" />
+                <div class="banner__content">
+                  <span class="banner__eyebrow">Weekly Wager Rush</span>
+                  <h2 class="banner__title">Luck <b>starts</b> here</h2>
+                  <p class="banner__sub">Spin, bet, and climb the 10,000,000 SPIN leaderboard.</p>
+                  <div class="banner__cta">
+                    <button class="btn btn--lime" type="button" data-auth="join">Bet now</button>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="hero__controls">
+            <button class="icon-btn hero__arrow" data-hero="prev" aria-label="Previous promotion"><svg class="ic" aria-hidden="true"><use href="#i-chev-left"/></svg></button>
+            <div class="hero__dots" id="heroDots" role="tablist" aria-label="Choose promotion"></div>
+            <button class="icon-btn hero__arrow" data-hero="next" aria-label="Next promotion"><svg class="ic" aria-hidden="true"><use href="#i-chev-right"/></svg></button>
+          </div>
+        </section>
+
+        <!-- WEEKLY RAFFLE -->
+        <section class="raffle" aria-label="Weekly raffle">
+          <span class="raffle__scrim" aria-hidden="true"></span>
+          <img class="raffle__char" src="assets/img/raffle/character.png" alt="" loading="lazy" decoding="async" onerror="this.remove()" />
+          <span class="raffle__winners"><svg class="ic" aria-hidden="true"><use href="#i-trophy"/></svg><b>100</b>&nbsp;Raffle Winners</span>
+          <div class="raffle__content">
+            <h2 class="raffle__title"><b>$100,000</b> Weekly Raffle</h2>
+            <div class="raffle__row">
+              <button class="btn btn--lime" type="button" data-toast="Weekly Raffle — opt in after you sign up.">Learn More</button>
+              <span class="raffle__cd"><img class="raffle__coin" src="assets/img/raffle/coin.svg" alt="" onerror="this.remove()" /><span data-cd="495960" data-fmt="compact">5d 18h 6m</span></span>
+            </div>
+          </div>
+        </section>
+
+        <!-- LIVE WINS (populated by app.js) -->
+        <section class="wins" aria-label="Live wins">
+          <span class="wins__label"><i aria-hidden="true"></i>Live wins</span>
+          <div class="wins__viewport"><div class="wins__track" id="winsTrack"></div></div>
+        </section>
+
+        <!-- CURRENCY RAIL -->
+        <section class="rail" aria-label="Available currencies">
+          <span class="rail__label">Available currencies</span>
+          <ul class="rail__list" id="currencyRail"></ul>
+        </section>
+
+        <!-- FILTER TABS -->
+        <nav class="filters" id="filters" aria-label="Game categories">
+          <button class="chip is-active" type="button" data-filter="all"><svg class="ic" aria-hidden="true"><use href="#i-dice"/></svg>Lobby</button>
+          <button class="chip" type="button" data-filter="slots"><svg class="ic" aria-hidden="true"><use href="#i-slots"/></svg>Slots</button>
+          <button class="chip" type="button" data-filter="live"><svg class="ic" aria-hidden="true"><use href="#i-live"/></svg>Live Casino</button>
+          <button class="chip" type="button" data-filter="shows"><svg class="ic" aria-hidden="true"><use href="#i-shows"/></svg>Game Shows</button>
+          <button class="chip" type="button" data-filter="hot"><svg class="ic" aria-hidden="true"><use href="#i-fire"/></svg>Hottest</button>
+          <button class="chip" type="button" data-filter="new"><svg class="ic" aria-hidden="true"><use href="#i-gift"/></svg>New Releases</button>
+        </nav>
+
+        <!-- GAME ROWS (rendered by app.js) -->
+        <div id="rows" class="rows"></div>
+        <p class="noscript" id="noscript">Enable JavaScript to browse the game library.</p>
+
+        <!-- GAME PROVIDERS (populated by app.js) -->
+        <section class="providers" aria-label="Game providers">
+          <div class="sec-head">
+            <h2><svg class="ic" aria-hidden="true"><use href="#i-slots"/></svg>Providers</h2>
+            <div class="sec-head__nav">
+              <button class="icon-btn sec-arrow" type="button" data-pscroll="prev" aria-label="Scroll providers left"><svg class="ic" aria-hidden="true"><use href="#i-chev-left"/></svg></button>
+              <button class="icon-btn sec-arrow" type="button" data-pscroll="next" aria-label="Scroll providers right"><svg class="ic" aria-hidden="true"><use href="#i-chev-right"/></svg></button>
+            </div>
+          </div>
+          <div class="providers__track" id="providersTrack"></div>
+        </section>
+
+        <!-- LATEST BETS (populated by app.js) -->
+        <section class="bets" aria-label="Latest bets">
+          <div class="sec-head"><h2><svg class="ic" aria-hidden="true"><use href="#i-list"/></svg>Latest bets</h2></div>
+          <div class="bets__table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Game</th>
+                  <th class="col-time">Time</th>
+                  <th class="col-player">Player</th>
+                  <th>Bet</th>
+                  <th>Multiplier</th>
+                  <th class="col-r">Payout</th>
+                </tr>
+              </thead>
+              <tbody id="betsBody"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- SELF EXCLUSION -->
+        <section class="selfx" aria-label="Self exclusion and responsible gambling">
+          <span class="selfx__age" aria-hidden="true">18+</span>
+          <div class="selfx__body">
+            <h3>Self Exclusion</h3>
+            <p>SatoshiSpin is committed to responsible gambling. Gambling should be fun, entertaining, and exciting. However, we recognise that some users may experience negative effects from gambling. We strive to support responsible gambling and offer tools to help users stay in control — including deposit limits, time-outs, and self-exclusion.</p>
+            <p class="selfx__links">
+              <a href="https://www.begambleaware.org" target="_blank" rel="noopener">BeGambleAware.org</a><span aria-hidden="true">·</span>
+              <a href="https://www.gamcare.org.uk" target="_blank" rel="noopener">GamCare.org.uk</a><span aria-hidden="true">·</span>
+              <a href="https://www.gamblersanonymous.org.uk" target="_blank" rel="noopener">Gamblers Anonymous</a>
+            </p>
+          </div>
+        </section>
+      </main>
+
+      <!-- ============ FOOTER ============ -->
+      <footer class="footer">
+        <div class="footer__grid">
+          <div class="footer__brand">
+            <span class="logo logo--foot"><span class="logo__mark"><img class="logo__img" src="assets/img/brand/satoshispin%20logo.svg" alt="" onerror="var m=this.closest('.logo__mark'); if(m){m.classList.add('is-fallback');} this.remove();" /><svg aria-hidden="true"><use href="#i-logo"/></svg></span><span class="logo__text">SatoshiSpin</span></span>
+            <p>Free-to-play crypto casino. Play responsibly. Set limits, take breaks, never bet what you can't lose.</p>
+            <div class="socials socials--foot">
+              <a class="icon-btn" href="#main" aria-label="Telegram"><svg class="ic" aria-hidden="true"><use href="#i-tg"/></svg></a>
+              <a class="icon-btn" href="#main" aria-label="Discord"><svg class="ic" aria-hidden="true"><use href="#i-discord"/></svg></a>
+              <a class="icon-btn" href="#main" aria-label="X (Twitter)"><svg class="ic" aria-hidden="true"><use href="#i-xcom"/></svg></a>
+            </div>
+            <ul class="pay-cluster" id="footerCoins" aria-label="Accepted currencies and payment methods"></ul>
+          </div>
+          <nav class="footer__col" aria-label="Casino">
+            <h3>Casino</h3>
+            <a href="#main">Slots</a><a href="#main">Live Casino</a><a href="#main">Game Shows</a><a href="#main">New Releases</a>
+          </nav>
+          <nav class="footer__col" aria-label="Company">
+            <h3>SatoshiSpin</h3>
+            <a href="#main">About</a><a href="#main">VIP Club</a><a href="#main">Affiliates</a><a href="#main">Blog</a>
+          </nav>
+          <nav class="footer__col" aria-label="Support">
+            <h3>Support</h3>
+            <a href="#main">Help Center</a><a href="#main">Live Support</a><a href="#main">Responsible Gaming</a><a href="#main">Terms</a>
+          </nav>
+        </div>
+        <div class="footer__legal">
+          <span class="age">18+</span>
+          <p>SatoshiSpin is a demonstration interface. No real-money gambling takes place. © 2026 SatoshiSpin.</p>
+        </div>
+        <div class="license">
+          <a class="license__seal" href="#" data-verify aria-label="Verify gaming licence">
+            <img src="assets/img/license/licence.png" alt="Curaçao Gaming Control Board licence" loading="lazy" decoding="async" onerror="var s=this.closest('.license__seal'); if(s){s.classList.add('is-fallback');} this.remove();" />
+            <span class="license__seal--fallback">CGB<br />VALID</span>
+          </a>
+          <p class="license__text">
+            <b>SatoshiSpin</b> is operated by <b>[Operator Name] N.V.</b>, a company registered in Curaçao under No. <b>[123456]</b>, registered address <b>[Street, Willemstad, Curaçao]</b>.
+            SatoshiSpin is licensed and regulated by the <b>Curaçao Gaming Control Board (GCB)</b> under licence No. <b>[OGL/2024/XXX/XXXX]</b>.
+            Payments are processed by <b>[Payment Agent] Ltd</b>. Gambling can be addictive — please play responsibly. <a href="#" data-verify>Click to verify</a>.
+          </p>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <!-- ============ MOBILE BOTTOM NAV ============ -->
+  <nav class="bottomnav" aria-label="Mobile navigation">
+    <button class="bottomnav__item" type="button" data-drawer-open><svg class="ic" aria-hidden="true"><use href="#i-list"/></svg><span>Menu</span></button>
+    <button class="bottomnav__item" type="button" data-mobile-search><svg class="ic" aria-hidden="true"><use href="#i-search"/></svg><span>Search</span></button>
+    <button class="bottomnav__item bottomnav__deposit" type="button" data-deposit aria-label="Deposit"><svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg><span>Deposit</span></button>
+    <button class="bottomnav__item" type="button" data-scroll-top><svg class="ic" aria-hidden="true"><use href="#i-dice"/></svg><span>Lobby</span></button>
+    <button class="bottomnav__item" type="button" data-toast="Daily free spin unlocks after sign-up."><svg class="ic" aria-hidden="true"><use href="#i-bolt"/></svg><span>Spin</span></button>
+  </nav>
+
+  <!-- ============ LIVE CHAT ============ -->
+  <button class="chat-tab" type="button" data-chat-toggle aria-label="Open community chat" aria-expanded="false" aria-controls="chatPanel">
+    <svg class="ic" aria-hidden="true"><use href="#i-chat"/></svg>
+  </button>
+  <aside class="chat" id="chatPanel" aria-label="Community chat" aria-hidden="true">
+    <header class="chat__head">
+      <span class="chat__title"><i class="chat__live" aria-hidden="true"></i>Community Chat</span>
+      <span class="chat__online"><b id="chatOnline">2,418</b> online</span>
+      <button class="icon-btn chat__close" type="button" data-chat-toggle aria-label="Close chat"><svg class="ic" aria-hidden="true"><use href="#i-x"/></svg></button>
+    </header>
+    <div class="chat__log" id="chatLog" aria-live="polite"></div>
+    <form class="chat__compose" data-chat-form>
+      <input id="chatInput" type="text" placeholder="Sign in to chat…" aria-label="Chat message" autocomplete="off" />
+      <button class="icon-btn chat__send" type="submit" aria-label="Send message"><svg class="ic" aria-hidden="true"><use href="#i-chev-right"/></svg></button>
+    </form>
+  </aside>
+
+  <!-- ============ OVERLAYS ============ -->
+  <div class="backdrop" id="backdrop" hidden></div>
+
+  <dialog class="modal" id="modal" aria-labelledby="modalTitle">
+    <div class="modal__inner" id="modalInner"><!-- filled by app.js --></div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+  <script src="assets/js/app.js" defer></script>
+</body>
+</html>
