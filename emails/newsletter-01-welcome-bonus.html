@@ -7,233 +7,323 @@
   <meta name="color-scheme" content="dark" />
   <meta name="supported-color-schemes" content="dark" />
   <meta name="format-detection" content="telephone=no, date=no, address=no, email=no" />
-  <title>Growl Games — Welcome Bonus</title>
+  <title>Growl Games &mdash; Welcome Bonus</title>
 
-  <!-- Exo 2 web font (renders in Apple Mail / iOS / many clients; Gmail & Outlook fall back to Trebuchet/Arial) -->
+  <!-- Exo 2 (Apple Mail / iOS / many clients; Gmail & Outlook fall back to Trebuchet/Arial) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin" />
-  <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,400;0,600;0,700;0,800;0,900;1,800;1,900&display=swap" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,800;1,900&display=swap" rel="stylesheet" type="text/css" />
+
+  <!--[if mso]>
+  <style type="text/css">
+    .ff, .ff * { font-family: 'Trebuchet MS', Arial, sans-serif !important; }
+  </style>
+  <![endif]-->
 
   <!--
     ==========================================================================
     GROWL GAMES · NEWSLETTER #01 · WELCOME / 100% DEPOSIT BONUS UP TO $2,000
+    Redesign pass applying: redesign-skill, typography, soft-skill (+ principles
+    from frontend-design, ui-ux-pro-max, taste-skill, web-design-guidelines).
+    Email-safe: tables + inline styles + bulletproof buttons. Web-only techniques
+    (JS motion, backdrop-blur, grid) intentionally omitted.
     Images use RELATIVE paths (assets/...) for local preview. Before sending,
-    host /assets and find-and-replace  src="assets/  with your CDN base URL.
-    Font: Exo 2 everywhere. Palette: navy / blue / gold / purple (Growl brand).
-    See ASSETS-newsletter-01.md for the image manifest.
+    host /assets and replace  src="assets/  with your CDN base URL.
     ==========================================================================
   -->
   <style type="text/css">
-    @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,400;0,600;0,700;0,800;0,900;1,800;1,900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,800;1,900&display=swap');
     body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
     table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
     img { -ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; display: block; }
-    body { margin: 0 !important; padding: 0 !important; width: 100% !important; background-color: #070d1f; }
-    a { color: #ffd21e; text-decoration: none; }
+    body { margin: 0 !important; padding: 0 !important; width: 100% !important; background-color: #070b16; }
+    a { color: #ffc52e; text-decoration: none; }
     .ff { font-family: 'Exo 2','Trebuchet MS',Arial,Helvetica,sans-serif; }
 
-    /* Reference-style 3D / outlined hero headline */
-    .h1hero {
+    /* Display "money moment" headline — reference-style 3D, single gold accent, blue extrude */
+    .display {
       font-family: 'Exo 2','Trebuchet MS',Arial,Helvetica,sans-serif;
-      font-weight: 900; font-style: italic; text-transform: uppercase; color: #ffd21e;
-      text-shadow: -2px -2px 0 #0a1430, 2px -2px 0 #0a1430, -2px 2px 0 #0a1430, 2px 2px 0 #0a1430, 0 7px 0 #6d3bf5, 0 10px 16px rgba(0,0,0,0.55);
+      font-weight: 900; font-style: italic; text-transform: uppercase; color: #ffc52e;
+      letter-spacing: -0.5px; -webkit-font-smoothing: antialiased;
+      text-shadow: -1px -1px 0 #070b16, 1px -1px 0 #070b16, -1px 1px 0 #070b16, 1px 1px 0 #070b16, 0 6px 0 #14306e, 0 9px 16px rgba(3,7,18,0.55);
+    }
+    .display-purple { /* local accent for the Daily Spins moment only */
+      text-shadow: -1px -1px 0 #0a0820, 1px -1px 0 #0a0820, -1px 1px 0 #0a0820, 1px 1px 0 #0a0820, 0 6px 0 #5b2bd6, 0 9px 16px rgba(3,7,18,0.55);
     }
     .amount {
       font-family: 'Exo 2','Trebuchet MS',Arial,Helvetica,sans-serif;
-      font-weight: 900; font-style: italic; color: #ffd21e;
-      text-shadow: -2px -2px 0 #0a1430, 2px -2px 0 #0a1430, -2px 2px 0 #0a1430, 2px 2px 0 #0a1430, 0 8px 0 #1f7ae0, 0 11px 18px rgba(0,0,0,0.55);
+      font-weight: 900; font-style: italic; color: #ffc52e; letter-spacing: -1px;
+      font-variant-numeric: tabular-nums; -webkit-font-smoothing: antialiased;
+      text-shadow: -1px -1px 0 #070b16, 1px -1px 0 #070b16, -1px 1px 0 #070b16, 1px 1px 0 #070b16, 0 7px 0 #14306e, 0 10px 18px rgba(3,7,18,0.55);
     }
-    .btn-gold:hover { background-color: #ffdf57 !important; }
-    .btn-purple:hover { background-color: #5a2fd0 !important; }
+    .btn-gold:hover { background-color: #ffd566 !important; }
+    .btn-purple:hover { background-color: #6d3bf0 !important; }
+    .lnk:hover { color: #ffffff !important; }
 
     @media screen and (max-width: 600px) {
       .container { width: 100% !important; }
       .px { padding-left: 20px !important; padding-right: 20px !important; }
-      .h1hero { font-size: 26px !important; line-height: 30px !important; }
-      .amount { font-size: 38px !important; line-height: 40px !important; }
+      .px-sm { padding-left: 18px !important; padding-right: 18px !important; }
+      .display { font-size: 27px !important; line-height: 30px !important; }
+      .amount { font-size: 44px !important; line-height: 44px !important; }
       .stack { display: block !important; width: 100% !important; box-sizing: border-box; }
       .stack-mb { margin-bottom: 22px !important; }
-      .reason-pad { padding-left: 14px !important; }
     }
   </style>
 </head>
-<body style="margin:0; padding:0; background-color:#070d1f;">
+<body style="margin:0; padding:0; background-color:#070b16;">
 
   <!-- Preheader -->
-  <div style="display:none; max-height:0; overflow:hidden; mso-hide:all; font-size:1px; line-height:1px; color:#070d1f; opacity:0;">
-    Welcome to the pack — your first deposit doubles, up to $2,000. Plus daily spins, login rewards &amp; 13,000+ games.
+  <div style="display:none; max-height:0; overflow:hidden; mso-hide:all; font-size:1px; line-height:1px; color:#070b16; opacity:0;">
+    Your first deposit doubles &mdash; up to $2,000. Plus daily spins, login rewards and 13,000+ games.
     &#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;
   </div>
 
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#070d1f">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#070b16">
     <tr>
       <td align="center" style="padding:0;">
 
         <!-- View in browser -->
         <table role="presentation" class="container" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px; max-width:600px;">
           <tr>
-            <td class="px ff" align="center" style="padding:12px 40px; font-size:11px; color:#6f7ea3;">
-              Can't see this email properly? <a href="{{view_in_browser_url}}" style="color:#9fb0d6; text-decoration:underline;">View in browser</a>
+            <td class="px ff" align="center" style="padding:14px 40px 8px 40px; font-size:11px; color:#5c6885;">
+              Trouble viewing this email? <a href="{{view_in_browser_url}}" class="lnk" style="color:#8a96b4; text-decoration:underline; text-underline-offset:2px;">View it in your browser</a>
             </td>
           </tr>
         </table>
 
         <!-- Main card -->
-        <table role="presentation" class="container" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px; max-width:600px; background-color:#0b1530; border-radius:14px; overflow:hidden;">
+        <table role="presentation" class="container" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px; max-width:600px; background-color:#0a1024; border-radius:18px; overflow:hidden;">
 
-          <!-- Header logo -->
+          <!-- Header -->
           <tr>
-            <td align="center" bgcolor="#0a1430" style="padding:20px 24px; border-bottom:1px solid #16264f;">
+            <td align="center" bgcolor="#070b16" style="padding:22px 24px 20px 24px; border-bottom:1px solid #1a2440;">
               <a href="{{site_url}}" target="_blank">
-                <img src="assets/brand/gg-logo.png" width="150" height="auto" alt="Growl Games" style="width:150px; height:auto;" />
+                <img src="assets/brand/gg-logo.png" width="148" alt="Growl Games" style="width:148px; height:auto;" />
               </a>
             </td>
           </tr>
 
-          <!-- HERO (character 1) -->
+          <!-- Hero (character 1) -->
           <tr>
-            <td align="center" bgcolor="#0e1640" style="padding:0; background-color:#0e1640;">
+            <td align="center" bgcolor="#0c1230" style="padding:0; background-color:#0c1230;">
               <a href="{{cta_url}}" target="_blank">
                 <img src="assets/newsletter-01/hero-welcome.png" width="600" alt="Welcome to Growl Games" style="width:100%; max-width:600px; height:auto;" />
               </a>
             </td>
           </tr>
 
-          <!-- Offer panel -->
+          <!-- ===================== OFFER (double-bezel card) ===================== -->
           <tr>
-            <td class="px ff" align="center" bgcolor="#0b1530" style="padding:32px 40px 6px 40px;">
-              <p style="margin:0 0 14px 0; font-size:13px; letter-spacing:3px; font-weight:700; color:#19c3f3; text-transform:uppercase;">
-                New Player Welcome Offer
-              </p>
-              <h1 class="h1hero" style="margin:0; font-size:40px; line-height:42px;">
-                Double Your First Deposit
-              </h1>
-              <p style="margin:18px 0 4px 0; font-size:15px; letter-spacing:2px; font-weight:700; color:#ffffff; text-transform:uppercase;">
-                100% Deposit Bonus
-              </p>
-              <p class="amount" style="margin:6px 0 0 0; font-size:64px; line-height:64px;">
-                UP TO $2,000
-              </p>
-              <p class="ff" style="margin:20px 0 0 0; font-size:16px; line-height:24px; color:#aebfe0;">
-                Join the pack, make your first deposit, and we'll match it dollar-for-dollar — so you start with twice the firepower.
-              </p>
+            <td class="px" style="padding:30px 32px 8px 32px;">
+              <!-- outer shell -->
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#0c1430; border:1px solid #1e2a4e; border-radius:22px;">
+                <tr>
+                  <td style="padding:6px;">
+                    <!-- inner core -->
+                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#0e1836; border-radius:17px;">
+                      <tr>
+                        <td class="px-sm ff" align="center" style="padding:30px 30px 30px 30px;">
+                          <!-- eyebrow pill -->
+                          <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:0 auto 16px auto;">
+                            <tr>
+                              <td style="padding:6px 14px; background-color:#1a1606; border:1px solid #4d3a10; border-radius:999px; font-size:11px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:#ffc52e;">
+                                New player welcome offer
+                              </td>
+                            </tr>
+                          </table>
+
+                          <h1 class="display" style="margin:0; font-size:36px; line-height:38px;">Double your<br />first deposit</h1>
+
+                          <p class="ff" style="margin:18px 0 2px 0; font-size:13px; font-weight:600; letter-spacing:0.16em; text-transform:uppercase; color:#9aa6c4;">100% deposit bonus</p>
+                          <p class="amount" style="margin:4px 0 0 0; font-size:60px; line-height:60px;">UP&nbsp;TO&nbsp;$2,000</p>
+
+                          <p class="ff" style="margin:18px auto 0 auto; max-width:430px; font-size:16px; line-height:24px; color:#aeb6c8;">
+                            Join the pack, make your first deposit, and we&rsquo;ll match it dollar-for-dollar &mdash; so you start with twice the firepower.
+                          </p>
+
+                          <!-- bulletproof CTA with button-in-button arrow -->
+                          <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:24px auto 0 auto;">
+                            <tr>
+                              <td align="center" bgcolor="#ffc52e" class="btn-gold" style="border-radius:10px; mso-padding-alt:16px 34px;">
+                                <a href="{{cta_url}}" target="_blank" class="ff" style="display:inline-block; padding:16px 32px; font-size:16px; font-weight:800; color:#0a1024; text-decoration:none; letter-spacing:0.2px;">
+                                  Claim my 100% bonus
+                                  <span style="display:inline-block; width:22px; height:22px; line-height:22px; text-align:center; background-color:#0a1024; color:#ffc52e; border-radius:50%; font-size:13px; margin-left:9px; vertical-align:middle;">&rarr;</span>
+                                </a>
+                              </td>
+                            </tr>
+                          </table>
+
+                          <p class="ff" style="margin:16px 0 0 0; font-size:11px; line-height:16px; color:#5c6885;">
+                            Minimum deposit applies. 18+ only. Bonus terms and wagering requirements apply.
+                          </p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
             </td>
           </tr>
 
-          <!-- Primary CTA -->
+          <!-- ===================== DAILY SPINS (purple moment) ===================== -->
           <tr>
-            <td align="center" style="padding:26px 40px 6px 40px;">
-              <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+            <td class="px" style="padding:22px 32px 8px 32px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#150e34; border:1px solid #2c2058; border-radius:22px; overflow:hidden;">
                 <tr>
-                  <td class="btn-gold" bgcolor="#ffd21e" style="border-radius:8px;">
-                    <a href="{{cta_url}}" target="_blank" class="btn-gold ff" style="display:inline-block; padding:17px 46px; font-size:17px; font-weight:800; color:#0a1430; text-decoration:none; text-transform:uppercase; letter-spacing:0.5px;">
-                      Claim My 100% Bonus&nbsp;&rarr;
+                  <td style="padding:0;">
+                    <a href="{{cta_url}}" target="_blank">
+                      <img src="assets/newsletter-01/banner-daily-spins.png" width="588" alt="Daily Spins at Growl Games" style="width:100%; max-width:588px; height:auto; border-radius:22px 22px 0 0;" />
                     </a>
                   </td>
                 </tr>
-              </table>
-            </td>
-          </tr>
-          <tr>
-            <td class="px ff" align="center" style="padding:8px 40px 30px 40px; font-size:11px; color:#6f7ea3;">
-              Min. deposit applies. 18+ only. Bonus terms &amp; wagering requirements apply.
-            </td>
-          </tr>
-
-          <!-- ============ SECOND BANNER (character 2 — Daily Spins) ============ -->
-          <tr>
-            <td align="center" bgcolor="#1a1147" style="padding:0; background-color:#1a1147;">
-              <a href="{{cta_url}}" target="_blank">
-                <img src="assets/newsletter-01/banner-daily-spins.png" width="600" alt="Daily Spins at Growl Games" style="width:100%; max-width:600px; height:auto;" />
-              </a>
-            </td>
-          </tr>
-          <tr>
-            <td class="px ff" align="center" bgcolor="#1a1147" style="padding:26px 40px 6px 40px; background-color:#1a1147;">
-              <p style="margin:0 0 12px 0; font-size:13px; letter-spacing:3px; font-weight:700; color:#19c3f3; text-transform:uppercase;">
-                Every Single Day
-              </p>
-              <h2 class="h1hero" style="margin:0; font-size:34px; line-height:36px;">
-                Spin To Win, Daily
-              </h2>
-              <p class="ff" style="margin:16px 0 0 0; font-size:16px; line-height:24px; color:#cdd7f0;">
-                Come back every day and give the bonus wheel a free spin — cash, free bets and bonus boosts up for grabs.
-              </p>
-            </td>
-          </tr>
-          <tr>
-            <td align="center" bgcolor="#1a1147" style="padding:22px 40px 34px 40px; background-color:#1a1147;">
-              <table role="presentation" cellpadding="0" cellspacing="0" border="0">
                 <tr>
-                  <td class="btn-purple" bgcolor="#6d3bf5" style="border-radius:8px;">
-                    <a href="{{cta_url}}" target="_blank" class="btn-purple ff" style="display:inline-block; padding:15px 40px; font-size:16px; font-weight:800; color:#ffffff; text-decoration:none; text-transform:uppercase; letter-spacing:0.5px;">
-                      Spin The Wheel&nbsp;&rarr;
-                    </a>
+                  <td class="px-sm ff" align="center" style="padding:24px 30px 28px 30px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:0 auto 14px auto;">
+                      <tr>
+                        <td style="padding:6px 14px; background-color:#1c0f3e; border:1px solid #3a2570; border-radius:999px; font-size:11px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:#c4a7ff;">
+                          Every single day
+                        </td>
+                      </tr>
+                    </table>
+                    <h2 class="display display-purple" style="margin:0; font-size:30px; line-height:32px;">Spin to win, daily</h2>
+                    <p class="ff" style="margin:14px auto 0 auto; max-width:420px; font-size:16px; line-height:24px; color:#c7cbe6;">
+                      Come back every day and give the bonus wheel a free spin &mdash; cash, free bets and bonus boosts up for grabs.
+                    </p>
+                    <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:20px auto 0 auto;">
+                      <tr>
+                        <td align="center" bgcolor="#5b2bd6" class="btn-purple" style="border-radius:10px; mso-padding-alt:14px 30px;">
+                          <a href="{{cta_url}}" target="_blank" class="ff" style="display:inline-block; padding:14px 30px; font-size:15px; font-weight:800; color:#ffffff; text-decoration:none; letter-spacing:0.2px;">
+                            Spin the wheel
+                            <span style="display:inline-block; width:20px; height:20px; line-height:20px; text-align:center; background-color:#ffffff; color:#5b2bd6; border-radius:50%; font-size:12px; margin-left:9px; vertical-align:middle;">&rarr;</span>
+                          </a>
+                        </td>
+                      </tr>
+                    </table>
                   </td>
                 </tr>
               </table>
             </td>
           </tr>
 
-          <!-- More reasons header -->
+          <!-- ===================== FEATURES ===================== -->
           <tr>
-            <td class="px ff" align="center" style="padding:34px 40px 4px 40px;">
-              <h2 class="h1hero" style="margin:0; font-size:24px; line-height:28px;">
-                More Reasons To Join The Pack
-              </h2>
+            <td class="px ff" align="center" style="padding:30px 40px 4px 40px;">
+              <h2 class="ff" style="margin:0; font-size:22px; line-height:26px; font-weight:800; color:#ffffff; letter-spacing:-0.2px;">More reasons to join the pack</h2>
+              <p class="ff" style="margin:8px auto 0 auto; max-width:380px; font-size:14px; line-height:20px; color:#8a96b4;">Everything that comes with your account, beyond the welcome bonus.</p>
             </td>
           </tr>
 
-          <!-- Reasons grid (uploaded icons) -->
           <tr>
-            <td class="px ff" style="padding:20px 40px 4px 40px;">
+            <td class="px" style="padding:18px 32px 6px 32px;">
 
-              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:18px;">
+              <!-- feature bezel -->
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#0c1430; border:1px solid #1c284a; border-radius:16px; margin-bottom:12px;">
                 <tr>
-                  <td width="60" valign="top" style="width:60px;"><img src="assets/icons/casino.png" width="52" alt="" style="width:52px; height:auto;" /></td>
-                  <td class="reason-pad" valign="middle" style="padding-left:16px;">
-                    <p style="margin:0 0 3px 0; font-size:16px; font-weight:700; color:#ffffff;">13,000+ casino games</p>
-                    <p style="margin:0; font-size:14px; line-height:20px; color:#9fb0d6;">Slots, live casino, table games and originals — one of the biggest libraries anywhere.</p>
+                  <td valign="middle" style="padding:14px 16px;">
+                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                      <tr>
+                        <td width="64" valign="middle" style="width:64px;">
+                          <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+                            <td align="center" valign="middle" style="width:52px; height:52px; background-color:#0e1836; border:1px solid #20305a; border-radius:12px;">
+                              <img src="assets/icons/casino.png" width="34" alt="" style="width:34px; height:auto; margin:0 auto;" />
+                            </td>
+                          </tr></table>
+                        </td>
+                        <td valign="middle" class="ff" style="padding-left:14px;">
+                          <p style="margin:0 0 2px 0; font-size:16px; font-weight:700; color:#ffffff;">13,000+ casino games</p>
+                          <p style="margin:0; font-size:13px; line-height:19px; color:#93a0bf;">Slots, live casino, table games and originals &mdash; one of the biggest libraries anywhere.</p>
+                        </td>
+                      </tr>
+                    </table>
                   </td>
                 </tr>
               </table>
 
-              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:18px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#0c1430; border:1px solid #1c284a; border-radius:16px; margin-bottom:12px;">
                 <tr>
-                  <td width="60" valign="top" style="width:60px;"><img src="assets/icons/games.png" width="52" alt="" style="width:52px; height:auto;" /></td>
-                  <td class="reason-pad" valign="middle" style="padding-left:16px;">
-                    <p style="margin:0 0 3px 0; font-size:16px; font-weight:700; color:#ffffff;">16+ sports &amp; the biggest esports library</p>
-                    <p style="margin:0; font-size:14px; line-height:20px; color:#9fb0d6;">Bet on 16+ sports plus the biggest esports lineup in the game.</p>
+                  <td valign="middle" style="padding:14px 16px;">
+                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                      <tr>
+                        <td width="64" valign="middle" style="width:64px;">
+                          <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+                            <td align="center" valign="middle" style="width:52px; height:52px; background-color:#0e1836; border:1px solid #20305a; border-radius:12px;">
+                              <img src="assets/icons/games.png" width="34" alt="" style="width:34px; height:auto; margin:0 auto;" />
+                            </td>
+                          </tr></table>
+                        </td>
+                        <td valign="middle" class="ff" style="padding-left:14px;">
+                          <p style="margin:0 0 2px 0; font-size:16px; font-weight:700; color:#ffffff;">16+ sports and the biggest esports library</p>
+                          <p style="margin:0; font-size:13px; line-height:19px; color:#93a0bf;">Bet on 16+ sports, plus the biggest esports lineup in the game.</p>
+                        </td>
+                      </tr>
+                    </table>
                   </td>
                 </tr>
               </table>
 
-              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:18px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#0c1430; border:1px solid #1c284a; border-radius:16px; margin-bottom:12px;">
                 <tr>
-                  <td width="60" valign="top" style="width:60px;"><img src="assets/icons/slots.png" width="52" alt="" style="width:52px; height:auto;" /></td>
-                  <td class="reason-pad" valign="middle" style="padding-left:16px;">
-                    <p style="margin:0 0 3px 0; font-size:16px; font-weight:700; color:#ffffff;">20+ cryptocurrencies accepted</p>
-                    <p style="margin:0; font-size:14px; line-height:20px; color:#9fb0d6;">Deposit and cash out fast with 20+ coins — your wallet, your way.</p>
+                  <td valign="middle" style="padding:14px 16px;">
+                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                      <tr>
+                        <td width="64" valign="middle" style="width:64px;">
+                          <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+                            <td align="center" valign="middle" style="width:52px; height:52px; background-color:#0e1836; border:1px solid #20305a; border-radius:12px;">
+                              <img src="assets/icons/slots.png" width="34" alt="" style="width:34px; height:auto; margin:0 auto;" />
+                            </td>
+                          </tr></table>
+                        </td>
+                        <td valign="middle" class="ff" style="padding-left:14px;">
+                          <p style="margin:0 0 2px 0; font-size:16px; font-weight:700; color:#ffffff;">20+ cryptocurrencies accepted</p>
+                          <p style="margin:0; font-size:13px; line-height:19px; color:#93a0bf;">Deposit and cash out fast with 20+ coins &mdash; your wallet, your way.</p>
+                        </td>
+                      </tr>
+                    </table>
                   </td>
                 </tr>
               </table>
 
-              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:18px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#0c1430; border:1px solid #1c284a; border-radius:16px; margin-bottom:12px;">
                 <tr>
-                  <td width="60" valign="top" style="width:60px;"><img src="assets/icons/most-played.png" width="52" alt="" style="width:52px; height:auto;" /></td>
-                  <td class="reason-pad" valign="middle" style="padding-left:16px;">
-                    <p style="margin:0 0 3px 0; font-size:16px; font-weight:700; color:#ffffff;">$5 for every friend you refer</p>
-                    <p style="margin:0; font-size:14px; line-height:20px; color:#9fb0d6;">Bring the pack together — earn a $5 bonus on every successful referral.</p>
+                  <td valign="middle" style="padding:14px 16px;">
+                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                      <tr>
+                        <td width="64" valign="middle" style="width:64px;">
+                          <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+                            <td align="center" valign="middle" style="width:52px; height:52px; background-color:#0e1836; border:1px solid #20305a; border-radius:12px;">
+                              <img src="assets/icons/most-played.png" width="34" alt="" style="width:34px; height:auto; margin:0 auto;" />
+                            </td>
+                          </tr></table>
+                        </td>
+                        <td valign="middle" class="ff" style="padding-left:14px;">
+                          <p style="margin:0 0 2px 0; font-size:16px; font-weight:700; color:#ffffff;">$5 for every friend you refer</p>
+                          <p style="margin:0; font-size:13px; line-height:19px; color:#93a0bf;">Bring the pack together &mdash; earn a $5 bonus on every successful referral.</p>
+                        </td>
+                      </tr>
+                    </table>
                   </td>
                 </tr>
               </table>
 
-              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:4px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#0c1430; border:1px solid #1c284a; border-radius:16px; margin-bottom:2px;">
                 <tr>
-                  <td width="60" valign="top" style="width:60px;"><img src="assets/icons/vipclub.png" width="52" alt="" style="width:52px; height:auto;" /></td>
-                  <td class="reason-pad" valign="middle" style="padding-left:16px;">
-                    <p style="margin:0 0 3px 0; font-size:16px; font-weight:700; color:#ffffff;">Daily, weekly &amp; monthly login rewards</p>
-                    <p style="margin:0; font-size:14px; line-height:20px; color:#9fb0d6;">Just show up and get paid — stacking rewards the more you play.</p>
+                  <td valign="middle" style="padding:14px 16px;">
+                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                      <tr>
+                        <td width="64" valign="middle" style="width:64px;">
+                          <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+                            <td align="center" valign="middle" style="width:52px; height:52px; background-color:#0e1836; border:1px solid #20305a; border-radius:12px;">
+                              <img src="assets/icons/vipclub.png" width="34" alt="" style="width:34px; height:auto; margin:0 auto;" />
+                            </td>
+                          </tr></table>
+                        </td>
+                        <td valign="middle" class="ff" style="padding-left:14px;">
+                          <p style="margin:0 0 2px 0; font-size:16px; font-weight:700; color:#ffffff;">Daily, weekly and monthly login rewards</p>
+                          <p style="margin:0; font-size:13px; line-height:19px; color:#93a0bf;">Just show up and get paid &mdash; rewards stack the more you play.</p>
+                        </td>
+                      </tr>
+                    </table>
                   </td>
                 </tr>
               </table>
@@ -241,14 +331,15 @@
             </td>
           </tr>
 
-          <!-- Secondary CTA -->
+          <!-- Final CTA -->
           <tr>
-            <td align="center" style="padding:26px 40px 38px 40px;">
-              <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+            <td align="center" style="padding:24px 40px 40px 40px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center">
                 <tr>
-                  <td class="btn-gold" bgcolor="#ffd21e" style="border-radius:8px;">
-                    <a href="{{cta_url}}" target="_blank" class="btn-gold ff" style="display:inline-block; padding:16px 44px; font-size:16px; font-weight:800; color:#0a1430; text-decoration:none; text-transform:uppercase; letter-spacing:0.5px;">
+                  <td align="center" bgcolor="#ffc52e" class="btn-gold" style="border-radius:10px; mso-padding-alt:16px 40px;">
+                    <a href="{{cta_url}}" target="_blank" class="ff" style="display:inline-block; padding:16px 38px; font-size:16px; font-weight:800; color:#0a1024; text-decoration:none; letter-spacing:0.2px;">
                       Join Growl Games
+                      <span style="display:inline-block; width:22px; height:22px; line-height:22px; text-align:center; background-color:#0a1024; color:#ffc52e; border-radius:50%; font-size:13px; margin-left:9px; vertical-align:middle;">&rarr;</span>
                     </a>
                   </td>
                 </tr>
@@ -258,22 +349,22 @@
 
           <!-- ============================ FOOTER ============================ -->
           <tr>
-            <td bgcolor="#0c4aa0" style="padding:0; background-color:#0c4aa0; background:linear-gradient(180deg,#1670d6 0%,#0c4aa0 100%);">
+            <td bgcolor="#0c4aa0" style="padding:0; background-color:#0c4aa0; background:linear-gradient(180deg,#1567c8 0%,#0b3f8e 100%);">
 
               <!-- certification row -->
               <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
                 <tr>
-                  <td align="center" style="padding:22px 30px 6px 30px;">
+                  <td align="center" style="padding:22px 28px 4px 28px;">
                     <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center">
                       <tr>
-                        <td align="center" style="padding:6px 12px;"><img src="assets/badges/sigma.png" height="22" alt="SiGMA" style="height:22px; width:auto; opacity:0.85;" /></td>
-                        <td align="center" style="padding:6px 12px;"><img src="assets/badges/responsible-gambling.png" height="22" alt="Responsible Gaming" style="height:22px; width:auto; opacity:0.85;" /></td>
-                        <td align="center" style="padding:6px 12px;"><img src="assets/badges/gamcare.png" height="22" alt="GamCare" style="height:22px; width:auto; opacity:0.85;" /></td>
+                        <td align="center" style="padding:6px 11px;"><img src="assets/badges/sigma.png" height="20" alt="SiGMA" style="height:20px; width:auto; opacity:0.8;" /></td>
+                        <td align="center" style="padding:6px 11px;"><img src="assets/badges/responsible-gambling.png" height="20" alt="Responsible Gaming" style="height:20px; width:auto; opacity:0.8;" /></td>
+                        <td align="center" style="padding:6px 11px;"><img src="assets/badges/gamcare.png" height="20" alt="GamCare" style="height:20px; width:auto; opacity:0.8;" /></td>
                       </tr>
                       <tr>
-                        <td align="center" style="padding:6px 12px;"><img src="assets/badges/betblocker.png" height="22" alt="BetBlocker" style="height:22px; width:auto; opacity:0.85;" /></td>
-                        <td align="center" style="padding:6px 12px;"><img src="assets/badges/18plus-white.png" height="24" alt="18+" style="height:24px; width:auto; opacity:0.9;" /></td>
-                        <td align="center" style="padding:6px 12px;"><img src="assets/badges/cloud9.png" height="22" alt="Cloud9" style="height:22px; width:auto; opacity:0.85;" /></td>
+                        <td align="center" style="padding:6px 11px;"><img src="assets/badges/betblocker.png" height="20" alt="BetBlocker" style="height:20px; width:auto; opacity:0.8;" /></td>
+                        <td align="center" style="padding:6px 11px;"><img src="assets/badges/18plus-white.png" height="22" alt="18 plus" style="height:22px; width:auto; opacity:0.9;" /></td>
+                        <td align="center" style="padding:6px 11px;"><img src="assets/badges/cloud9.png" height="20" alt="Cloud9" style="height:20px; width:auto; opacity:0.8;" /></td>
                       </tr>
                     </table>
                   </td>
@@ -283,9 +374,9 @@
               <!-- logo + description -->
               <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
                 <tr>
-                  <td class="px ff" align="center" style="padding:18px 40px 0 40px;">
-                    <img src="assets/brand/gg-logo.png" width="130" alt="Growl Games" style="width:130px; height:auto; margin:0 auto 14px auto;" />
-                    <p style="margin:0 auto; max-width:460px; font-size:13px; line-height:20px; color:#dbe6ff;">
+                  <td class="px ff" align="center" style="padding:16px 40px 0 40px;">
+                    <img src="assets/brand/gg-logo.png" width="124" alt="Growl Games" style="width:124px; height:auto; margin:0 auto 14px auto;" />
+                    <p style="margin:0 auto; max-width:450px; font-size:13px; line-height:20px; color:#dce7ff;">
                       Growl Games, recognized among the best gaming platforms, is a leading brand in the gaming industry. We provide exceptional gaming experiences with cutting-edge technology and innovative solutions.
                     </p>
                   </td>
@@ -296,9 +387,9 @@
               <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
                 <tr>
                   <td class="px ff" align="center" style="padding:14px 40px 0 40px; font-size:13px; color:#ffffff;">
-                    <a href="mailto:Admin@growl.games" style="color:#ffd21e; text-decoration:none;">Admin@growl.games</a>
+                    <a href="mailto:Admin@growl.games" class="lnk" style="color:#ffd566; text-decoration:none;">Admin@growl.games</a>
                     &nbsp;&nbsp;&middot;&nbsp;&nbsp;
-                    <a href="mailto:Support@growl.games" style="color:#ffd21e; text-decoration:none;">Support@growl.games</a>
+                    <a href="mailto:Support@growl.games" class="lnk" style="color:#ffd566; text-decoration:none;">Support@growl.games</a>
                   </td>
                 </tr>
               </table>
@@ -306,12 +397,12 @@
               <!-- social -->
               <table role="presentation" align="center" cellpadding="0" cellspacing="0" border="0" style="margin:16px auto 0 auto;">
                 <tr>
-                  <td style="padding:0 5px;"><a href="{{instagram_url}}" target="_blank"><img src="assets/social/instagram.png" width="34" height="34" alt="Instagram" style="width:34px; height:34px;" /></a></td>
-                  <td style="padding:0 5px;"><a href="{{youtube_url}}" target="_blank"><img src="assets/social/youtube.png" width="34" height="34" alt="YouTube" style="width:34px; height:34px;" /></a></td>
-                  <td style="padding:0 5px;"><a href="{{tiktok_url}}" target="_blank"><img src="assets/social/tiktok.png" width="34" height="34" alt="TikTok" style="width:34px; height:34px;" /></a></td>
-                  <td style="padding:0 5px;"><a href="{{facebook_url}}" target="_blank"><img src="assets/social/facebook.png" width="34" height="34" alt="Facebook" style="width:34px; height:34px;" /></a></td>
-                  <td style="padding:0 5px;"><a href="{{x_url}}" target="_blank"><img src="assets/social/x.png" width="34" height="34" alt="X" style="width:34px; height:34px;" /></a></td>
-                  <td style="padding:0 5px;"><a href="{{telegram_url}}" target="_blank"><img src="assets/social/telegram.png" width="34" height="34" alt="Telegram" style="width:34px; height:34px;" /></a></td>
+                  <td style="padding:0 5px;"><a href="{{instagram_url}}" target="_blank"><img src="assets/social/instagram.png" width="33" height="33" alt="Instagram" style="width:33px; height:33px;" /></a></td>
+                  <td style="padding:0 5px;"><a href="{{youtube_url}}" target="_blank"><img src="assets/social/youtube.png" width="33" height="33" alt="YouTube" style="width:33px; height:33px;" /></a></td>
+                  <td style="padding:0 5px;"><a href="{{tiktok_url}}" target="_blank"><img src="assets/social/tiktok.png" width="33" height="33" alt="TikTok" style="width:33px; height:33px;" /></a></td>
+                  <td style="padding:0 5px;"><a href="{{facebook_url}}" target="_blank"><img src="assets/social/facebook.png" width="33" height="33" alt="Facebook" style="width:33px; height:33px;" /></a></td>
+                  <td style="padding:0 5px;"><a href="{{x_url}}" target="_blank"><img src="assets/social/x.png" width="33" height="33" alt="X" style="width:33px; height:33px;" /></a></td>
+                  <td style="padding:0 5px;"><a href="{{telegram_url}}" target="_blank"><img src="assets/social/telegram.png" width="33" height="33" alt="Telegram" style="width:33px; height:33px;" /></a></td>
                 </tr>
               </table>
 
@@ -322,20 +413,20 @@
                     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
                       <tr>
                         <td class="stack stack-mb ff" width="33%" valign="top" align="center" style="vertical-align:top;">
-                          <p style="margin:0 0 10px 0; font-size:13px; font-weight:800; letter-spacing:1px; color:#ffffff; text-transform:uppercase;">Growl Games</p>
-                          <p style="margin:0 0 7px 0; font-size:13px;"><a href="{{about_url}}" style="color:#cfe0ff; text-decoration:none;">About Us</a></p>
-                          <p style="margin:0 0 7px 0; font-size:13px;"><a href="{{faqs_url}}" style="color:#cfe0ff; text-decoration:none;">FAQs</a></p>
-                          <p style="margin:0; font-size:13px;"><a href="{{contact_url}}" style="color:#cfe0ff; text-decoration:none;">Contact Us</a></p>
+                          <p style="margin:0 0 10px 0; font-size:12px; font-weight:800; letter-spacing:0.12em; color:#ffffff; text-transform:uppercase;">Growl Games</p>
+                          <p style="margin:0 0 7px 0; font-size:13px;"><a href="{{about_url}}" class="lnk" style="color:#cfe0ff; text-decoration:none;">About us</a></p>
+                          <p style="margin:0 0 7px 0; font-size:13px;"><a href="{{faqs_url}}" class="lnk" style="color:#cfe0ff; text-decoration:none;">FAQs</a></p>
+                          <p style="margin:0; font-size:13px;"><a href="{{contact_url}}" class="lnk" style="color:#cfe0ff; text-decoration:none;">Contact us</a></p>
                         </td>
                         <td class="stack stack-mb ff" width="33%" valign="top" align="center" style="vertical-align:top;">
-                          <p style="margin:0 0 10px 0; font-size:13px; font-weight:800; letter-spacing:1px; color:#ffffff; text-transform:uppercase;">Resources</p>
-                          <p style="margin:0; font-size:13px;"><a href="{{responsible_gaming_url}}" style="color:#cfe0ff; text-decoration:none;">Responsible Gaming</a></p>
+                          <p style="margin:0 0 10px 0; font-size:12px; font-weight:800; letter-spacing:0.12em; color:#ffffff; text-transform:uppercase;">Resources</p>
+                          <p style="margin:0; font-size:13px;"><a href="{{responsible_gaming_url}}" class="lnk" style="color:#cfe0ff; text-decoration:none;">Responsible gaming</a></p>
                         </td>
                         <td class="stack ff" width="33%" valign="top" align="center" style="vertical-align:top;">
-                          <p style="margin:0 0 10px 0; font-size:13px; font-weight:800; letter-spacing:1px; color:#ffffff; text-transform:uppercase;">Legal</p>
-                          <p style="margin:0 0 7px 0; font-size:13px;"><a href="{{terms_url}}" style="color:#cfe0ff; text-decoration:none;">Terms of Service</a></p>
-                          <p style="margin:0 0 7px 0; font-size:13px;"><a href="{{privacy_url}}" style="color:#cfe0ff; text-decoration:none;">Privacy Policy</a></p>
-                          <p style="margin:0; font-size:13px;"><a href="{{cookie_url}}" style="color:#cfe0ff; text-decoration:none;">Cookie Policy</a></p>
+                          <p style="margin:0 0 10px 0; font-size:12px; font-weight:800; letter-spacing:0.12em; color:#ffffff; text-transform:uppercase;">Legal</p>
+                          <p style="margin:0 0 7px 0; font-size:13px;"><a href="{{terms_url}}" class="lnk" style="color:#cfe0ff; text-decoration:none;">Terms of service</a></p>
+                          <p style="margin:0 0 7px 0; font-size:13px;"><a href="{{privacy_url}}" class="lnk" style="color:#cfe0ff; text-decoration:none;">Privacy policy</a></p>
+                          <p style="margin:0; font-size:13px;"><a href="{{cookie_url}}" class="lnk" style="color:#cfe0ff; text-decoration:none;">Cookie policy</a></p>
                         </td>
                       </tr>
                     </table>
@@ -343,7 +434,6 @@
                 </tr>
               </table>
 
-              <!-- divider -->
               <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
                 <tr><td class="px" style="padding:18px 40px 0 40px;"><div style="height:1px; line-height:1px; font-size:0; background-color:rgba(255,255,255,0.18);">&nbsp;</div></td></tr>
               </table>
@@ -354,17 +444,17 @@
                   <td class="px ff" style="padding:18px 40px 0 40px;">
                     <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin-bottom:12px;">
                       <tr>
-                        <td style="padding:0 8px;"><img src="assets/footer/operator-mark.png" height="34" alt="Operator" style="height:34px; width:auto;" /></td>
-                        <td style="padding:0 8px;"><img src="assets/footer/gaming-curacao.png" height="34" alt="Gaming Curacao" style="height:34px; width:auto;" /></td>
-                        <td style="padding:0 8px;"><img src="assets/badges/ssl.png" height="30" alt="SSL secure" style="height:30px; width:auto;" /></td>
-                        <td style="padding:0 8px;"><img src="assets/badges/18plus-white.png" height="30" alt="18+" style="height:30px; width:auto;" /></td>
+                        <td style="padding:0 8px;"><img src="assets/footer/operator-mark.png" height="32" alt="Operator" style="height:32px; width:auto;" /></td>
+                        <td style="padding:0 8px;"><img src="assets/footer/gaming-curacao.png" height="32" alt="Gaming Curacao" style="height:32px; width:auto;" /></td>
+                        <td style="padding:0 8px;"><img src="assets/badges/ssl.png" height="28" alt="SSL secure" style="height:28px; width:auto;" /></td>
+                        <td style="padding:0 8px;"><img src="assets/badges/18plus-white.png" height="28" alt="18 plus" style="height:28px; width:auto;" /></td>
                       </tr>
                     </table>
                     <p style="margin:0 0 10px 0; font-size:11px; line-height:17px; color:#cfe0ff; text-align:center;">
                       GROWL.GAMES is operated by Stack Games Limited, a limited liability company registered in Belize with company registration number 70549, with registered address at 94, Hill Bank Road, Orange Walk, Belize, BZ (BLZ). GROWL.GAMES is licensed and regulated by the Government of the Autonomous Island of Anjouan, Union of Comoros and operates under License No. ALSI-203810009-FI1.
                     </p>
                     <p style="margin:0; font-size:11px; line-height:17px; color:#cfe0ff; text-align:center;">
-                      GROWL.GAMES has passed all regulatory compliance and is legally authorized to conduct gaming operations for any and all games of chance and wagering. Gambling can be addictive — please play responsibly. 18+ only.
+                      GROWL.GAMES has passed all regulatory compliance and is legally authorized to conduct gaming operations for any and all games of chance and wagering. Gambling can be addictive &mdash; please play responsibly. 18+ only.
                     </p>
                   </td>
                 </tr>
@@ -373,18 +463,18 @@
               <!-- copyright + unsubscribe -->
               <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
                 <tr>
-                  <td class="px ff" align="center" style="padding:18px 40px 8px 40px; font-size:11px; line-height:17px; color:#bcd1f5;">
-                    Copyright &copy;2025 growl.games | Growl Games All Rights Reserved
+                  <td class="px ff" align="center" style="padding:18px 40px 6px 40px; font-size:11px; line-height:17px; color:#bcd1f5;">
+                    &copy;&nbsp;2025 growl.games &middot; Growl Games. All rights reserved.
                   </td>
                 </tr>
                 <tr>
                   <td class="px ff" align="center" style="padding:0 40px 26px 40px; font-size:11px; line-height:17px; color:#bcd1f5;">
-                    You're receiving this because you signed up at Growl Games with {{email}}.<br />
-                    <a href="{{unsubscribe_url}}" style="color:#ffffff; text-decoration:underline;">Unsubscribe</a>
+                    You&rsquo;re receiving this because you signed up at Growl Games with {{email}}.<br />
+                    <a href="{{unsubscribe_url}}" class="lnk" style="color:#ffffff; text-decoration:underline; text-underline-offset:2px;">Unsubscribe</a>
                     &nbsp;&middot;&nbsp;
-                    <a href="{{preferences_url}}" style="color:#ffffff; text-decoration:underline;">Manage preferences</a>
+                    <a href="{{preferences_url}}" class="lnk" style="color:#ffffff; text-decoration:underline; text-underline-offset:2px;">Manage preferences</a>
                     &nbsp;&middot;&nbsp;
-                    <a href="{{view_in_browser_url}}" style="color:#ffffff; text-decoration:underline;">View in browser</a>
+                    <a href="{{view_in_browser_url}}" class="lnk" style="color:#ffffff; text-decoration:underline; text-underline-offset:2px;">View in browser</a>
                   </td>
                 </tr>
               </table>
