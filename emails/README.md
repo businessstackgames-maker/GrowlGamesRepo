@@ -52,8 +52,21 @@ emails/
     └── social/     footer social icons
 ```
 
+## Brand system (applies to all 5 emails)
+
+- **Font:** Exo 2 (loaded via `<link>`/`@import`, applied everywhere; Gmail/Outlook
+  fall back to Trebuchet/Arial).
+- **Palette:** navy `#0a1430`, blue `#1f7ae0`, gold `#ffd21e`, purple `#6d3bf5`,
+  cyan `#19c3f3` (from the Growl swatches).
+- **Footer:** matches growl.games — cert row, gorilla logo + description, contact
+  emails, socials, Growl Games / Resources / Legal columns, operator + Gaming
+  Curaçao logos, the Stack Games Limited / Anjouan licence text, `©2025 growl.games`.
+- **Headlines:** heavy italic uppercase with navy outline + 3D extrude (reference style).
+- **Structure:** hero (character 1) → offer + CTA → second banner (character 2) →
+  feature grid → secondary CTA → footer → end-of-email art strip.
+
 ## Outstanding
 
-- **Footer legal details** (company name, address, licence, helpline) are
-  placeholders — growl.games was unreachable from the build environment. Provide
-  the real values and they'll be applied to all 5 emails.
+- Replace placeholder artwork (hero, second banner, end-art, certification &
+  operator logos) — see `ASSETS-newsletter-01.md`.
+- Confirm/adjust the icon→offer mapping if desired.
